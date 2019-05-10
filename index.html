@@ -43,6 +43,9 @@
           data-background-image="img/andy-watkins-317614-unsplash.jpg"
           data-background-opacity="0.3"
         >
+          <aside class="notes">
+            Les têtes d'affiche (aucun ordre particulier)
+          </aside>
           <p class="poster-title">
             <img
               width="25%"
@@ -53,11 +56,254 @@
           </p>
           <img class="plain stretch" data-src="img/poster-white.png" />
         </section>
+        <section>
+          <h2>Le projet Instakittens</h2>
+          <a href="https://github.com/fredericbonnet/instakittens">
+            <img class="plain" data-src="img/instakittens-qr-code.png" />
+            https://github.com/fredericbonnet/instakittens
+          </a>
+        </section>
+        <section>
+          <section>
+            <h3>Le projet Instakittens</h3>
+            <p class="_fragment">
+              Application de type Instagram, mais pour les photos de chatons
+            </p>
+            <p class="fragment">
+              <img width="25%" class="plain" data-src="img/evilmbcats.jpg" />
+              <br />
+              <a href="https://twitter.com/evilbmcats">
+                Black Metal Cats (@evilbmcats)</a
+              >
+            </p>
+          </section>
+          <section>
+            <img
+              class="stretch"
+              data-src="https://pbs.twimg.com/media/D3xIMpDXoAAq9mk.jpg"
+            />
+            <blockquote>
+              We speak the words of destruction, and sing the songs of death.
+              <a
+                href="https://twitter.com/evilbmcats/status/1116122940431458305"
+              >
+                &mdash; Black Metal Cats (@evilbmcats)</a
+              >
+            </blockquote>
+          </section>
+          <section>
+            <img
+              class="stretch"
+              data-src="https://pbs.twimg.com/media/D5TO1H_VUAYohSK.jpg"
+            />
+            <blockquote>
+              The night shall come when the hammer of Satan rises. You shall see
+              our wrath, and you shall feel our hate.
+              <a
+                href="https://twitter.com/evilbmcats/status/1122996230328504320"
+              >
+                &mdash; Black Metal Cats (@evilbmcats)</a
+              >
+            </blockquote>
+          </section>
+          <section>
+            <img
+              class="stretch"
+              data-src="https://pbs.twimg.com/media/D3V_c8yUwAA8aDJ.jpg"
+            />
+            <blockquote>
+              I strike from the ground, I strike from the sky, I strike from
+              beyond, all living things must die.
+              <a
+                href="https://twitter.com/evilbmcats/status/1113936639523315712"
+              >
+                &mdash; Black Metal Cats (@evilbmcats)</a
+              >
+            </blockquote>
+          </section>
+          <section>
+            <img
+              class="stretch"
+              data-src="https://pbs.twimg.com/media/D5SGp4QU8AAZXAf.jpg"
+            />
+            <blockquote>
+              On the vast plains of ice, against the lacerating wind, a lone
+              pilgrim presses through the snow.
+              <a
+                href="https://twitter.com/evilbmcats/status/1122670584557473792"
+              >
+                &mdash; Black Metal Cats (@evilbmcats)</a
+              >
+            </blockquote>
+          </section>
+          <section>
+            <img
+              class="stretch"
+              data-src="https://pbs.twimg.com/media/D4JlWx0UcAAqx6J.jpg"
+            />
+            <blockquote>
+              A warrior of northern twilight, I shall walk alone.
+              <a
+                href="https://twitter.com/evilbmcats/status/1117567112837382144"
+              >
+                &mdash; Black Metal Cats (@evilbmcats)</a
+              >
+            </blockquote>
+          </section>
+          <section>
+            <img
+              class="stretch"
+              data-src="https://pbs.twimg.com/media/D36Qt19UcAAZutP.jpg"
+            />
+            <blockquote>
+              The legion is thoroughly formed. The ranks are set and waiting.
+              We've come here for glory.
+              <a
+                href="https://twitter.com/evilbmcats/status/1116489606390697985"
+              >
+                &mdash; Black Metal Cats (@evilbmcats)</a
+              >
+            </blockquote>
+          </section>
+        </section>
         <section data-markdown>
           <textarea data-template>
-## Slide 2
-			</textarea
-          >
+            ### Objectifs
+
+            [TodoMVC](http://todomvc.com/), mais pour les tests
+
+            - Embryons d'applications testables
+            - Minimum de code applicatif
+            - Représentatif d'une application réelle
+  
+            Notes: Pas un prototype mais un embryon
+          </textarea>
+        </section>
+        <section data-markdown data-separator-vertical="^\r?\n----\r?\n$">
+          <textarea data-template>
+            ### Les entités
+          
+            - Utilisateurs
+            - Albums
+            - Photos
+            - Commentaires
+
+            ----
+
+            #### Utilisateurs
+            
+            L'application autorise plusieurs niveaux d'accès :
+
+            - Visiteurs anonymes non authentifiés
+            - Utilisateurs enregistrés
+            - Administrateurs        
+
+            ----
+
+            #### Albums
+
+            Les utilisateurs peuvent créer un nombre arbitraire d'albums photos. Les albums ont plusieurs niveaux d'accès :
+
+            - **Public** : Contenu visible par tout le monde
+            - **Restreint** : Contenu visible uniquement par les utilisateurs enregistrés
+            - **Privé** : Contenu visible uniquement par le propriétaire
+
+            ----
+
+            #### Photos
+
+            Les albums peuvent contenir un nombre arbitraire de photos de chatons
+
+            ----
+
+            #### Commentaires
+
+            Les utilisateurs enregistrés peuvent poster des commentaires sous les photos des albums publics ou restreints
+          </textarea>
+        </section>
+        <section data-markdown data-separator-vertical="^\r?\n----\r?\n$">
+          <textarea data-template>
+            ### Les applications
+
+            - Générateur de données
+            - Serveur d'API REST
+            - interface d'administration
+            - Application mobile
+
+            ----
+
+            #### [Instakittens Data Generator](https://github.com/fredericbonnet/instakittens-data-generator)
+
+            Générateur de base de données JSON
+            
+            ```json
+            {
+              "users": [
+              ...
+                {
+                  "id": 3,
+                  "username": "Miller.Thompson",
+                  "firstName": "Miller",
+                  "lastName": "Thompson",
+                  "email": "Miller.Thompson@ellsworth.org",
+                  ...
+                },         
+            ```   
+
+            - **[Faker](https://github.com/Marak/faker.js)** : générateur de données fictives
+            - **[Unsplash](https://unsplash.com/search/photos/kitten)** : bibliothèque d'images libres de droit
+
+            Note: Faker permet de générer de nombreux types de données, très utile lors de l'écriture de tests unitaires par exemple
+
+            ----
+            
+            #### [Instakittens JSON Server](https://github.com/fredericbonnet/instakittens-json-server)
+            
+            Serveur d'API REST Mock avec contrôle d'accès
+            
+            <img data-src="img/json-server.jpg" alt="JSON Server" class="stretch plain"/>
+
+            - **[JSON Server](https://github.com/typicode/json-server)** : serveur REST complet à partir d'un simple fichier JSON
+            - Middlewares **[Express](https://expressjs.com/)** pour les autres fonctionnalités
+
+            Note: JSON Server basé sur Express, utilisable avec d'autres middlewares
+
+            Existe aussi en mode GraphQL : json-graphql-server
+
+            ----
+
+            #### [Instakittens React administration interface](https://github.com/fredericbonnet/instakittens-react-admin)
+
+            Interface d'administration web
+
+            <img data-src="img/react-admin.jpg" alt="React-admin" class="stretch plain"/>
+
+            - **[React-admin](https://github.com/marmelab/react-admin/)** : framework de construction d'interface d'administration basé sur [React](https://reactjs.org/)
+
+            Note: 
+            
+            Pas besoin de connaître React pour utiliser React-admin, modèle déclaratif
+            
+            Quasiment aucun codage spécifique hormis contrôle d'accès
+
+            Compatible avec de nombreux protocoles : JSON, GraphQL, etc
+
+            ----
+
+            #### [Instakittens Ionic 4/Angular client application](https://github.com/fredericbonnet/instakittens-ionic4)
+
+            Application web mobile
+
+            <img data-src="img/app-login.png" alt="App login" class="plain" width="15%"/>
+            <img data-src="img/app-users.png" alt="App users" class="plain" width="15%"/>
+            <br/>
+
+            
+            - **[Ionic 4](https://ionicframework.com/)** : bibliothèque de composants web mobiles
+            - **[Angular 7](https://angular.io/)** : framework web
+
+            Note: Très basique, juste fonctionnelle pour le besoin du projet
+          </textarea>
         </section>
       </div>
     </div>
@@ -69,6 +315,7 @@
       // - https://github.com/hakimel/reveal.js#configuration
       // - https://github.com/hakimel/reveal.js#dependencies
       Reveal.initialize({
+        hash: true,
         dependencies: [
           { src: "plugin/markdown/marked.js" },
           { src: "plugin/markdown/markdown.js" },

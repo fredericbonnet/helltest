@@ -24,8 +24,7 @@ $mainFont: "Source Sans Pro", Helvetica, sans-serif;
 $headingFont: "zai Consul Polish Typewriter", Helvetica, sans-serif;
 $headingTextShadow: 0px 0px 15px black;
 $headingLetterSpacing: normal;
-$headingTextTransform: uppercase;
-$headingFontWeight: 600;
+$headingTextTransform: capitalize;
 $linkColor: #e7ad52;
 $linkColorHover: lighten($linkColor, 15%);
 $selectionBackgroundColor: lighten($linkColor, 25%);
@@ -61,7 +60,7 @@ section.has-light-background {
 }
 
 @mixin bodyBackground() {
-  @include radial-gradient(rgba(28, 30, 32, 1), rgba(85, 90, 95, 1));
+  @include radial-gradient(rgba(28, 30, 32, 1), rgba(60, 65, 70, 1), circle);
 }
 
 // Theme template ------------------------------
