@@ -24,7 +24,7 @@ $mainFont: "Source Sans Pro", Helvetica, sans-serif;
 $headingFont: "zai Consul Polish Typewriter", Helvetica, sans-serif;
 $headingTextShadow: 0px 0px 15px black;
 $headingLetterSpacing: normal;
-$headingTextTransform: capitalize;
+$headingTextTransform: none;
 $linkColor: #e7ad52;
 $linkColorHover: lighten($linkColor, 15%);
 $selectionBackgroundColor: lighten($linkColor, 25%);

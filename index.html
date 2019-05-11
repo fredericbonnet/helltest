@@ -36,7 +36,7 @@
           data-background-opacity="0.5"
         >
           <img class="plain stretch" data-src="img/logo.png" />
-          <h2>Le Test-ival full stack extrême</h2>
+          <h2>Le Test-ival Full Stack Extrême</h2>
         </section>
         <section
           data-background="black"
@@ -179,7 +179,7 @@
             Notes: Pas un prototype mais un embryon
           </textarea>
         </section>
-        <section data-markdown data-separator-vertical="^\r?\n----\r?\n$">
+        <section data-markdown data-separator-vertical="^\r?\n===\r?\n$">
           <textarea data-template>
             ### Les entités
           
@@ -188,7 +188,7 @@
             - Photos
             - Commentaires
 
-            ----
+            ===
 
             #### Utilisateurs
             
@@ -198,7 +198,7 @@
             - Utilisateurs enregistrés
             - Administrateurs        
 
-            ----
+            ===
 
             #### Albums
 
@@ -208,29 +208,29 @@
             - **Restreint** : Contenu visible uniquement par les utilisateurs enregistrés
             - **Privé** : Contenu visible uniquement par le propriétaire
 
-            ----
+            ===
 
             #### Photos
 
             Les albums peuvent contenir un nombre arbitraire de photos de chatons
 
-            ----
+            ===
 
             #### Commentaires
 
             Les utilisateurs enregistrés peuvent poster des commentaires sous les photos des albums publics ou restreints
           </textarea>
         </section>
-        <section data-markdown data-separator-vertical="^\r?\n----\r?\n$">
+        <section data-markdown data-separator-vertical="^\r?\n===\r?\n$">
           <textarea data-template>
             ### Les applications
 
-            - Générateur de données
-            - Serveur d'API REST
-            - interface d'administration
-            - Application mobile
+            - Générateur de données <!-- .element: class="fragment" -->
+            - Serveur d'API REST <!-- .element: class="fragment" -->
+            - interface d'administration <!-- .element: class="fragment" -->
+            - Application mobile <!-- .element: class="fragment" -->
 
-            ----
+            ===
 
             #### [Instakittens Data Generator](https://github.com/fredericbonnet/instakittens-data-generator)
 
@@ -250,12 +250,13 @@
                 },         
             ```   
 
-            - **[Faker](https://github.com/Marak/faker.js)** : générateur de données fictives
-            - **[Unsplash](https://unsplash.com/search/photos/kitten)** : bibliothèque d'images libres de droit
+              - **[Faker](https://github.com/Marak/faker.js)** : générateur de données fictives
+              - **[Unsplash](https://unsplash.com/search/photos/kitten)** : bibliothèque d'images libres de droit
+            </div>
 
             Note: Faker permet de générer de nombreux types de données, très utile lors de l'écriture de tests unitaires par exemple
 
-            ----
+            ===
             
             #### [Instakittens JSON Server](https://github.com/fredericbonnet/instakittens-json-server)
             
@@ -270,7 +271,7 @@
 
             Existe aussi en mode GraphQL : json-graphql-server
 
-            ----
+            ===
 
             #### [Instakittens React administration interface](https://github.com/fredericbonnet/instakittens-react-admin)
 
@@ -288,7 +289,7 @@
 
             Compatible avec de nombreux protocoles : JSON, GraphQL, etc
 
-            ----
+            ===
 
             #### [Instakittens Ionic 4/Angular client application](https://github.com/fredericbonnet/instakittens-ionic4)
 
@@ -303,6 +304,139 @@
             - **[Angular 7](https://angular.io/)** : framework web
 
             Note: Très basique, juste fonctionnelle pour le besoin du projet
+          </textarea>
+        </section>
+        <section data-markdown data-separator-vertical="^\r?\n===\r?\n$">
+          <textarea data-template>
+            ## Un peu de jargon
+
+            - TDD, BDD, ATDD... <!-- .element: class="fragment" -->
+            - Assertions, mocks, stubs, spies... <!-- .element: class="fragment" -->
+            - Tests unitaires, d'intégration, fonctionnels, end-to-end... <!-- .element: class="fragment" -->
+
+            ---
+
+            #### TDD
+
+            Test Driven Development
+
+            ----
+
+            <span class="fragment">
+              <img data-src="img/extreme-programming.jpg" alt="Extreme Programming" class="plain" width="33%" />
+              <blockquote>All tests are green, Brothers! Let's pray the Dark Lord!</blockquote>
+            </span>
+
+            Note: Pratique de l'Extreme Programming
+
+            On code d'abord les tests pour qu'ils échouent, ensuite on code jusqu'à ce qu'ils fonctionnent
+
+            Orienté développeur
+
+            ===
+
+            #### BDD
+
+            Behavior Driven Development
+
+            ----
+
+            - Domain-driven design (DDD) : méthodologie de conception logicielle axée sur la logique métier <!-- .element: class="fragment" -->
+            - Domain-specific language (DSL) : langage dédié à un domaine applicatif <!-- .element: class="fragment" -->
+
+            Note:
+            
+            Evolution/réaction au TDD basée sur la collaboration entre toutes les parties prenantes d'un projet : développeurs, testeurs, utilisateurs...
+
+            Orienté équipe
+
+            ===
+
+            #### ATDD
+
+            Acceptance Test Driven Development
+
+            Note: Englobe tous les concepts xDD avec un focus sur les besoins client
+
+            Orienté business
+
+            ---
+
+            ### Assertions
+
+            Dans le contexte des tests, expression permettant de vérifier l'état du contexte testé <!-- .element: class="fragment" -->
+            
+            Un test contient au moins une assertion <!-- .element: class="fragment" -->
+            
+            ===
+
+            ### Test doubles
+
+            Concept générique <!-- .element: class="fragment" -->
+
+            - Stubs (ou bouchons) <!-- .element: class="fragment" -->
+            - Mocks (ou objet factice) <!-- .element: class="fragment" -->
+            - Spy (ou espion) <!-- .element: class="fragment" -->
+
+            Note: Concepts proches mais quelques nuances:
+
+            - Stubs : réponses pré-enregistrées respectant le contrat d'interface. S'applique 
+              aux fonctions, aux services, etc
+            - Mocks : application orientée objet des stubs, avec comportement dépendant du contexte
+            - Spy : greffon sur objet ou fonction existante
+            
+            ---
+
+            ### Tests "white box" / "black box"
+
+            - Test "white box" : dépend de la struture interne de l'objet du test
+            - Test "black box" : dépend de la définition de l'objet du test
+
+            ===
+
+            ### Tests unitaires
+
+            Évalue la conformité d'un composant isolément <!-- .element: class="fragment" -->
+
+            ===
+
+            ### Tests d'intégration
+
+            Évalue la compatibilité d'un sous-ensemble de composants de l'application <!-- .element: class="fragment" -->
+
+            ===
+
+            ### Tests fonctionnels
+
+            Appelés aussi tests système (définition [CFTL](http://www.cftl.fr/))
+
+            Évalue la conformité de l'application aux exigences <!-- .element: class="fragment" -->
+            
+            ===
+
+            ### Tests end-to-end
+
+            Tests fonctionnels de type "black box" <!-- .element: class="fragment" -->
+
+            Basés sur le contrat d'interface (services) ou l'interface homme-machine (applications interactives)  <!-- .element: class="fragment" -->
+
+            Dans le domaine des applications web, implique en général le pilotage d'un navigateur <!-- .element: class="fragment" -->
+
+            ===
+
+            ### Test d'acceptation / recette
+
+            Métier à part entière distinct du développement proprement dit
+            
+            Note: Rarement automatisé dans le domaine du développement logiciel, mais si c'est le cas
+            alors il y a de grandes chances pour que ce soit avec une solution standard de type Selenium
+            pour les applications web
+
+            Dans les projets au forfait on fait souvent ces tests 2 fois : une fois chez le fournisseur,
+            et l'autre chez le client, après s'être mis d'accord sur un cahier de recette
+
+            La principale source d'incompréhension dans un projet logiciel c'est la divergence entre les tests 
+            écrits par les développeurs et ceux du cahier de recette
           </textarea>
         </section>
       </div>
@@ -320,7 +454,8 @@
           { src: "plugin/markdown/marked.js" },
           { src: "plugin/markdown/markdown.js" },
           { src: "plugin/notes/notes.js", async: true },
-          { src: "plugin/highlight/highlight.js", async: true }
+          { src: "plugin/highlight/highlight.js", async: true },
+          { src: "plugin/zoom-js/zoom.js", async: true }
         ]
       });
     </script>
