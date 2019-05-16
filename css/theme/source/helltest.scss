@@ -23,6 +23,7 @@ $mainFontSize: 42px;
 $mainFont: "Source Sans Pro", Helvetica, sans-serif;
 $headingFont: "zai Consul Polish Typewriter", Helvetica, sans-serif;
 $headingTextShadow: 0px 0px 15px black;
+$heading1TextShadow: $headingTextShadow;
 $headingLetterSpacing: normal;
 $headingTextTransform: none;
 $linkColor: #e7ad52;
@@ -43,6 +44,7 @@ section.has-light-background {
   h5,
   h6 {
     color: #222;
+    text-shadow: 0px 0px 15px white;
   }
 }
 

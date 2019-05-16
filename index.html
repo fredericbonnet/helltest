@@ -39,35 +39,124 @@
           <h2>Le Test-ival Full Stack Extrême</h2>
         </section>
         <section
+          data-markdown
           data-background="black"
           data-background-image="img/andy-watkins-317614-unsplash.jpg"
           data-background-opacity="0.3"
         >
-          <aside class="notes">
-            Les têtes d'affiche (aucun ordre particulier)
-          </aside>
-          <p class="poster-title">
-            <img
-              width="25%"
-              class="plain"
-              data-src="img/poster-title-white.png"
-              alt="Helltest"
-            />22 mai 2019
-          </p>
-          <img class="plain stretch" data-src="img/poster-white.png" />
+          <textarea data-template>
+            <p class="poster-title">
+              <img
+                width="25%"
+                class="plain"
+                data-src="img/poster-title-white.png"
+                alt="Helltest"
+              />22 mai 2019
+            </p>
+            <img class="plain stretch" data-src="img/poster-white.png" />
+
+            Notes: Les têtes d'affiche (aucun ordre particulier) 
+                
+            Eclectique, il y a tous les genres et pour tous les goûts
+          </textarea>
+        </section>
+
+        <section
+          data-markdown
+          data-separator-vertical="^\r?\n===\r?\n$"
+          data-background-image="img/marius-masalar-410695-unsplash.jpg"
+          data-background-color="#000"
+          data-background-opacity="0.5"
+        >
+          <textarea data-template>
+            # Un peu de jargon
+
+            Notes: Un peu come le solfège en musique, il y a des concepts à connaître
+          </textarea>
         </section>
 
         <section data-markdown data-separator-vertical="^\r?\n===\r?\n$">
           <textarea data-template>
             ## Un peu de jargon
 
-            - TDD, BDD, ATDD... <!-- .element: class="fragment" -->
-            - Assertions, mocks, stubs, spies... <!-- .element: class="fragment" -->
-            - Tests unitaires, d'intégration, fonctionnels, end-to-end... <!-- .element: class="fragment" -->
+            - Niveaux de tests : tests unitaires, d'intégration, fonctionnels, end-to-end... <!-- .element: class="fragment" -->
+            - Méthodologies : TDD, BDD, ATDD... <!-- .element: class="fragment" -->
+            - Techniques : Assertions, mocks, stubs, spies... <!-- .element: class="fragment" -->
+            - Outils : Test runner, test reporter... <!-- .element: class="fragment" -->
+
+            Notes: Présentation des différentes catégories de termes et de concepts
 
             ---
 
-            #### TDD
+            ## Les niveaux de tests
+
+            [CFTL](http://www.cftl.fr/) : Comité Français des Tests Logiciels
+
+            1. Tests unitaires <!-- .element: class="fragment" -->
+            2. Tests d'intégration <!-- .element: class="fragment" -->
+            3. Tests système <!-- .element: class="fragment" -->
+            4. Tests d'acceptation <!-- .element: class="fragment" -->
+
+            ===
+
+            ### Tests unitaires
+
+            Évaluent la conformité d'un composant isolément <!-- .element: class="fragment" -->
+
+            Note: Un seul composant, on simule le reste
+
+            ===
+
+            ### Tests d'intégration
+
+            Évaluent la compatibilité d'un sous-ensemble de composants de l'application <!-- .element: class="fragment" -->
+
+            Notes: Deux ou plusieurs composants qui doivent fonctionner sous-ensemble
+
+            On simule le reste
+
+            ===
+
+            ### Tests système
+
+            Appelés aussi tests fonctionnels
+
+            Évaluent la conformité de l'application aux exigences <!-- .element: class="fragment" -->
+            
+            Note: On peut simuler les applications tierces ou pas selon l'environnement
+
+            CFTL : Comité Français des Tests Logiciels
+
+            ===
+
+            ### Test d'acceptation / recette
+
+            Métier à part entière distinct du développement proprement dit <!-- .element: class="fragment" -->
+            
+            Notes:
+            
+            Dans le domaine du développement logiciel, c'est parfois automatisé mas pas toujours. 
+            Dans ce cas il y a de grandes chances pour que ce soit avec une solution standard de
+            pilotage d'appli interactive (typiquement Selenium pour les applis web)
+
+            Dans les projets au forfait on fait souvent ces tests 2 fois : une fois chez le fournisseur,
+            et l'autre chez le client, après s'être mis d'accord sur un cahier de recette
+
+            La principale source d'incompréhension dans un projet logiciel c'est la divergence entre les tests 
+            écrits par les développeurs et ceux du cahier de recette : nécessite des bonnes pratiques de
+            communication (voir Cucumber)
+
+            ---
+
+            ## Les méthodologies
+
+            - TDD <!-- .element: class="fragment" -->
+            - BDD <!-- .element: class="fragment" -->
+            - ATDD <!-- .element: class="fragment" -->
+
+            ===
+
+            ### TDD
 
             Test Driven Development
 
@@ -78,15 +167,19 @@
               <blockquote>All tests are green, Brothers! Let's pray the Dark Lord!</blockquote>
             </span>
 
-            Note: Pratique de l'Extreme Programming
+            Notes: Pratique de l'Extreme Programming
 
             On code d'abord les tests pour qu'ils échouent, ensuite on code jusqu'à ce qu'ils fonctionnent
 
             Orienté développeur
 
+            Pas nécessaire de faire du TDD "pur" pour acquérir de bonnes pratiques
+
+            TCR : Test Commit Revert : encore plus extreme (Blackened Death Metal)
+
             ===
 
-            #### BDD
+            ### BDD
 
             Behavior Driven Development
 
@@ -95,29 +188,44 @@
             - Domain-driven design (DDD) : méthodologie de conception logicielle axée sur la logique métier <!-- .element: class="fragment" -->
             - Domain-specific language (DSL) : langage dédié à un domaine applicatif <!-- .element: class="fragment" -->
 
-            Note:
+            Notes:
             
             Evolution/réaction au TDD basée sur la collaboration entre toutes les parties prenantes d'un projet : développeurs, testeurs, utilisateurs...
 
             Orienté équipe
 
+            DDD et DSL : concepts liés
+
             ===
 
-            #### ATDD
+            ### ATDD
 
             Acceptance Test Driven Development
 
-            Note: Englobe tous les concepts xDD avec un focus sur les besoins client
+            Notes: Englobe tous les concepts xDD avec un focus sur les besoins client
+
+            Le cahier de recette dirige le développement
 
             Orienté business
 
             ---
 
+            ## Les techniques
+
+            - Assertions <!-- .element: class="fragment" -->
+            - Test Doubles <!-- .element: class="fragment" -->
+
+            Notes: Techniques d'écriture des tests automatisés
+
+            ===
+
             ### Assertions
 
-            Dans le contexte des tests, expression permettant de vérifier l'état du contexte testé <!-- .element: class="fragment" -->
+            Dans le contexte des tests, expression permettant de vérifier l'état du système en cours de test <!-- .element: class="fragment" -->
             
             Un test contient au moins une assertion <!-- .element: class="fragment" -->
+
+            Notes: Assertion = prédicat + exception
             
             ===
 
@@ -129,7 +237,7 @@
             - Mocks (ou objet factice) <!-- .element: class="fragment" -->
             - Spy (ou espion) <!-- .element: class="fragment" -->
 
-            Note: Concepts proches mais quelques nuances:
+            Notes: Englobe plusieurs concepts proches avec quelques nuances:
 
             - Stubs : réponses pré-enregistrées respectant le contrat d'interface. S'applique 
               aux fonctions, aux services, etc
@@ -138,56 +246,54 @@
             
             ---
 
-            ### Tests "white box" / "black box"
+            ## Outils
 
-            - Test "white box" : dépend de la struture interne de l'objet du test
-            - Test "black box" : dépend de la définition de l'objet du test
+            - Test Runner <!-- .element: class="fragment" -->
+            - Test Reporter <!-- .element: class="fragment" -->
+            - Testing Framework <!-- .element: class="fragment" -->
 
+            Notes:
+            - Test Runner : exécute les tests
+
+            - Test Reporter : produit un rapport d'exécution des tests.
+
+            Différents formats, fonctions type couverture de code, intégration avec tableaux de bord, etc
+
+            - Testing Framework : permet l'écriture des tests : structuration du code par exemple
+            
             ---
 
-            ### Tests unitaires
+            ## Termes usuels
 
-            Évaluent la conformité d'un composant isolément <!-- .element: class="fragment" -->
-
-            ===
-
-            ### Tests d'intégration
-
-            Évaluent la compatibilité d'un sous-ensemble de composants de l'application <!-- .element: class="fragment" -->
+            - White Box / Black Box
+            - End-to-End
 
             ===
 
-            ### Tests fonctionnels
+            ### Tests "White Box" / "Black Box"
 
-            Appelés aussi tests système (définition [CFTL](http://www.cftl.fr/))
+            - Test "White Box" : dépend de la struture interne de l'objet du test <!-- .element: class="fragment" -->
+            - Test "Black Box" : dépend de la définition de l'objet du test <!-- .element: class="fragment" -->
 
-            Évaluent la conformité de l'application aux exigences <!-- .element: class="fragment" -->
-            
-            ===
+            Notes: Termes qui reviennent souvent
 
-            ### Tests end-to-end
-
-            Tests fonctionnels de type "black box" <!-- .element: class="fragment" -->
-
-            Basés sur le contrat d'interface (services) ou l'interface homme-machine (applications interactives)  <!-- .element: class="fragment" -->
-
-            Dans le domaine des applications web, implique en général le pilotage d'un navigateur <!-- .element: class="fragment" -->
+            En général:
+            - White box plutôt TU
+            - Black box plutôt TI/TF
 
             ===
 
-            ### Test d'acceptation / recette
+            ### Tests End-to-End (ou E2E)
 
-            Métier à part entière distinct du développement proprement dit
-            
-            Note: Rarement automatisé dans le domaine du développement logiciel, mais si c'est le cas
-            alors il y a de grandes chances pour que ce soit avec une solution standard de type Selenium
-            pour les applications web
+            - Tests fonctionnels de type "Black Box" <!-- .element: class="fragment" -->
 
-            Dans les projets au forfait on fait souvent ces tests 2 fois : une fois chez le fournisseur,
-            et l'autre chez le client, après s'être mis d'accord sur un cahier de recette
+            - Basés sur le contrat d'interface (services) ou l'interface homme-machine (applications interactives)  <!-- .element: class="fragment" -->
 
-            La principale source d'incompréhension dans un projet logiciel c'est la divergence entre les tests 
-            écrits par les développeurs et ceux du cahier de recette
+            - Dans le domaine des applications web, implique en général le pilotage d'un navigateur <!-- .element: class="fragment" -->
+
+            Notes: Dernier point de la partie jargon
+
+            Tests E2E applis web = objet de cette présentation
           </textarea>
         </section>
 
@@ -195,7 +301,7 @@
           data-markdown
           data-separator-vertical="^\r?\n===\r?\n$"
           data-background-image="img/nick-moore-647831-unsplash.jpg"
-          data-background-color="black"
+          data-background-color="#000"
           data-background-opacity="0.5"
         >
           <textarea data-template>
@@ -206,7 +312,7 @@
           <textarea data-template>
             ## Scénario d'exemple
             
-            [99 Bottles of Beer](http://www.99-bottles-of-beer.net/)
+            ### 99 Bottles of Beer
 
             99 bottles of beer on the wall, 99 bottles of beer. <!-- .element: class="fragment" -->
 
@@ -218,13 +324,21 @@
             
             ... <!-- .element: class="fragment" -->
 
-            Note: Scénario pour comparer l'écriture des tests selon les outils
+            Notes: Scénario pour comparer l'écriture des tests selon les outils
+
+            ===
+
+            [99 Bottles of Beer](http://www.99-bottles-of-beer.net/)
+
+            <img class="plain" data-src="img/99bottlesofbeer-qrcode.png" />
+
+            Notes: Implémentations de la chanson dans différents langages informatiques
             
             ---
 
             ### Implémentation testée
 
-            <pre><code class="language-ts stretch" data-trim>
+            <pre><code class="hljs language-ts stretch" data-trim>
             class Wall {
               bottles: Bottle[] = [];
 
@@ -245,21 +359,59 @@
               }
             }
             </code></pre>
+
+            Notes: En TypeScript mais le concept reste le même
           </textarea>
         </section>
 
         <section data-markdown>
           <textarea data-template>
             ## Outils génériques
+
+            Notes: D'abord présentation des outils génériques dans le monde JS/Web
+
+            Pas de présentation des outils équivalents dans d'autres langages, on suppose
+            que vous connaissez déjà ceux de vos technos respectives (JUnit par exemple)
           </textarea>
         </section>
 
         <section
           data-background-image="img/trinity.jpg"
           data-background-size="contain"
-          data-background-color="black"
+          data-background-color="#000"
+          data-markdown
         >
-          <aside class="notes" data-markdown></aside>
+          <textarea data-template>
+            Notes: La Sainte Trinité du Hard Rock britanique : Led Zeppelin, Black Sabbath et Deep Purple
+
+            Outils distincts mais qu'on combine très souvent ensemble, combinaison sans doute la plus populaire
+          </textarea>
+        </section>
+        <section data-markdown data-separator-vertical="^\r?\n===\r?\n$">
+          <textarea data-template>
+            ## [Mocha](https://mochajs.org/)
+
+            Framework de tests
+
+            <img class="plain" data-src="img/mocha-qrcode.png" />
+
+            ---
+
+            ## [Chai](https://www.chaijs.com/)
+
+            Bibliothèque d'assertions
+
+            <img class="plain" data-src="img/chai-qrcode.png" />
+
+            ---
+
+            ## [Sinon](https://sinonjs.org/)
+
+            Bibliothèque de Test Doubles
+
+            <img class="plain" data-src="img/sinon-qrcode.png" />
+
+          </textarea>
         </section>
         <section>
           <section data-markdown data-transition="fade">
@@ -268,7 +420,7 @@
 
               #### QUnit (assert)
 
-              <pre><code class="language-js stretch" data-trim>
+              <pre><code class="hljs language-js stretch" data-trim>
               suite('99 Bottles of Beer')
               
               let wall;
@@ -291,7 +443,7 @@
             <textarea data-template>
               #### TDD (assert)
 
-              <pre><code class="language-js stretch" data-trim>
+              <pre><code class="hljs language-js stretch" data-trim>
               suite('99 Bottles of Beer', function() {
                 let wall;
   
@@ -314,7 +466,7 @@
             <textarea data-template>
               #### BDD (expect)
     
-              <pre><code class="language-js stretch" data-trim>
+              <pre><code class="hljs language-js stretch" data-trim>
               describe('99 Bottles of Beer', function() {
                 let wall;
     
@@ -337,7 +489,7 @@
             <textarea data-template>
               #### BDD (should)
     
-              <pre><code class="language-js stretch" data-trim>
+              <pre><code class="hljs language-js stretch" data-trim>
               describe('99 Bottles of Beer', function() {
                 let wall;
     
@@ -361,15 +513,30 @@
         <section
           data-background-image="img/jasmine-cover.jpg"
           data-background-size="contain"
-          data-background-color="white"
+          data-background-color="#fff"
+          data-markdown
         >
-          <aside class="notes" data-markdown></aside>
+          <textarea data-template>
+            Notes: Le grand classique thrash metal que tout le monde connaît : Metallica
+            
+            Existe depuis longtemps, toujours très populaire, encore actif, mais ça fait pas mal de temps
+            qu'ils n'ont pas sorti quelque chose de vraiment novateur
+          </textarea>
+        </section>
+        <section data-markdown data-separator-vertical="^\r?\n===\r?\n$">
+          <textarea data-template>
+            ## [Jasmine](https://jasmine.github.io/index.html)
+
+            Framework de tests
+
+            <img class="plain" data-src="img/jasmine-qrcode.png" />
+          </textarea>
         </section>
         <section data-markdown data-separator-vertical="^\r?\n===\r?\n$">
           <textarea data-template>
             ### Test Jasmine
 
-            <pre><code class="language-js stretch" data-trim>
+            <pre><code class="hljs language-js stretch" data-trim>
             describe('99 Bottles of Beer', function() {
               let wall;
   
@@ -391,47 +558,128 @@
 
         <section
           data-background-image="img/jest-cover.jpg"
-          data-background-color="black"
+          data-background-color="#000"
+          data-markdown
         >
-          <aside class="notes" data-markdown></aside>
-        </section>
+          <textarea data-template>
+            Notes: Groupe de thrash metal fondé par un ancien de Metallica qu'il a largement dépassé d'un point de vue technique : Megadeth
+            
+            Basé à l'origine sur Jasmine mais avec plein de fonctions en plus
 
-        <section
-          data-background-image="img/karma.jpg"
-          data-background-size="contain"
-          data-background-color="white"
-        >
-          <aside class="notes" data-markdown></aside>
+            Très actif
+          </textarea>
+        </section>
+        <section data-markdown data-separator-vertical="^\r?\n===\r?\n$">
+          <textarea data-template>
+            ## [Jest](https://jestjs.io/)
+
+            Framework de tests
+
+            <img class="plain" data-src="img/jasmine-qrcode.png" />
+
+            Note: Projet Facebook
+
+            Directement intégré au toolchain React
+
+            Très populaire même hors React
+          </textarea>
+        </section>
+        <section data-markdown data-separator-vertical="^\r?\n===\r?\n$">
+          <textarea data-template>
+            ### Test Jest
+
+            <pre><code class="hljs language-js stretch" data-trim>
+            describe('99 Bottles of Beer', function() {
+              let wall;
+  
+              beforeEach(function() {
+                wall = new Wall();
+                wall.addBottles(99);
+              });
+            
+              test('one beer down', function() {
+                expect(wall.getNbBottles()).toBe(99);
+                const bottle = wall.takeDownBottle();
+                bottle.passAround();
+                expect(wall.getNbBottles()).toBe(98);
+              });
+            });            
+            </code></pre>
+          </textarea>
         </section>
 
         <section
           data-background-image="img/cucumber-cover.jpg"
           data-background-size="contain"
-          data-background-color="black"
+          data-background-color="#000"
+          data-markdown
         >
-          <aside class="notes" data-markdown></aside>
+          <textarea data-template>
+            Notes: Le truc inclassable : System of a Down
+
+            Mélange les genres, ne ressemble à rien d'autre : métal alternatif, nu metal, hard rock, etc
+
+          </textarea>
         </section>
         <section data-markdown data-separator-vertical="^\r?\n===\r?\n$">
           <textarea data-template>
-            ### Scénario Gherkin
-
-            <pre><code class="language-gherkin stretch" data-trim>
-            Feature: 99 Bottles of Beer
+              ## [Cucumber](https://cucumber.io/)
   
-            Background: 
-              Given there are 99 bottles of beer on the wall
+              Framework de tests
   
-            Scenario: One beer down
-               When I take one bottle down 
-                And I pass the bottle around
-               Then there should be 98 bottles of beer on the wall
-            </code></pre>
+              <img class="plain" data-src="img/cucumber-qrcode.png" />
+  
+          </textarea>
+        </section>
+        <section>
+          <section
+            data-markdown
+            data-separator-vertical="^\r?\n===\r?\n$"
+            data-transition="fade"
+          >
+            <textarea data-template>
+              ### Scénario Gherkin
 
-            ===
+              <pre><code class="hljs language-gherkin stretch" data-trim>
+              Feature: 99 Bottles of Beer
+    
+              Background: 
+                Given there are 99 bottles of beer on the wall
+    
+              Scenario: One beer down
+                When I take one bottle down 
+                 And I pass the bottle around
+                Then there should be 98 bottles of beer on the wall
+              </code></pre>
+            </textarea>
+          </section>
+          <section
+            data-markdown
+            data-separator-vertical="^\r?\n===\r?\n$"
+            data-transition="fade"
+          >
+            <textarea data-template>
+              ### Scénario Gherkin (en français)
 
+              <pre><div class="hljs language-gherkin stretch" style="padding: 5px"><span class="hljs-comment"># language: fr</span>
+              <span class="hljs-keyword">Fonctionnalité</span>: 99 Bouteilles de Bière
+              
+              <span class="hljs-keyword">Contexte</span>: 
+                <span class="hljs-keyword">Étant donné qu'</span>il y a 99 bouteilles de bière sur le mur
+
+              <span class="hljs-keyword">Scenario</span>: Une bière en moins
+                 <span class="hljs-keyword">Quand</span> je prends une bouteille
+                <span class="hljs-keyword">Et que</span> je passe la bouteille autour de moi
+                 <span class="hljs-keyword">Alors</span> il devrait y avoir 98 bouteilles de bière sur le mur
+              </div></pre>
+            </textarea>
+          </section>
+        </section>
+        <section data-markdown data-separator-vertical="^\r?\n===\r?\n$">
+          <textarea data-template>
             ### Steps Cucumber
 
-            <pre><code class="language-js stretch" data-trim>
+            <pre><code class="hljs language-js stretch" data-trim>
             class World() {
               constructor() {
                 this.wall = new Wall();
@@ -455,75 +703,198 @@
           </textarea>
         </section>
 
-        <section data-markdown>
+        <section
+          data-background-image="img/karma.jpg"
+          data-background-size="contain"
+          data-background-color="#fff"
+          data-markdown
+        >
+          <textarea data-template>
+            Notes: L'ampli Marshall "Murder One" de Lenny Kilmister le chanteur de Motörhead
+          </textarea>
+        </section>
+        <section data-markdown data-separator-vertical="^\r?\n===\r?\n$">
+          <textarea data-template>
+            ## [Karma](https://karma-runner.github.io/)
+
+            Test runner
+
+            <img class="plain" data-src="img/karma-qrcode.png" />
+          </textarea>
+        </section>
+
+        <section data-markdown data-separator-vertical="^\r?\n===\r?\n$">
           <textarea data-template>
             ## Solutions end-to-end
+
+            ---
+
+            ### Les défis du E2E Web
+
+            - Navigation <!-- .element: class="fragment" -->
+            - Markup des pages <!-- .element: class="fragment" -->
+            - Timing <!-- .element: class="fragment" -->
+            - Asynchronisme <!-- .element: class="fragment" -->
+
+            Notes:
+
+            Navigation applications SPA
+
+            Tester l'existence d'éléments dynamiques sur la page: 
+            - Sélecteurs : les frameworks compliquent parfois la tâche (coucou React VDOM ou JSX)
+            - Trop tôt / Trop tard / Timeouts
+
+            Modèles asynchrones JS pour l'écriture des tests :
+            - Callbacks
+            - Promises
+            - Syntaxe async/await
+            - Implicite ou explicite (smart assertions)
           </textarea>
         </section>
 
         <section
           data-background-image="img/selenium-cover.jpg"
           data-background-size="contain"
-          data-background-color="black"
+          data-background-color="#000"
+          data-markdown
         >
-          <aside class="notes" data-markdown></aside>
+          <textarea data-template>
+            Notes: AC/DC, les papys du hard rock
+
+            Forte influence, tout le monde connait même ta mère. 
+            
+            Plus gros tube : Highway to Hell : tous ceux qui ont écrit des tests Selenium peuvent en parler.
+            
+            On leur doit beaucoup, ils tournent encore mais ça marche surtout sur la nostalgie, il est peut-être temps de passer à autre chose
+          </textarea>
+        </section>
+        <section data-markdown data-separator-vertical="^\r?\n===\r?\n$">
+          <textarea data-template>
+              ## [Selenium "classique"](https://www.seleniumhq.org/)
+
+              - Selenium RC : Serveur d'automatisation navigateur écrit en Java
+              - Selenium IDE : Environnement de développement basé sur des plugins Firefox et Chrome
+
+              <img class="plain" data-src="img/selenium-qrcode.png" />
+              
+              Notes: RC = Remote Control
+            </textarea
+          >
+        </section>
+        <section data-markdown data-separator-vertical="^\r?\n===\r?\n$">
+          <textarea data-template>
+            ## Le futur : [Webdriver](https://www.w3.org/TR/webdriver/)
+
+            Selenium 2
+            
+            Standard W3C depuis juin 2018
+
+            <img class="plain" data-src="img/webdriver-qrcode.png" />
+
+            Notes: Issu des travaux du projet Selenium
+
+            Supporté par tous les navigateurs
+
+            Lingua franca des frameworks de Tests
+
+            Selenium not dead!
+          </textarea>
         </section>
 
         <section
           data-background-image="img/protractor-cover.jpg"
           data-background-size="contain"
-          data-background-color="black"
+          data-background-color="#000"
+          data-markdown
         >
-          <aside class="notes" data-markdown></aside>
+          <textarea data-template>
+            Notes: La secte Angular : black metal Belzebubs
+
+            Black metal sous-genre de métal extrême considéré par beaucoup comme hermétique voire sectaire
+            Incantations cabalistiques : providers, modules, directives, injection de dépendances
+          </textarea>
         </section>
 
         <section
           data-background-image="img/puppeteer-cover.jpg"
           data-background-size="contain"
-          data-background-color="black"
+          data-background-color="#000"
+          data-markdown
         >
-          <aside class="notes" data-markdown></aside>
+          <textarea data-template>
+            Notes: Rapide, puissant, bourrin, sale : métal industriel Rammstein
+
+            On met les mains dans le cambouis mais on sais exactement ce qui se passe sous le capot.
+          </textarea>
         </section>
 
         <section
           data-background-image="img/cypress-cover.jpg"
           data-background-size="contain"
-          data-background-color="black"
+          data-background-color="#000"
+          data-markdown
         >
-          <aside class="notes" data-markdown></aside>
+          <textarea data-template>
+            Notes: le genre le plus accessible et mainstream du métal: glam metal Mötley Crüe
+            
+            Clinquant, des strass et des paillettes, des pantalons moulants, des tatouages et des coupes de cheveux improbables
+            
+            Ca passe à la radio, ta petite soeur adore, c'est efficace et fun
+
+            Fait aimer les tests à ceux qui n'aiment pas les tests
+
+            Certains parti-pris et quelques limites qui peuvent rebuter les amateurs d'autres styles
+          </textarea>
         </section>
 
         <section
-          data-background-image="img/testcafe-cover.jpg"
+          data-background-image="img/testcafé-cover.jpg"
           data-background-size="contain"
-          data-background-color="black"
+          data-background-color="#000"
+          data-markdown
         >
-          <aside class="notes" data-markdown></aside>
+          <textarea data-template>
+            Notes: Iron Maiden le seul groupe dont le chanteur pilote l'avion lors des tournées
+
+            Basé sur une architecture spécifique et originale d'injection de proxy navigateur
+          </textarea>
         </section>
 
         <section
           data-background-image="img/codeceptjs-cover.jpg"
           data-background-size="contain"
-          data-background-color="black"
+          data-background-color="#000"
+          data-markdown
         >
-          <aside class="notes" data-markdown></aside>
+          <textarea data-template>
+            Notes: Apocalyptica, réinterprète les classiques métal au violoncelle
+
+            Interface commune au dessus de différents moteurs
+          </textarea>
+        </section>
+
+        <section
+          data-background-image="img/evilbmcats.jpg"
+          data-background-size="contain"
+          data-background-color="#fff"
+          data-background-opacity="0.5"
+        >
+          <h1>Le projet Instakittens</h1>
         </section>
 
         <section>
-          <h2>Le projet Instakittens</h2>
-          <a href="https://github.com/fredericbonnet/instakittens">
-            <img class="plain" data-src="img/instakittens-qr-code.png" />
-            https://github.com/fredericbonnet/instakittens
-          </a>
-        </section>
-        <section>
-          <section>
-            <h3>Le projet Instakittens</h3>
-            <p class="_fragment">
+          <section data-markdown>
+            <textarea data-template>
+              ## [Le projet Instakittens](https://github.com/fredericbonnet/instakittens)
+
               Application de type Instagram, mais pour les photos de chatons
-            </p>
-            <p class="fragment">
-              <img width="25%" class="plain" data-src="img/evilmbcats.jpg" />
+
+              <img class="plain" data-src="img/instakittens-qrcode.png" />
+            </textarea>
+          </section>
+          <section>
+            <p>
+              <img class="plain" data-src="img/evilbmcats.jpg" />
               <br />
               <a href="https://twitter.com/evilbmcats">
                 Black Metal Cats (@evilbmcats)</a
@@ -531,7 +902,7 @@
             </p>
           </section>
           <section
-            data-background-color="black"
+            data-background-color="#000"
             data-background-image="https://pbs.twimg.com/media/D3xIMpDXoAAq9mk.jpg"
           >
             <div class="stretch layout-bottom">
@@ -546,7 +917,7 @@
             </div>
           </section>
           <section
-            data-background-color="black"
+            data-background-color="#000"
             data-background-image="https://pbs.twimg.com/media/D5TO1H_VUAYohSK.jpg"
           >
             <div class="stretch layout-bottom">
@@ -562,7 +933,7 @@
             </div>
           </section>
           <section
-            data-background-color="black"
+            data-background-color="#000"
             data-background-image="https://pbs.twimg.com/media/D3V_c8yUwAA8aDJ.jpg"
           >
             <div class="stretch layout-bottom">
@@ -578,7 +949,7 @@
             </div>
           </section>
           <section
-            data-background-color="black"
+            data-background-color="#000"
             data-background-image="https://pbs.twimg.com/media/D5SGp4QU8AAZXAf.jpg"
           >
             <div class="stretch layout-bottom">
@@ -594,7 +965,7 @@
             </div>
           </section>
           <section
-            data-background-color="black"
+            data-background-color="#000"
             data-background-image="https://pbs.twimg.com/media/D4JlWx0UcAAqx6J.jpg"
           >
             <div class="stretch layout-bottom">
@@ -609,7 +980,7 @@
             </div>
           </section>
           <section
-            data-background-color="black"
+            data-background-color="#000"
             data-background-image="https://pbs.twimg.com/media/D36Qt19UcAAZutP.jpg"
           >
             <div class="stretch layout-bottom">
@@ -627,72 +998,72 @@
         </section>
         <section data-markdown>
           <textarea data-template>
-            ### Objectifs
+            ## Objectifs
 
             [TodoMVC](http://todomvc.com/), mais pour les tests
 
-            - Embryons d'applications testables
-            - Minimum de code applicatif
-            - Représentatif d'une application réelle
-            - Configuration par défaut dans la mesure du possible
+            - Embryons d'applications testables <!-- .element: class="fragment" -->
+            - Minimum de code applicatif <!-- .element: class="fragment" -->
+            - Représentatif d'une application réelle <!-- .element: class="fragment" -->
+            - Configuration par défaut dans la mesure du possible <!-- .element: class="fragment" -->
 
             Notes: Pas un prototype mais un embryon
           </textarea>
         </section>
         <section data-markdown data-separator-vertical="^\r?\n===\r?\n$">
           <textarea data-template>
-            ### Les entités
+            ## Les entités
           
-            - Utilisateurs
-            - Albums
-            - Photos
-            - Commentaires
+            - Utilisateurs <!-- .element: class="fragment" -->
+            - Albums <!-- .element: class="fragment" -->
+            - Photos <!-- .element: class="fragment" -->
+            - Commentaires <!-- .element: class="fragment" -->
 
             ===
 
-            #### Utilisateurs
+            ### Utilisateurs
             
             L'application autorise plusieurs niveaux d'accès :
 
-            - Visiteurs anonymes non authentifiés
-            - Utilisateurs enregistrés
-            - Administrateurs        
+            - Visiteurs anonymes non authentifiés <!-- .element: class="fragment" -->
+            - Utilisateurs enregistrés <!-- .element: class="fragment" -->
+            - Administrateurs <!-- .element: class="fragment" -->
 
             ===
 
-            #### Albums
+            ### Albums
 
             Les utilisateurs peuvent créer un nombre arbitraire d'albums photos. Les albums ont plusieurs niveaux d'accès :
 
-            - **Public** : Contenu visible par tout le monde
-            - **Restreint** : Contenu visible uniquement par les utilisateurs enregistrés
-            - **Privé** : Contenu visible uniquement par le propriétaire
+            - Public : Contenu visible par tout le monde <!-- .element: class="fragment" -->
+            - Restreint : Contenu visible uniquement par les utilisateurs enregistrés <!-- .element: class="fragment" -->
+            - Privé : Contenu visible uniquement par le propriétaire <!-- .element: class="fragment" -->
 
             ===
 
-            #### Photos
+            ### Photos
 
             Les albums peuvent contenir un nombre arbitraire de photos de chatons
 
             ===
 
-            #### Commentaires
+            ### Commentaires
 
             Les utilisateurs enregistrés peuvent poster des commentaires sous les photos des albums publics ou restreints
           </textarea>
         </section>
         <section data-markdown data-separator-vertical="^\r?\n===\r?\n$">
           <textarea data-template>
-            ### Les applications
+            ## Les applications
 
             - Générateur de données <!-- .element: class="fragment" -->
             - Serveur d'API REST <!-- .element: class="fragment" -->
-            - interface d'administration <!-- .element: class="fragment" -->
+            - Interface d'administration <!-- .element: class="fragment" -->
             - Application mobile <!-- .element: class="fragment" -->
 
-            ===
+            ---
 
-            #### [Instakittens Data Generator](https://github.com/fredericbonnet/instakittens-data-generator)
+            ## [Instakittens Data Generator](https://github.com/fredericbonnet/instakittens-data-generator)
 
             Générateur de base de données JSON
             
@@ -714,26 +1085,44 @@
               - **[Unsplash](https://unsplash.com/search/photos/kitten)** : bibliothèque d'images libres de droit
             </div>
 
-            Note: Faker permet de générer de nombreux types de données, très utile lors de l'écriture de tests unitaires par exemple
+            Notes: Faker permet de générer de nombreux types de données, très utile lors de l'écriture de tests unitaires par exemple
 
-            ===
+            Pas de tests vu la nature de l'appli
+
+            ---
             
-            #### [Instakittens JSON Server](https://github.com/fredericbonnet/instakittens-json-server)
+            ## [Instakittens JSON Server](https://github.com/fredericbonnet/instakittens-json-server)
             
-            Serveur d'API REST Mock avec contrôle d'accès
+            Serveur mock d'API REST avec contrôle d'accès
             
             <img data-src="img/json-server.jpg" alt="JSON Server" class="stretch plain"/>
 
             - **[JSON Server](https://github.com/typicode/json-server)** : serveur REST complet à partir d'un simple fichier JSON
             - Middlewares **[Express](https://expressjs.com/)** pour les autres fonctionnalités
 
-            Note: JSON Server basé sur Express, utilisable avec d'autres middlewares
+            Notes: JSON Server basé sur Express, utilisable avec d'autres middlewares
 
             Existe aussi en mode GraphQL : json-graphql-server
 
-            ===
+            ---
 
-            #### [Instakittens React administration interface](https://github.com/fredericbonnet/instakittens-react-admin)
+            ### Démonstration
+
+            Note: Démo avec Postman
+
+            ---
+
+            ### Les tests
+
+            - Tests unitaires : Mocha, Chai, Sinon
+            - Tests E2E :
+              - Mocha, Chai, Supertest
+              - Cucumber, Chai, Supertest
+              - Cypress (classique + Cucumber)
+
+            ---
+
+            ## [Instakittens React administration interface](https://github.com/fredericbonnet/instakittens-react-admin)
 
             Interface d'administration web
 
@@ -741,7 +1130,7 @@
 
             - **[React-admin](https://github.com/marmelab/react-admin/)** : framework de construction d'interface d'administration basé sur [React](https://reactjs.org/)
 
-            Note: 
+            Notes: 
             
             Pas besoin de connaître React pour utiliser React-admin, modèle déclaratif
             
@@ -749,22 +1138,82 @@
 
             Compatible avec de nombreux protocoles : JSON, GraphQL, etc
 
-            ===
+            ---
 
-            #### [Instakittens Ionic 4/Angular client application](https://github.com/fredericbonnet/instakittens-ionic4)
+            ### Démonstration
+
+            Note: Démo navigateur
+
+            ---
+
+            ### Les tests
+
+            - Tests unitaires : Jest
+            - Tests E2E :
+              - Jest, Puppeteer
+              - Cucumber, Chai, Puppeteer
+              - Cypress (classique + Cucumber)
+              - TestCafé (classique + Cucumber)
+              - CodeceptJS (classique + Cucumber)
+
+            Notes: Très peu de TU car très peu de code applicatif
+
+            ---
+
+            ## [Instakittens Ionic 4/Angular client application](https://github.com/fredericbonnet/instakittens-ionic4)
 
             Application web mobile
 
-            <img data-src="img/app-login.png" alt="App login" class="plain" width="15%"/>
-            <img data-src="img/app-users.png" alt="App users" class="plain" width="15%"/>
+            <img data-src="img/app-login.png" alt="App login" class="plain" width="12%"/>
+            <img data-src="img/app-users.png" alt="App users" class="plain" width="12%"/>
             <br/>
-
             
             - **[Ionic 4](https://ionicframework.com/)** : bibliothèque de composants web mobiles
             - **[Angular 7](https://angular.io/)** : framework web
 
-            Note: Très basique, juste fonctionnelle pour le besoin du projet
+            Notes: Très basique, juste fonctionnelle pour le besoin du projet
+
+            ---
+
+            ### Démonstration
+
+            Note: Démo navigateur mobile (mode émulation)
+
+            ---
+
+            ### Les tests
+
+            - Tests unitaires : Karma, Jasmine
+            - Tests E2E :
+              - Protractor, Jasmine
+              - Protractor, Cucumber
+              - Mocha, Puppeteer
+              - Cucumber, Puppeteer
+              - Cypress (classique + Cucumber)
+              - TestCafé (classique + Cucumber)
+              - CodeceptJS (classique + Cucumber)
           </textarea>
+        </section>
+
+        <section
+          data-background="black"
+          data-background-image="img/hellfest-warmup.jpg"
+          data-background-opacity="0.5"
+          data-markdown
+        >
+          <textarea data-template>
+            # Retour d'expérience
+          </textarea>
+        </section>
+
+        <section
+          data-background="black"
+          data-background-image="img/lemmy.jpg"
+          data-background-opacity="0.5"
+        >
+          <div class="stretch">
+            <h1>Lemmy<br /><small>answer your questions</small></h1>
+          </div>
         </section>
       </div>
     </div>
