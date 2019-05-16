@@ -56,6 +56,459 @@
           </p>
           <img class="plain stretch" data-src="img/poster-white.png" />
         </section>
+
+        <section data-markdown data-separator-vertical="^\r?\n===\r?\n$">
+          <textarea data-template>
+            ## Un peu de jargon
+
+            - TDD, BDD, ATDD... <!-- .element: class="fragment" -->
+            - Assertions, mocks, stubs, spies... <!-- .element: class="fragment" -->
+            - Tests unitaires, d'intégration, fonctionnels, end-to-end... <!-- .element: class="fragment" -->
+
+            ---
+
+            #### TDD
+
+            Test Driven Development
+
+            ----
+
+            <span class="fragment">
+              <img data-src="img/extreme-programming.jpg" alt="Extreme Programming" class="plain" width="33%" />
+              <blockquote>All tests are green, Brothers! Let's pray the Dark Lord!</blockquote>
+            </span>
+
+            Note: Pratique de l'Extreme Programming
+
+            On code d'abord les tests pour qu'ils échouent, ensuite on code jusqu'à ce qu'ils fonctionnent
+
+            Orienté développeur
+
+            ===
+
+            #### BDD
+
+            Behavior Driven Development
+
+            ----
+
+            - Domain-driven design (DDD) : méthodologie de conception logicielle axée sur la logique métier <!-- .element: class="fragment" -->
+            - Domain-specific language (DSL) : langage dédié à un domaine applicatif <!-- .element: class="fragment" -->
+
+            Note:
+            
+            Evolution/réaction au TDD basée sur la collaboration entre toutes les parties prenantes d'un projet : développeurs, testeurs, utilisateurs...
+
+            Orienté équipe
+
+            ===
+
+            #### ATDD
+
+            Acceptance Test Driven Development
+
+            Note: Englobe tous les concepts xDD avec un focus sur les besoins client
+
+            Orienté business
+
+            ---
+
+            ### Assertions
+
+            Dans le contexte des tests, expression permettant de vérifier l'état du contexte testé <!-- .element: class="fragment" -->
+            
+            Un test contient au moins une assertion <!-- .element: class="fragment" -->
+            
+            ===
+
+            ### Test doubles
+
+            Concept générique <!-- .element: class="fragment" -->
+
+            - Stubs (ou bouchons) <!-- .element: class="fragment" -->
+            - Mocks (ou objet factice) <!-- .element: class="fragment" -->
+            - Spy (ou espion) <!-- .element: class="fragment" -->
+
+            Note: Concepts proches mais quelques nuances:
+
+            - Stubs : réponses pré-enregistrées respectant le contrat d'interface. S'applique 
+              aux fonctions, aux services, etc
+            - Mocks : application orientée objet des stubs, avec comportement dépendant du contexte
+            - Spy : greffon sur objet ou fonction existante
+            
+            ---
+
+            ### Tests "white box" / "black box"
+
+            - Test "white box" : dépend de la struture interne de l'objet du test
+            - Test "black box" : dépend de la définition de l'objet du test
+
+            ---
+
+            ### Tests unitaires
+
+            Évaluent la conformité d'un composant isolément <!-- .element: class="fragment" -->
+
+            ===
+
+            ### Tests d'intégration
+
+            Évaluent la compatibilité d'un sous-ensemble de composants de l'application <!-- .element: class="fragment" -->
+
+            ===
+
+            ### Tests fonctionnels
+
+            Appelés aussi tests système (définition [CFTL](http://www.cftl.fr/))
+
+            Évaluent la conformité de l'application aux exigences <!-- .element: class="fragment" -->
+            
+            ===
+
+            ### Tests end-to-end
+
+            Tests fonctionnels de type "black box" <!-- .element: class="fragment" -->
+
+            Basés sur le contrat d'interface (services) ou l'interface homme-machine (applications interactives)  <!-- .element: class="fragment" -->
+
+            Dans le domaine des applications web, implique en général le pilotage d'un navigateur <!-- .element: class="fragment" -->
+
+            ===
+
+            ### Test d'acceptation / recette
+
+            Métier à part entière distinct du développement proprement dit
+            
+            Note: Rarement automatisé dans le domaine du développement logiciel, mais si c'est le cas
+            alors il y a de grandes chances pour que ce soit avec une solution standard de type Selenium
+            pour les applications web
+
+            Dans les projets au forfait on fait souvent ces tests 2 fois : une fois chez le fournisseur,
+            et l'autre chez le client, après s'être mis d'accord sur un cahier de recette
+
+            La principale source d'incompréhension dans un projet logiciel c'est la divergence entre les tests 
+            écrits par les développeurs et ceux du cahier de recette
+          </textarea>
+        </section>
+
+        <section
+          data-markdown
+          data-separator-vertical="^\r?\n===\r?\n$"
+          data-background-image="img/nick-moore-647831-unsplash.jpg"
+          data-background-color="black"
+          data-background-opacity="0.5"
+        >
+          <textarea data-template>
+            # Les outils de tests
+          </textarea>
+        </section>
+        <section data-markdown data-separator-vertical="^\r?\n===\r?\n$">
+          <textarea data-template>
+            ## Scénario d'exemple
+            
+            [99 Bottles of Beer](http://www.99-bottles-of-beer.net/)
+
+            99 bottles of beer on the wall, 99 bottles of beer. <!-- .element: class="fragment" -->
+
+            Take one down and pass it around, 98 bottles of beer on the wall. <!-- .element: class="fragment" -->
+            
+            98 bottles of beer on the wall, 98 bottles of beer. <!-- .element: class="fragment" -->
+
+            Take one down and pass it around, 97 bottles of beer on the wall. <!-- .element: class="fragment" -->
+            
+            ... <!-- .element: class="fragment" -->
+
+            Note: Scénario pour comparer l'écriture des tests selon les outils
+            
+            ---
+
+            ### Implémentation testée
+
+            <pre><code class="language-ts stretch" data-trim>
+            class Wall {
+              bottles: Bottle[] = [];
+
+              getNbBottles() {
+                return this.bottles.length;
+              }
+              addBottles(nb) {
+                while (nb--) this.bottles.push(new Bottle());
+              }
+              takeDownBottle(): Bottle {
+                return this.bottles.pop();
+              }
+            }
+            
+            class Bottle {
+              passAround() {
+                // TODO
+              }
+            }
+            </code></pre>
+          </textarea>
+        </section>
+
+        <section data-markdown>
+          <textarea data-template>
+            ## Outils génériques
+          </textarea>
+        </section>
+
+        <section
+          data-background-image="img/trinity.jpg"
+          data-background-size="contain"
+          data-background-color="black"
+        >
+          <aside class="notes" data-markdown></aside>
+        </section>
+        <section>
+          <section data-markdown data-transition="fade">
+            <textarea data-template>
+              ### Test Mocha/Chai
+
+              #### QUnit (assert)
+
+              <pre><code class="language-js stretch" data-trim>
+              suite('99 Bottles of Beer')
+              
+              let wall;
+              
+              beforeEach(function() {
+                wall = new Wall();
+                wall.addBottles(99);
+              });
+              
+              test('one beer down', function() {
+                assert.equal(wall.getNbBottles(), 99);
+                const bottle = wall.takeDownBottle();
+                bottle.passAround();
+                assert.equal(wall.getNbBottles(), 98);
+              });
+              </code></pre>
+            </textarea>
+          </section>
+          <section data-markdown data-transition="fade">
+            <textarea data-template>
+              #### TDD (assert)
+
+              <pre><code class="language-js stretch" data-trim>
+              suite('99 Bottles of Beer', function() {
+                let wall;
+  
+                setup(function() {
+                  wall = new Wall();
+                  wall.addBottles(99);
+                });
+              
+                test('one beer down', function() {
+                  assert.equal(wall.getNbBottles(), 99);
+                  const bottle = wall.takeDownBottle();
+                  bottle.passAround();
+                  assert.equal(wall.getNbBottles(), 98);
+                });
+              });            
+              </code></pre>
+            </textarea>
+          </section>
+          <section data-markdown data-transition="fade">
+            <textarea data-template>
+              #### BDD (expect)
+    
+              <pre><code class="language-js stretch" data-trim>
+              describe('99 Bottles of Beer', function() {
+                let wall;
+    
+                beforeEach(function() {
+                  wall = new Wall();
+                  wall.addBottles(99);
+                });
+              
+                it('one beer down', function() {
+                  expect(wall.getNbBottles()).to.equal(99);
+                  const bottle = wall.takeDownBottle();
+                  bottle.passAround();
+                  expect(wall.getNbBottles()).to.equal(98);
+                });
+              });            
+              </code></pre>
+            </textarea>
+          </section>
+          <section data-markdown data-transition="fade">
+            <textarea data-template>
+              #### BDD (should)
+    
+              <pre><code class="language-js stretch" data-trim>
+              describe('99 Bottles of Beer', function() {
+                let wall;
+    
+                beforeEach(function() {
+                  wall = new Wall();
+                  wall.addBottles(99);
+                });
+              
+                it('one beer down', function() {
+                  wall.getNbBottles().should.equal(99);
+                  const bottle = wall.takeDownBottle();
+                  bottle.passAround();
+                  wall.getNbBottles().should.equal(98);
+                });
+              });            
+              </code></pre>
+            </textarea>
+          </section>
+        </section>
+
+        <section
+          data-background-image="img/jasmine-cover.jpg"
+          data-background-size="contain"
+          data-background-color="white"
+        >
+          <aside class="notes" data-markdown></aside>
+        </section>
+        <section data-markdown data-separator-vertical="^\r?\n===\r?\n$">
+          <textarea data-template>
+            ### Test Jasmine
+
+            <pre><code class="language-js stretch" data-trim>
+            describe('99 Bottles of Beer', function() {
+              let wall;
+  
+              beforeEach(function() {
+                wall = new Wall();
+                wall.addBottles(99);
+              });
+            
+              it('one beer down', function() {
+                expect(wall.getNbBottles()).toBe(99);
+                const bottle = wall.takeDownBottle();
+                bottle.passAround();
+                expect(wall.getNbBottles()).toBe(98);
+              });
+            });            
+            </code></pre>
+          </textarea>
+        </section>
+
+        <section
+          data-background-image="img/jest-cover.jpg"
+          data-background-color="black"
+        >
+          <aside class="notes" data-markdown></aside>
+        </section>
+
+        <section
+          data-background-image="img/karma.jpg"
+          data-background-size="contain"
+          data-background-color="white"
+        >
+          <aside class="notes" data-markdown></aside>
+        </section>
+
+        <section
+          data-background-image="img/cucumber-cover.jpg"
+          data-background-size="contain"
+          data-background-color="black"
+        >
+          <aside class="notes" data-markdown></aside>
+        </section>
+        <section data-markdown data-separator-vertical="^\r?\n===\r?\n$">
+          <textarea data-template>
+            ### Scénario Gherkin
+
+            <pre><code class="language-gherkin stretch" data-trim>
+            Feature: 99 Bottles of Beer
+  
+            Background: 
+              Given there are 99 bottles of beer on the wall
+  
+            Scenario: One beer down
+               When I take one bottle down 
+                And I pass the bottle around
+               Then there should be 98 bottles of beer on the wall
+            </code></pre>
+
+            ===
+
+            ### Steps Cucumber
+
+            <pre><code class="language-js stretch" data-trim>
+            class World() {
+              constructor() {
+                this.wall = new Wall();
+              }
+            }
+            setWorldConstructor(world);
+  
+            Given('there are {int} bottles of beer on the wall', function(nb) {
+              this.wall.addBottles(nb);
+            });
+            When('I take one bottle down ', function() {
+              this.bottle = this.wall.takeDownBottle();
+            });
+            When('I pass the bottles around', function() {
+              this.bottle.passAround();
+            });
+            Then('there should be {int} bottles of beer on the wall', function(nb) {
+              expect(this.wall.getNbBottles()).toBe(nb);
+            });
+            </code></pre>
+          </textarea>
+        </section>
+
+        <section data-markdown>
+          <textarea data-template>
+            ## Solutions end-to-end
+          </textarea>
+        </section>
+
+        <section
+          data-background-image="img/selenium-cover.jpg"
+          data-background-size="contain"
+          data-background-color="black"
+        >
+          <aside class="notes" data-markdown></aside>
+        </section>
+
+        <section
+          data-background-image="img/protractor-cover.jpg"
+          data-background-size="contain"
+          data-background-color="black"
+        >
+          <aside class="notes" data-markdown></aside>
+        </section>
+
+        <section
+          data-background-image="img/puppeteer-cover.jpg"
+          data-background-size="contain"
+          data-background-color="black"
+        >
+          <aside class="notes" data-markdown></aside>
+        </section>
+
+        <section
+          data-background-image="img/cypress-cover.jpg"
+          data-background-size="contain"
+          data-background-color="black"
+        >
+          <aside class="notes" data-markdown></aside>
+        </section>
+
+        <section
+          data-background-image="img/testcafe-cover.jpg"
+          data-background-size="contain"
+          data-background-color="black"
+        >
+          <aside class="notes" data-markdown></aside>
+        </section>
+
+        <section
+          data-background-image="img/codeceptjs-cover.jpg"
+          data-background-size="contain"
+          data-background-color="black"
+        >
+          <aside class="notes" data-markdown></aside>
+        </section>
+
         <section>
           <h2>Le projet Instakittens</h2>
           <a href="https://github.com/fredericbonnet/instakittens">
@@ -77,93 +530,99 @@
               >
             </p>
           </section>
-          <section>
-            <img
-              class="stretch"
-              data-src="https://pbs.twimg.com/media/D3xIMpDXoAAq9mk.jpg"
-            />
-            <blockquote>
-              We speak the words of destruction, and sing the songs of death.
-              <a
-                href="https://twitter.com/evilbmcats/status/1116122940431458305"
-              >
-                &mdash; Black Metal Cats (@evilbmcats)</a
-              >
-            </blockquote>
+          <section
+            data-background-color="black"
+            data-background-image="https://pbs.twimg.com/media/D3xIMpDXoAAq9mk.jpg"
+          >
+            <div class="stretch layout-bottom">
+              <blockquote class="fragment fade-up semi-opaque">
+                We speak the words of destruction, and sing the songs of death.
+                <a
+                  href="https://twitter.com/evilbmcats/status/1116122940431458305"
+                >
+                  &mdash; Black Metal Cats (@evilbmcats)</a
+                >
+              </blockquote>
+            </div>
           </section>
-          <section>
-            <img
-              class="stretch"
-              data-src="https://pbs.twimg.com/media/D5TO1H_VUAYohSK.jpg"
-            />
-            <blockquote>
-              The night shall come when the hammer of Satan rises. You shall see
-              our wrath, and you shall feel our hate.
-              <a
-                href="https://twitter.com/evilbmcats/status/1122996230328504320"
-              >
-                &mdash; Black Metal Cats (@evilbmcats)</a
-              >
-            </blockquote>
+          <section
+            data-background-color="black"
+            data-background-image="https://pbs.twimg.com/media/D5TO1H_VUAYohSK.jpg"
+          >
+            <div class="stretch layout-bottom">
+              <blockquote class="fragment fade-up semi-opaque">
+                The night shall come when the hammer of Satan rises. You shall
+                see our wrath, and you shall feel our hate.
+                <a
+                  href="https://twitter.com/evilbmcats/status/1122996230328504320"
+                >
+                  &mdash; Black Metal Cats (@evilbmcats)</a
+                >
+              </blockquote>
+            </div>
           </section>
-          <section>
-            <img
-              class="stretch"
-              data-src="https://pbs.twimg.com/media/D3V_c8yUwAA8aDJ.jpg"
-            />
-            <blockquote>
-              I strike from the ground, I strike from the sky, I strike from
-              beyond, all living things must die.
-              <a
-                href="https://twitter.com/evilbmcats/status/1113936639523315712"
-              >
-                &mdash; Black Metal Cats (@evilbmcats)</a
-              >
-            </blockquote>
+          <section
+            data-background-color="black"
+            data-background-image="https://pbs.twimg.com/media/D3V_c8yUwAA8aDJ.jpg"
+          >
+            <div class="stretch layout-bottom">
+              <blockquote class="fragment fade-up semi-opaque">
+                I strike from the ground, I strike from the sky, I strike from
+                beyond, all living things must die.
+                <a
+                  href="https://twitter.com/evilbmcats/status/1113936639523315712"
+                >
+                  &mdash; Black Metal Cats (@evilbmcats)</a
+                >
+              </blockquote>
+            </div>
           </section>
-          <section>
-            <img
-              class="stretch"
-              data-src="https://pbs.twimg.com/media/D5SGp4QU8AAZXAf.jpg"
-            />
-            <blockquote>
-              On the vast plains of ice, against the lacerating wind, a lone
-              pilgrim presses through the snow.
-              <a
-                href="https://twitter.com/evilbmcats/status/1122670584557473792"
-              >
-                &mdash; Black Metal Cats (@evilbmcats)</a
-              >
-            </blockquote>
+          <section
+            data-background-color="black"
+            data-background-image="https://pbs.twimg.com/media/D5SGp4QU8AAZXAf.jpg"
+          >
+            <div class="stretch layout-bottom">
+              <blockquote class="fragment fade-up semi-opaque">
+                On the vast plains of ice, against the lacerating wind, a lone
+                pilgrim presses through the snow.
+                <a
+                  href="https://twitter.com/evilbmcats/status/1122670584557473792"
+                >
+                  &mdash; Black Metal Cats (@evilbmcats)</a
+                >
+              </blockquote>
+            </div>
           </section>
-          <section>
-            <img
-              class="stretch"
-              data-src="https://pbs.twimg.com/media/D4JlWx0UcAAqx6J.jpg"
-            />
-            <blockquote>
-              A warrior of northern twilight, I shall walk alone.
-              <a
-                href="https://twitter.com/evilbmcats/status/1117567112837382144"
-              >
-                &mdash; Black Metal Cats (@evilbmcats)</a
-              >
-            </blockquote>
+          <section
+            data-background-color="black"
+            data-background-image="https://pbs.twimg.com/media/D4JlWx0UcAAqx6J.jpg"
+          >
+            <div class="stretch layout-bottom">
+              <blockquote class="fragment fade-up semi-opaque">
+                A warrior of northern twilight, I shall walk alone.
+                <a
+                  href="https://twitter.com/evilbmcats/status/1117567112837382144"
+                >
+                  &mdash; Black Metal Cats (@evilbmcats)</a
+                >
+              </blockquote>
+            </div>
           </section>
-          <section>
-            <img
-              class="stretch"
-              data-src="https://pbs.twimg.com/media/D36Qt19UcAAZutP.jpg"
-            />
-            <blockquote>
-              The legion is thoroughly formed. The ranks are set and waiting.
-              We've come here for glory.
-              <a
-                href="https://twitter.com/evilbmcats/status/1116489606390697985"
-              >
-                &mdash; Black Metal Cats (@evilbmcats)</a
-              >
-            </blockquote>
+          <section
+            data-background-color="black"
+            data-background-image="https://pbs.twimg.com/media/D36Qt19UcAAZutP.jpg"
+          >
+            <div class="stretch layout-bottom">
+              <blockquote class="fragment fade-up semi-opaque">
+                The legion is thoroughly formed. The ranks are set and waiting.
+                We've come here for glory.
+                <a
+                  href="https://twitter.com/evilbmcats/status/1116489606390697985"
+                >
+                  &mdash; Black Metal Cats (@evilbmcats)</a
+                >
+              </blockquote>
+            </div>
           </section>
         </section>
         <section data-markdown>
@@ -175,7 +634,8 @@
             - Embryons d'applications testables
             - Minimum de code applicatif
             - Représentatif d'une application réelle
-  
+            - Configuration par défaut dans la mesure du possible
+
             Notes: Pas un prototype mais un embryon
           </textarea>
         </section>
@@ -304,139 +764,6 @@
             - **[Angular 7](https://angular.io/)** : framework web
 
             Note: Très basique, juste fonctionnelle pour le besoin du projet
-          </textarea>
-        </section>
-        <section data-markdown data-separator-vertical="^\r?\n===\r?\n$">
-          <textarea data-template>
-            ## Un peu de jargon
-
-            - TDD, BDD, ATDD... <!-- .element: class="fragment" -->
-            - Assertions, mocks, stubs, spies... <!-- .element: class="fragment" -->
-            - Tests unitaires, d'intégration, fonctionnels, end-to-end... <!-- .element: class="fragment" -->
-
-            ---
-
-            #### TDD
-
-            Test Driven Development
-
-            ----
-
-            <span class="fragment">
-              <img data-src="img/extreme-programming.jpg" alt="Extreme Programming" class="plain" width="33%" />
-              <blockquote>All tests are green, Brothers! Let's pray the Dark Lord!</blockquote>
-            </span>
-
-            Note: Pratique de l'Extreme Programming
-
-            On code d'abord les tests pour qu'ils échouent, ensuite on code jusqu'à ce qu'ils fonctionnent
-
-            Orienté développeur
-
-            ===
-
-            #### BDD
-
-            Behavior Driven Development
-
-            ----
-
-            - Domain-driven design (DDD) : méthodologie de conception logicielle axée sur la logique métier <!-- .element: class="fragment" -->
-            - Domain-specific language (DSL) : langage dédié à un domaine applicatif <!-- .element: class="fragment" -->
-
-            Note:
-            
-            Evolution/réaction au TDD basée sur la collaboration entre toutes les parties prenantes d'un projet : développeurs, testeurs, utilisateurs...
-
-            Orienté équipe
-
-            ===
-
-            #### ATDD
-
-            Acceptance Test Driven Development
-
-            Note: Englobe tous les concepts xDD avec un focus sur les besoins client
-
-            Orienté business
-
-            ---
-
-            ### Assertions
-
-            Dans le contexte des tests, expression permettant de vérifier l'état du contexte testé <!-- .element: class="fragment" -->
-            
-            Un test contient au moins une assertion <!-- .element: class="fragment" -->
-            
-            ===
-
-            ### Test doubles
-
-            Concept générique <!-- .element: class="fragment" -->
-
-            - Stubs (ou bouchons) <!-- .element: class="fragment" -->
-            - Mocks (ou objet factice) <!-- .element: class="fragment" -->
-            - Spy (ou espion) <!-- .element: class="fragment" -->
-
-            Note: Concepts proches mais quelques nuances:
-
-            - Stubs : réponses pré-enregistrées respectant le contrat d'interface. S'applique 
-              aux fonctions, aux services, etc
-            - Mocks : application orientée objet des stubs, avec comportement dépendant du contexte
-            - Spy : greffon sur objet ou fonction existante
-            
-            ---
-
-            ### Tests "white box" / "black box"
-
-            - Test "white box" : dépend de la struture interne de l'objet du test
-            - Test "black box" : dépend de la définition de l'objet du test
-
-            ===
-
-            ### Tests unitaires
-
-            Évalue la conformité d'un composant isolément <!-- .element: class="fragment" -->
-
-            ===
-
-            ### Tests d'intégration
-
-            Évalue la compatibilité d'un sous-ensemble de composants de l'application <!-- .element: class="fragment" -->
-
-            ===
-
-            ### Tests fonctionnels
-
-            Appelés aussi tests système (définition [CFTL](http://www.cftl.fr/))
-
-            Évalue la conformité de l'application aux exigences <!-- .element: class="fragment" -->
-            
-            ===
-
-            ### Tests end-to-end
-
-            Tests fonctionnels de type "black box" <!-- .element: class="fragment" -->
-
-            Basés sur le contrat d'interface (services) ou l'interface homme-machine (applications interactives)  <!-- .element: class="fragment" -->
-
-            Dans le domaine des applications web, implique en général le pilotage d'un navigateur <!-- .element: class="fragment" -->
-
-            ===
-
-            ### Test d'acceptation / recette
-
-            Métier à part entière distinct du développement proprement dit
-            
-            Note: Rarement automatisé dans le domaine du développement logiciel, mais si c'est le cas
-            alors il y a de grandes chances pour que ce soit avec une solution standard de type Selenium
-            pour les applications web
-
-            Dans les projets au forfait on fait souvent ces tests 2 fois : une fois chez le fournisseur,
-            et l'autre chez le client, après s'être mis d'accord sur un cahier de recette
-
-            La principale source d'incompréhension dans un projet logiciel c'est la divergence entre les tests 
-            écrits par les développeurs et ceux du cahier de recette
           </textarea>
         </section>
       </div>

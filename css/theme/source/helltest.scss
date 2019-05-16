@@ -59,6 +59,19 @@ section.has-light-background {
   }
 }
 
+.layout-bottom {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.reveal blockquote.semi-opaque {
+  background-color: rgba(0, 0, 0, 0.75);
+}
+
+.reveal pre {
+  font-size: 0.5em !important;
+}
+
 @mixin bodyBackground() {
   @include radial-gradient(rgba(28, 30, 32, 1), rgba(60, 65, 70, 1), circle);
 }

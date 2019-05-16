@@ -23,6 +23,16 @@ section.has-light-background h6 {
   .poster-title img {
     vertical-align: middle; }
 
+.layout-bottom {
+  display: flex;
+  flex-direction: column-reverse; }
+
+.reveal blockquote.semi-opaque {
+  background-color: rgba(0, 0, 0, 0.75); }
+
+.reveal pre {
+  font-size: 0.5em !important; }
+
 /*********************************************
  * GLOBAL STYLES
  *********************************************/
