@@ -412,9 +412,9 @@
         <section>
           <section data-markdown data-transition="fade">
             <textarea data-template>
-              ### Test Mocha/Chai
+              ### Tests Mocha/Chai
 
-              #### QUnit (assert)
+              #### QUnit "plat" (assert)
 
               <pre><code class="hljs language-js stretch" data-trim>
               suite('99 Bottles of Beer')
@@ -699,15 +699,23 @@
           </textarea>
         </section>
 
-        <section
-          data-background-image="img/karma.jpg"
-          data-background-size="contain"
-          data-background-color="#fff"
-          data-markdown
-        >
-          <textarea data-template>
-            Notes: L'ampli Marshall "Murder One" de Lenny Kilmister le chanteur de Motörhead
-          </textarea>
+        <section>
+          <section
+            data-background-image="img/karma.jpg"
+            data-background-size="contain"
+            data-background-color="#fff"
+            data-markdown
+          >
+            <textarea data-template>
+              Notes: L'ampli Marshall "Murder One" de Lenny Kilmister le chanteur de Motörhead
+            </textarea>
+          </section>
+          <section
+            data-background-image="img/motorhead-murderone.jpg"
+            data-background-size="contain"
+            data-background-color="#000"
+            data-markdown
+          ></section>
         </section>
         <section data-markdown data-separator-vertical="^\r?\n===\r?\n$">
           <textarea data-template>
@@ -727,14 +735,14 @@
 
             ### Les défis du E2E Web
 
-            - Navigation <!-- .element: class="fragment" -->
+            - Interactions <!-- .element: class="fragment" -->
             - Markup des pages <!-- .element: class="fragment" -->
             - Timing <!-- .element: class="fragment" -->
             - Asynchronisme <!-- .element: class="fragment" -->
 
             Notes:
 
-            Navigation applications SPA
+            Interactions inclut navigations => voir applications SPA
 
             Tester l'existence d'éléments dynamiques sur la page: 
             - Sélecteurs : les frameworks compliquent parfois la tâche (coucou React VDOM ou JSF)
@@ -801,7 +809,7 @@
             
             Notes: RC = Remote Control
 
-            TODO parler des problématiques intégration continue
+            Parler des problématiques intégration continue
           </textarea>
         </section>
         <section data-markdown data-separator-vertical="^\r?\n===\r?\n$">
@@ -841,9 +849,51 @@
           <textarea data-template>
             ## [Protractor](https://www.protractortest.org/)
 
+            Framework de tests E2E pour Angular/AngularJS
+            
             <img class="plain" data-src="img/protractor-qrcode.png" />
             
-            Notes:
+            ---
+
+            ### Fonctionnalités principales
+
+            - Test runner en ligne de commande
+            - Supporte Selenium et tous les navigateurs compatibles avec WebDriver + mode headless
+            - Exécution parallèle
+            - Compatible intégration continue
+
+            Note: IC : installe automatiquement WebDriver par exemple
+            
+            ---
+
+            ### Expérience développeur
+
+            - Supporte plusieurs frameworks : Jasmine, Mocha, Cucumber, custom
+            - Modèle synchrone avec "control flow"
+            - API de sélecteurs "Locators" CSS, XPath et Angular
+            - Extensible, nombreux plugins
+
+            Notes: 
+
+            Accès à tout l'écosystème des frameworks respectifs, 
+            notamment couverture de code (istanbul par exemple)
+            et enregistrement vidéo
+
+            ---
+
+            ### Limites
+
+            - Spécifique à AngularJS/Angular
+            - Gestion complexe de l'asynchronisme
+            - Support Angular moins avancé que AngularJS
+            - Gestion limitée du timing et des échecs
+            - Support debugging limité
+            - Pas de rechargement dynamique du code
+            - Pas intégrable
+
+            Notes: Intégré par défaut à la toolchain Angular
+
+            Echecs : plugins pour retry
           </textarea>
         </section>
         <section data-markdown data-separator-vertical="^\r?\n===\r?\n$">
@@ -886,9 +936,47 @@
           <textarea data-template>
             ## [Puppeteer](https://pptr.dev/)
 
-            <img class="plain" data-src="img/protractor-qrcode.png" />
+            Bibliothèque de pilotage Chrome via DevTools
+
+            <img class="plain" data-src="img/puppeteer-qrcode.png" />
             
+            Notes: Pas spécifique aux tests, bibliothèque polyvalente
+
+            ---
+
+            ### Fonctionnalités principales
+
+            - Outil polyvalent
+            - API puissante basée sur DevTools
+            - Mode headless
+            - Captures écrans et PDF
+            - Intégrable avec tout type de framework
+            - Compatible intégration continue
+
             Notes:
+
+            Evoquer utilisation pour génération de rapport
+
+            IC : installation automatique de Chromium
+
+            ---
+
+            ### Expérience développeur
+
+            - Modèle asynchrone (Promises natives)
+            - Sélecteurs CSS et XPath
+            - Exécution distante de code
+
+            ---
+
+            ### Limites
+
+            - Gestion manuelle du timing et des échecs (timeouts)
+            - Supporte uniquement Chrome (mais travail en cours sur Firefox)
+
+            Notes: Revers de la médaille d'un outil bas niveau
+
+            Vidéo possible via bibliothèque tierce
           </textarea>
         </section>
         <section data-markdown data-separator-vertical="^\r?\n===\r?\n$">
@@ -944,9 +1032,71 @@
           <textarea data-template>
             ## [Cypress](https://www.cypress.io/)
 
+            Environnement de tests complet
+
             <img class="plain" data-src="img/cypress-qrcode.png" />
             
+            ---
+
+            ### Fonctionnalités principales
+
+            - IDE graphique basé sur Electron + test runner en ligne de commande
+            - Supporte Chrome et Electron + mode headless
+            - Captures écrans et vidéos
+            - Compatible intégration continue
+
             Notes:
+
+            IC supporte plein de trucs : https://docs.cypress.io/guides/guides/continuous-integration.html#Examples
+
+            ---
+
+            ### Expérience développeur
+
+            - Basé sur Mocha/Chai/Sinon, style BDD
+            - Modèle synchrone avec pseudo-Promises
+            - Sélecteurs jQuery
+            - Gestion automatique du timing et des échecs ("Retry-ability")
+
+            ...
+
+            Notes: 
+
+            Accès à tout l'écosystème Mocha/Chai/Sinon
+
+            ===
+
+            ...
+
+            - Rechargement dynamique du code
+            - Debugging et exécution pas à pas avec inspecteur et voyage dans le temps
+            - S'exécute dans le navigateur, accès direct aux DOM
+            - Extensible, nombreux plugins
+
+            Notes:
+
+            Exécution dans navigateur à double tranchant : pas accès aux ressources locales
+            
+            Plugins : https://docs.cypress.io/plugins/index.html
+            Dont Cucumber !!!
+
+            ---
+
+            ### Limites
+
+            - Supporte uniquement Chrome et Electron
+            - Pas d'exécution parallèle (nécessite plusieurs machines)
+            - Pas intégrable
+            - Pas de couverture de code
+
+            Notes: 
+            
+            Parallélisation tient à la nature de l'archi in-browser
+
+            Un gars de Cypress a même écrit un article de blog pour 
+            expliquer en quoi la couverture de code ne sert à rien en E2E
+            https://www.cypress.io/blog/2018/12/20/element-coverage/
+            => parti-pris
           </textarea>
         </section>
         <section data-markdown data-separator-vertical="^\r?\n===\r?\n$">
@@ -973,25 +1123,87 @@
           </textarea>
         </section>
 
-        <section
-          data-background-image="img/testcafe-cover.jpg"
-          data-background-size="contain"
-          data-background-color="#000"
-          data-markdown
-        >
-          <textarea data-template>
-            Notes: Iron Maiden le seul groupe dont le chanteur pilote l'avion lors des tournées
+        <section>
+          <section
+            data-background-image="img/testcafe-cover.jpg"
+            data-background-size="contain"
+            data-background-color="#000"
+            data-markdown
+          >
+            <textarea data-template>
+              Notes: Iron Maiden le seul groupe dont le chanteur pilote l'avion lors des tournées
 
-            Basé sur une architecture spécifique et originale d'injection de proxy navigateur
-          </textarea>
+              Basé sur une architecture spécifique et originale d'injection de proxy navigateur
+            </textarea>
+          </section>
+          <section
+            data-background-image="img/ironmaiden-aceshigh.jpg"
+            data-background-size="contain"
+            data-background-color="#000"
+            data-markdown
+          ></section>
+          <section
+            data-background-image="img/ironmaiden-edforceone.jpg"
+            data-background-size="contain"
+            data-background-color="#000"
+            data-markdown
+          ></section>
         </section>
         <section data-markdown data-separator-vertical="^\r?\n===\r?\n$">
           <textarea data-template>
             ## [TestCafé](https://devexpress.github.io/testcafe/)
+            
+            Framework de tests avec une architecture originale :
+            - Un proxy injecté côté navigateur (Hammerhead)
+            - Un test runner côté Node.js
 
             <img class="plain" data-src="img/testcafe-qrcode.png" />
-            
+
+            ---
+
+            ### Fonctionnalités principales
+
+            - Test runner en ligne de commande
+            - TestCafé Studio : IDE commercial
+            - Supporte tous les navigateurs : desktop, mobile, cloud, headless...
+            - Captures écrans et vidéos
+            - Exécution parallèle
+            - Compatible intégration continue
+
             Notes:
+
+            IC supporte plein de trucs : https://devexpress.github.io/testcafe/documentation/continuous-integration/
+
+            ---
+
+            ### Expérience développeur
+
+            - Style de tests "plat"
+            - Modèle asynchrone (Promises natives + spécifiques)
+            - API de sélecteurs "Selectors" puissance et extensible
+            - Gestion automatique du timing et des échecs ("Smart Assertions")
+
+            ...
+
+            Notes: 
+            
+            Bibliothèques de sélecteurs pour Angular, React etc : https://devexpress.github.io/testcafe/documentation/test-api/selecting-page-elements/framework-specific-selectors.html
+
+            ===
+
+            ...
+
+            - Rôles utilisateurs
+            - Debugging et exécution pas à pas
+            - Rechargement dynamique du code
+            - Extensible et intégrable
+
+            ---
+
+            ### Limites
+
+            - Pas de support natif Cucumber
+            - Pas de couverture de code
           </textarea>
         </section>
         <section data-markdown data-separator-vertical="^\r?\n===\r?\n$">
@@ -1029,9 +1241,65 @@
           <textarea data-template>
             ## [CodeceptJS](https://codecept.io/)
 
+            Framework de tests multi-cibles
+
             <img class="plain" data-src="img/codeceptjs-qrcode.png" />
             
-            Notes:
+            ---
+
+            ### Fonctionnalités principales
+
+            - Test runner en ligne de commande
+            - Architecture extensible : pilotes WebDriver, Puppeteer, Protractor, Nightmare, Appium...
+            - Supporte tous les navigateurs : desktop, mobile, cloud, headless...
+            - Nombreux formats de rapport
+            - Captures écrans
+            
+            ...
+
+            ===
+
+            ...
+
+            - Exécution parallèle
+            - Support Cucumber natif
+            - Data-Driven Tests
+            - Compatible intégration continue
+
+            ---
+
+            ### Expérience développeur
+
+            - Style de tests "plat"
+            - Modèle mixte synchrone/asynchrone (Promises natives)
+            - API de sélecteurs "Locators" puissance et extensible : CSS, XPath, sémantique, etc.
+            - Gestion automatique du timing et des échecs ("SmartWait")
+            
+            ...
+
+            Notes: 
+            
+            Locators acceptent les chaînes de caractères comme le label d'un bouton par exemple
+
+            ===
+
+            ...
+
+            - Coeur du runner basé sur Mocha
+            - Multi-sessions et autologin
+            - Générateurs de code
+            - Injection de dépendances (helpers, page objects...)
+            - Debugging et shell interactif
+            - Extensible et intégrable, nombreux plugins
+
+            Notes: Accès aux reportes Mocha par exemple
+
+            ---
+
+            ### Limites
+
+            - Pas de rechargement dynamique du code
+            - Pas d'enregistrement vidéo
           </textarea>
         </section>
         <section data-markdown data-separator-vertical="^\r?\n===\r?\n$">
@@ -1389,6 +1657,141 @@
           </textarea>
         </section>
 
+        <section data-markdown data-separator-vertical="^\r?\n===\r?\n$">
+          <textarea data-template>
+            ## Choix du framework généraliste
+
+            ---
+
+            ### La souplesse et l'extensibilité 
+
+            <table>
+              <tr>
+                <td><img class="plain" data-src="img/mocha-white.png" /></td>
+                <td><img class="plain" data-src="img/cucumber-white.png" /></td>
+                <td><img class="plain" data-src="img/chai-white.png" /></td>
+                <td><img class="plain" data-src="img/sinon-white.png" /></td>
+              </tr>
+            </table>
+
+            Notes: Plus souple de combiner Mocha/Chai/Sinon qu'un seul système monolithique comme Jasmine ou Jest
+            
+            Chai permet d'utiliser les mêmes assertions entre plusieurs runners (Mocha et Cucumber par exemple)
+            et plusieurs niveaux (TU/E2E)
+
+            ---
+
+            ### Le zéro-conf
+
+            <img class="plain" data-src="img/jest.png" />
+
+            ---
+
+            ## Choix du framework E2E
+
+            ---
+
+            ### La puissance
+
+            <img class="plain" data-src="img/puppeteer-white.png" />
+
+            <table>
+              <tr>
+                <td><img class="plain" data-src="img/mocha-white.png" /></td>
+                <td><img class="plain" data-src="img/cucumber-white.png" /></td>
+                <td><img class="plain" data-src="img/chai-white.png" /></td>
+                <td><img class="plain" data-src="img/sinon-white.png" /></td>
+              </tr>
+            </table>
+
+            ===
+
+            #### Les points forts
+
+            - Rapide
+
+            ===
+
+            #### Les points faibles
+
+            - Bas niveau
+            - Spécifique à Chrome
+
+            Note: Même si travail en cours sur Firefox
+
+            ---
+            
+            ### La simplicité d'utilisation
+
+            <img class="plain" data-src="img/cypress-white.png" />
+
+            ===
+
+            #### Les points forts
+
+            - IDE
+            - Plein de fonctionnalités
+
+            ===
+
+            #### Les points faibles
+
+            - Parfois rigide
+            - Support limité des navigateurs
+            - Gourmand en ressources
+
+            ---
+
+            ### La versatilité
+
+            <img class="plain" data-src="img/testcafe.png" />
+
+            ===
+
+            #### Les points forts
+
+            - Rapide
+            - Support navigateur
+
+            Notes: Hammerhead fait des trucs bizzarres avec le DOM : problèmes avec Ionic 4 en mode dev => utilisation en mode prod
+            
+            ===
+
+            #### Les points faibles
+
+            - Compatiblité Hammerhead avec certains frameworks
+            - Difficultés d'intégration avec Cucumber
+
+            Notes: Hammerhead fait des trucs bizzarres avec le DOM : problèmes avec Ionic 4 en mode dev => utilisation en mode prod
+
+            ---
+
+            ### L'expérience développeur
+
+            <img class="plain stretch" data-src="img/codeceptjs-big.png" />
+
+            ===
+
+            #### Les points forts
+
+            - Rapide
+            - Mode interactif
+            - Cucumber inclus
+
+            Notes: Manque qq trucs Cucumber comme objets world
+            
+            ===
+
+            #### Les points faibles
+
+            - Moins intégré que d'autres solutions
+
+            ===
+
+
+          </textarea>
+        </section>
+
         <section
           data-background="black"
           data-background-image="img/lemmy.jpg"
@@ -1409,6 +1812,9 @@
       // - https://github.com/hakimel/reveal.js#dependencies
       Reveal.initialize({
         hash: true,
+        // Display the page number of the current slide
+        slideNumber: true,
+
         dependencies: [
           { src: "plugin/markdown/marked.js" },
           { src: "plugin/markdown/markdown.js" },
