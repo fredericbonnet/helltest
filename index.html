@@ -109,9 +109,9 @@
 
             ### Tests d'intégration
 
-            Évaluent la compatibilité d'un sous-ensemble de composants de l'application <!-- .element: class="fragment" -->
+            Évaluent la compatibilité mutuelle d'un sous-ensemble de composants de l'application <!-- .element: class="fragment" -->
 
-            Notes: Deux ou plusieurs composants qui doivent fonctionner sous-ensemble
+            Notes: Deux ou plusieurs composants qui doivent fonctionner ensemble
 
             On simule le reste
 
@@ -125,13 +125,11 @@
             
             Note: On peut simuler les applications tierces ou pas selon l'environnement
 
-            CFTL : Comité Français des Tests Logiciels
-
-            ===
+=            ===
 
             ### Test d'acceptation / recette
 
-            Métier à part entière distinct du développement proprement dit <!-- .element: class="fragment" -->
+            Métier à part entière, distinct du développement proprement dit <!-- .element: class="fragment" -->
             
             Notes:
             
@@ -268,23 +266,22 @@
 
             ### Tests "White Box" / "Black Box"
 
-            - Test "White Box" : dépend de la struture interne de l'objet du test <!-- .element: class="fragment" -->
+            - Test "White Box" : dépend de la structure interne de l'objet du test <!-- .element: class="fragment" -->
             - Test "Black Box" : dépend de la définition de l'objet du test <!-- .element: class="fragment" -->
 
             Notes: Termes qui reviennent souvent
 
             En général:
-            - White box plutôt TU
-            - Black box plutôt TI/TF
+            - White box plutôt développeur / TU
+            - Black box plutôt spécification / TI/TF
 
             ===
 
             ### Tests End-to-End (ou E2E)
 
             - Tests fonctionnels de type "Black Box" <!-- .element: class="fragment" -->
-
-            - Basés sur le contrat d'interface (services) ou l'interface homme-machine (applications interactives)  <!-- .element: class="fragment" -->
-
+            - Basés sur le contrat d'interface (services) ou l'interface homme-machine (applications interactives) <!-- .element: class="fragment" -->
+            - Font appel à toutes les couches de l'application <!-- .element: class="fragment" -->
             - Dans le domaine des applications web, implique en général le pilotage d'un navigateur <!-- .element: class="fragment" -->
 
             Notes: Dernier point de la partie jargon
@@ -324,7 +321,7 @@
 
             ===
 
-            [99 Bottles of Beer](http://www.99-bottles-of-beer.net/)
+            www.99-bottles-of-beer.net
 
             <img class="plain" data-src="img/99bottlesofbeer-qrcode.png" />
 
@@ -362,7 +359,7 @@
             
             class Bottle {
               passAround() {
-                // TODO
+                throw new Error('TODO');  
               }
             }
             </code></pre>
@@ -387,9 +384,20 @@
           <textarea data-template>
             ## [Mocha](https://mochajs.org/)
 
-            Framework de tests
+            Framework de tests + Test runner
 
             <img class="plain" data-src="img/mocha-qrcode.png" />
+
+            ===
+
+            ### Fonctionnalités principales
+
+            - Très peu de configuration nécessaire
+            - Plusieurs styles de tests : QUnit, TDD, BDD
+            - Environnements navigateur et Node.js
+            - Supporte les tests asynchrones
+            - Rechargement dynamique du code
+            - Extensible et intégrable, nombreux plugins : rapports, couverture de code...
 
             ---
 
@@ -399,6 +407,14 @@
 
             <img class="plain" data-src="img/chai-qrcode.png" />
 
+            ===
+
+            ### Fonctionnalités principales
+
+            - Plusieurs styles d'assertions : Assert, Expect, Should
+            - Syntaxe fluide et chaînable
+            - Nombreux plugins : Promises, DOM, WebDriver...
+
             ---
 
             ## [Sinon](https://sinonjs.org/)
@@ -406,6 +422,14 @@
             Bibliothèque de Test Doubles
 
             <img class="plain" data-src="img/sinon-qrcode.png" />
+
+            ===
+
+            ### Fonctionnalités principales
+
+            - Stubs, mocks, spies, etc
+            - Fake Timers
+            - Fake XHR & server
 
           </textarea>
         </section>
@@ -526,6 +550,17 @@
             Framework de tests
 
             <img class="plain" data-src="img/jasmine-qrcode.png" />
+
+            ===
+
+            ### Fonctionnalités principales
+
+            - Style de tests BDD
+            - Inclut ses propres assertions et test doubles
+            - Supporte les tests asynchrones
+            - Environnements navigateur et Node.js
+            - Extensible et intégrable, nombreux plugins : rapports, couverture de code...
+            - Intégration possible avec Ruby et Python
           </textarea>
         </section>
         <section data-markdown data-separator-vertical="^\r?\n===\r?\n$">
@@ -578,6 +613,17 @@
             Directement intégré au toolchain React
 
             Très populaire même hors React
+
+            ===
+
+            ### Fonctionnalités principales
+
+            - Très peu de configuration nécessaire
+            - Style de tests BDD
+            - Vaste API d'assertions, test doubles, etc.
+            - Exécution parallèle des tests
+            - Extensible et intégrable, nombreux plugins : rapports, couverture de code...
+
           </textarea>
         </section>
         <section data-markdown data-separator-vertical="^\r?\n===\r?\n$">
@@ -624,7 +670,23 @@
               Framework de tests
   
               <img class="plain" data-src="img/cucumber-qrcode.png" />
+    
+              Notes: Le chainon manquant entre les specs, la validation et les développeurs
+
+              ===
+
+              ### Fonctionnalités principales
   
+              - Basé sur 2 piliers :
+                - Gherkin, langage de spécifications BDD
+                - "Steps", code exécutable proprement dit
+              - Supporte de très nombreux langages
+              - S'intègre à la plupart des environnements
+              - Génération de code ("snippets")
+    
+              Notes: 
+              Gherkin : Outil de communication, spécification exécutable, lisible par
+              tout le monde
           </textarea>
         </section>
         <section>
@@ -647,6 +709,8 @@
                  And I pass the bottle around
                 Then there should be 98 bottles of beer on the wall
               </code></pre>
+
+              Notes: Format lisible, colle bien aux modèles agiles
             </textarea>
           </section>
           <section
@@ -668,6 +732,8 @@
                 <span class="hljs-keyword">Et que</span> je passe la bouteille autour de moi
                  <span class="hljs-keyword">Alors</span> il devrait y avoir 98 bouteilles de bière sur le mur
               </div></pre>
+
+              Notes: Multilinguisme très intéressant pour les specs
             </textarea>
           </section>
         </section>
@@ -707,7 +773,9 @@
             data-markdown
           >
             <textarea data-template>
-              Notes: L'ampli Marshall "Murder One" de Lenny Kilmister le chanteur de Motörhead
+              Notes: On conclut sur les outils génériques
+
+              L'ampli Marshall "Murder One" de Lenny Kilmister le chanteur de Motörhead
             </textarea>
           </section>
           <section
@@ -724,6 +792,19 @@
             Test runner
 
             <img class="plain" data-src="img/karma-qrcode.png" />
+
+            Notes: Test runner générique avec plein de fonctionnalités intéressantes pour
+            améliorer le fonctionnement d'autres outils de tests
+            
+            ===
+
+            ### Fonctionnalités principales
+
+            - Supporte Mocha, Jasmine, etc.
+            - Extensible, nombreux plugins : lanceurs de navigateurs, préprocesseurs, reporters, exécution parallèle, etc
+            - Rechargement dynamique du code
+
+            Notes: Intégré par défaut avec Angular
           </textarea>
         </section>
 
@@ -736,7 +817,7 @@
             ### Les défis du E2E Web
 
             - Interactions <!-- .element: class="fragment" -->
-            - Markup des pages <!-- .element: class="fragment" -->
+            - Structure des pages <!-- .element: class="fragment" -->
             - Timing <!-- .element: class="fragment" -->
             - Asynchronisme <!-- .element: class="fragment" -->
 
@@ -767,9 +848,7 @@
                 <div class="bottle" id="beer-99" onclick="takeDownBottle()"></div>
               </div>
 
-              <div class="around">
-                <button onclick="passBottleAround()">Pass bottle around</button>
-              </div>
+              <button id="pass-bottle-around" onclick="passBottleAround()">Pass bottle around</button>
 
               <script>
                 let bottle;
@@ -820,6 +899,8 @@
             
             Standard W3C depuis juin 2018
 
+            Fonctionnement autonome ("standalone")
+
             <img class="plain" data-src="img/webdriver-qrcode.png" />
 
             Notes: Issu des travaux du projet Selenium
@@ -853,17 +934,21 @@
             
             <img class="plain" data-src="img/protractor-qrcode.png" />
             
+            Notes: Intégré par défaut à la toolchain Angular
+            
             ---
 
             ### Fonctionnalités principales
 
             - Test runner en ligne de commande
             - Supporte Selenium et tous les navigateurs compatibles avec WebDriver + mode headless
-            - Exécution parallèle
+            - Exécution parallèle en mode "sharding"
             - Compatible intégration continue
 
             Note: IC : installe automatiquement WebDriver par exemple
             
+            Sharding : plusieurs instances de navigateurs
+
             ---
 
             ### Expérience développeur
@@ -884,15 +969,14 @@
             ### Limites
 
             - Spécifique à AngularJS/Angular
-            - Gestion complexe de l'asynchronisme
+            - Gestion complexe de l'asynchronisme (surtout avec Mocha)
             - Support Angular moins avancé que AngularJS
             - Gestion limitée du timing et des échecs
             - Support debugging limité
             - Pas de rechargement dynamique du code
             - Pas intégrable
 
-            Notes: Intégré par défaut à la toolchain Angular
-
+            Notes:
             Echecs : plugins pour retry
           </textarea>
         </section>
@@ -912,7 +996,7 @@
                   const bottles = element.all(by.css('.wall .bottle'));
                   expect(bottles.count()).toBe(99);
                   bottles.first().click();
-                  element(by.css('.around button')).click();
+                  element(by.css('#pass-bottle-around')).click();
                   expect($$('.wall .bottle').count()).toBe(98);
                 });
               });            
@@ -957,7 +1041,9 @@
 
             Evoquer utilisation pour génération de rapport
 
-            IC : installation automatique de Chromium
+            Capture Vidéo possible via bibliothèque tierce
+            
+            IC : installation automatique de Chromium sous forme de dépendance
 
             ---
 
@@ -976,7 +1062,6 @@
 
             Notes: Revers de la médaille d'un outil bas niveau
 
-            Vidéo possible via bibliothèque tierce
           </textarea>
         </section>
         <section data-markdown data-separator-vertical="^\r?\n===\r?\n$">
@@ -1002,7 +1087,7 @@
                   const bottles = await page.$$('.wall .bottle');
                   expect(bottles).to.have.lengthOf(99);
                   await bottles.first().click();
-                  await page.click('.around button');
+                  await page.click('#pass-bottle-around');
                   expect(await page.$$('.wall .bottle')).to.have.lengthOf(98);
                 });
               });            
@@ -1071,14 +1156,13 @@
             - Rechargement dynamique du code
             - Debugging et exécution pas à pas avec inspecteur et voyage dans le temps
             - S'exécute dans le navigateur, accès direct aux DOM
-            - Extensible, nombreux plugins
+            - Extensible, nombreux plugins dont Cucumber
 
             Notes:
 
             Exécution dans navigateur à double tranchant : pas accès aux ressources locales
             
             Plugins : https://docs.cypress.io/plugins/index.html
-            Dont Cucumber !!!
 
             ---
 
@@ -1114,7 +1198,7 @@
                     .should('have.length', 99)
                     .first()
                     .click();
-                  cy.get('.around button').click();
+                  cy.get('#pass-bottle-around').click();
                   cy.get('.wall .bottle')
                     .should('have.length', 98);
                 });
@@ -1218,7 +1302,7 @@
                 const bottles = Selector('.wall .bottle');
                 await t.expect(bottles.count).eql(99);
                 await t.click(bottles.nth(0));
-                await t.click('.around button');
+                await t.click('#pass-bottle-around');
                 await t.expect(bottles.count).eql(98);
               });
             </code></pre>
@@ -1253,18 +1337,20 @@
             - Architecture extensible : pilotes WebDriver, Puppeteer, Protractor, Nightmare, Appium...
             - Supporte tous les navigateurs : desktop, mobile, cloud, headless...
             - Nombreux formats de rapport
-            - Captures écrans
+            - Compatible intégration continue
             
             ...
+            
+            Notes: Accès aux reporters Mocha par exemple
 
             ===
 
             ...
 
+            - Captures écrans
             - Exécution parallèle
             - Support Cucumber natif
             - Data-Driven Tests
-            - Compatible intégration continue
 
             ---
 
@@ -1277,7 +1363,7 @@
             
             ...
 
-            Notes: 
+            Notes: Asynchrone quand on doit obtenir des données du navigateur, synchrone sinon
             
             Locators acceptent les chaînes de caractères comme le label d'un bouton par exemple
 
@@ -1291,8 +1377,6 @@
             - Injection de dépendances (helpers, page objects...)
             - Debugging et shell interactif
             - Extensible et intégrable, nombreux plugins
-
-            Notes: Accès aux reportes Mocha par exemple
 
             ---
 
@@ -1317,7 +1401,7 @@
                 const bottles = locate('.wall .bottle');
                 I.seeNumberOfElements(bottles, 99);
                 I.click(bottles.first());
-                I.click('.around button');
+                I.click('#pass-bottle-around');
                 I.seeNumberOfElements(bottles, 98);
               });
             </code></pre>
@@ -1454,8 +1538,8 @@
             [TodoMVC](http://todomvc.com/), mais pour les tests
 
             - Embryons d'applications testables <!-- .element: class="fragment" -->
-            - Minimum de code applicatif <!-- .element: class="fragment" -->
             - Représentatif d'une application réelle <!-- .element: class="fragment" -->
+            - Minimum de code applicatif <!-- .element: class="fragment" -->
             - Configuration par défaut dans la mesure du possible <!-- .element: class="fragment" -->
 
             Notes: Pas un prototype mais un embryon
@@ -1511,6 +1595,14 @@
             - Serveur d'API REST <!-- .element: class="fragment" -->
             - Interface d'administration <!-- .element: class="fragment" -->
             - Application mobile <!-- .element: class="fragment" -->
+
+            ===
+
+            ## Objectifs à long terme
+
+            - Autres protocoles que JSON REST : GraphQL, Falcor...
+            - Autres technologies côté serveur : Java, PHP...
+            - Autres technologies côté client : NativeScript, Flutter...
 
             ---
 
@@ -1685,9 +1777,11 @@
 
             <img class="plain" data-src="img/jest.png" />
 
+            Notes: Donne de très bons résultats sans effort
+
             ---
 
-            ## Choix du framework E2E
+            ## Choix de la solution E2E
 
             ---
 
@@ -1731,6 +1825,7 @@
 
             - IDE
             - Plein de fonctionnalités
+            - Documentation
 
             ===
 
@@ -1751,9 +1846,7 @@
             #### Les points forts
 
             - Rapide
-            - Support navigateur
-
-            Notes: Hammerhead fait des trucs bizzarres avec le DOM : problèmes avec Ionic 4 en mode dev => utilisation en mode prod
+            - Support navigateurs
             
             ===
 
@@ -1784,10 +1877,7 @@
 
             #### Les points faibles
 
-            - Moins intégré que d'autres solutions
-
-            ===
-
+            - Communauté moins développée
 
           </textarea>
         </section>
