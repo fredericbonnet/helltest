@@ -160,8 +160,6 @@
 
             Test Driven Development
 
-            ----
-
             <span class="fragment">
               <img data-src="img/extreme-programming.jpg" alt="Extreme Programming" class="plain" width="33%" />
               <blockquote>All tests are green, Brothers! Let's pray the Dark Lord!</blockquote>
@@ -182,8 +180,6 @@
             ### BDD
 
             Behavior Driven Development
-
-            ----
 
             - Domain-driven design (DDD) : méthodologie de conception logicielle axée sur la logique métier <!-- .element: class="fragment" -->
             - Domain-specific language (DSL) : langage dédié à un domaine applicatif <!-- .element: class="fragment" -->
@@ -333,10 +329,21 @@
             <img class="plain" data-src="img/99bottlesofbeer-qrcode.png" />
 
             Notes: Implémentations de la chanson dans différents langages informatiques
-            
+          </textarea>
+        </section>
+
+        <section data-markdown data-separator-vertical="^\r?\n===\r?\n$">
+          <textarea data-template>
+            ## Outils génériques
+
+            Notes: D'abord présentation des outils génériques dans le monde JS/Web
+
+            Pas de présentation des outils équivalents dans d'autres langages, on suppose
+            que vous connaissez déjà ceux de vos technos respectives (JUnit par exemple)
+
             ---
 
-            ### Implémentation testée
+            ### Classe testée
 
             <pre><code class="hljs language-ts stretch" data-trim>
             class Wall {
@@ -360,18 +367,7 @@
             }
             </code></pre>
 
-            Notes: En TypeScript mais le concept reste le même
-          </textarea>
-        </section>
-
-        <section data-markdown>
-          <textarea data-template>
-            ## Outils génériques
-
-            Notes: D'abord présentation des outils génériques dans le monde JS/Web
-
-            Pas de présentation des outils équivalents dans d'autres langages, on suppose
-            que vous connaissez déjà ceux de vos technos respectives (JUnit par exemple)
+            Notes: En TypeScript mais le concept reste le même avec d'autres langages
           </textarea>
         </section>
 
@@ -525,7 +521,7 @@
         </section>
         <section data-markdown data-separator-vertical="^\r?\n===\r?\n$">
           <textarea data-template>
-            ## [Jasmine](https://jasmine.github.io/index.html)
+            ## [Jasmine](https://jasmine.github.io/)
 
             Framework de tests
 
@@ -667,7 +663,7 @@
               <span class="hljs-keyword">Contexte</span>: 
                 <span class="hljs-keyword">Étant donné qu'</span>il y a 99 bouteilles de bière sur le mur
 
-              <span class="hljs-keyword">Scenario</span>: Une bière en moins
+              <span class="hljs-keyword">Scénario</span>: Une bière en moins
                  <span class="hljs-keyword">Quand</span> je prends une bouteille
                 <span class="hljs-keyword">Et que</span> je passe la bouteille autour de moi
                  <span class="hljs-keyword">Alors</span> il devrait y avoir 98 bouteilles de bière sur le mur
@@ -741,7 +737,7 @@
             Navigation applications SPA
 
             Tester l'existence d'éléments dynamiques sur la page: 
-            - Sélecteurs : les frameworks compliquent parfois la tâche (coucou React VDOM ou JSX)
+            - Sélecteurs : les frameworks compliquent parfois la tâche (coucou React VDOM ou JSF)
             - Trop tôt / Trop tard / Timeouts
 
             Modèles asynchrones JS pour l'écriture des tests :
@@ -749,6 +745,32 @@
             - Promises
             - Syntaxe async/await
             - Implicite ou explicite (smart assertions)
+
+            ---
+
+            ### Page testée
+
+            <pre><code class="hljs language-html stretch" data-trim>
+              <div class="wall">
+                <div class="bottle" id="beer-1" onclick="takeDownBottle()"></div>
+                <div class="bottle" id="beer-2" onclick="takeDownBottle()"></div>
+                ...
+                <div class="bottle" id="beer-98" onclick="takeDownBottle()"></div>
+                <div class="bottle" id="beer-99" onclick="takeDownBottle()"></div>
+              </div>
+
+              <div class="around">
+                <button onclick="passBottleAround()">Pass bottle around</button>
+              </div>
+
+              <script>
+                let bottle;
+                function takeDownBottle(event) {...}
+                function passBottleAround() {...}
+              </script>
+            </code></pre>
+
+            Notes: En HTML pur mais le concept reste le même avec des frameworks web
           </textarea>
         </section>
 
@@ -770,16 +792,17 @@
         </section>
         <section data-markdown data-separator-vertical="^\r?\n===\r?\n$">
           <textarea data-template>
-              ## [Selenium "classique"](https://www.seleniumhq.org/)
+            ## [Selenium "classique"](https://www.seleniumhq.org/)
 
-              - Selenium RC : Serveur d'automatisation navigateur écrit en Java
-              - Selenium IDE : Environnement de développement basé sur des plugins Firefox et Chrome
+            - Selenium RC : Serveur d'automatisation navigateur écrit en Java
+            - Selenium IDE : Environnement de développement basé sur des plugins Firefox et Chrome
 
-              <img class="plain" data-src="img/selenium-qrcode.png" />
-              
-              Notes: RC = Remote Control
-            </textarea
-          >
+            <img class="plain" data-src="img/selenium-qrcode.png" />
+            
+            Notes: RC = Remote Control
+
+            TODO parler des problématiques intégration continue
+          </textarea>
         </section>
         <section data-markdown data-separator-vertical="^\r?\n===\r?\n$">
           <textarea data-template>
@@ -814,6 +837,38 @@
             Incantations cabalistiques : providers, modules, directives, injection de dépendances
           </textarea>
         </section>
+        <section data-markdown data-separator-vertical="^\r?\n===\r?\n$">
+          <textarea data-template>
+            ## [Protractor](https://www.protractortest.org/)
+
+            <img class="plain" data-src="img/protractor-qrcode.png" />
+            
+            Notes:
+          </textarea>
+        </section>
+        <section data-markdown data-separator-vertical="^\r?\n===\r?\n$">
+          <textarea data-template>
+            ### Test Protractor (Jasmine)
+
+            <pre><code class="hljs language-js stretch" data-trim>
+              import { browser, by, element } from 'protractor';
+
+              describe('99 Bottles of Beer', () => {
+                before(() => {
+                  browser.get('/99beers.html');
+                });
+              
+                it('one beer down', () => {
+                  const bottles = element.all(by.css('.wall .bottle'));
+                  expect(bottles.count()).toBe(99);
+                  bottles.first().click();
+                  element(by.css('.around button')).click();
+                  expect($$('.wall .bottle').count()).toBe(98);
+                });
+              });            
+            </code></pre>
+          </textarea>
+        </section>
 
         <section
           data-background-image="img/puppeteer-cover.jpg"
@@ -825,6 +880,45 @@
             Notes: Rapide, puissant, bourrin, sale : métal industriel Rammstein
 
             On met les mains dans le cambouis mais on sais exactement ce qui se passe sous le capot.
+          </textarea>
+        </section>
+        <section data-markdown data-separator-vertical="^\r?\n===\r?\n$">
+          <textarea data-template>
+            ## [Puppeteer](https://pptr.dev/)
+
+            <img class="plain" data-src="img/protractor-qrcode.png" />
+            
+            Notes:
+          </textarea>
+        </section>
+        <section data-markdown data-separator-vertical="^\r?\n===\r?\n$">
+          <textarea data-template>
+            ### Test Puppeteer (Mocha/Chai)
+
+            <pre><code class="hljs language-js stretch" data-trim>
+              const puppeteer = require('puppeteer');
+
+              describe('99 Bottles of Beer', () => {
+                let browser, page;
+
+                before(async () => {
+                  browser = await puppeteer.launch();
+                  page = await browser.newPage();
+                  await page.goto('http://hostname/99beers.html');
+                });
+                after(async () => {
+                  await browser.close();
+                });
+              
+                it('one beer down', async () => {
+                  const bottles = await page.$$('.wall .bottle');
+                  expect(bottles).to.have.lengthOf(99);
+                  await bottles.first().click();
+                  await page.click('.around button');
+                  expect(await page.$$('.wall .bottle')).to.have.lengthOf(98);
+                });
+              });            
+            </code></pre>
           </textarea>
         </section>
 
@@ -846,9 +940,41 @@
             Certains parti-pris et quelques limites qui peuvent rebuter les amateurs d'autres styles
           </textarea>
         </section>
+        <section data-markdown data-separator-vertical="^\r?\n===\r?\n$">
+          <textarea data-template>
+            ## [Cypress](https://www.cypress.io/)
+
+            <img class="plain" data-src="img/cypress-qrcode.png" />
+            
+            Notes:
+          </textarea>
+        </section>
+        <section data-markdown data-separator-vertical="^\r?\n===\r?\n$">
+          <textarea data-template>
+            ### Test Cypress
+
+            <pre><code class="hljs language-js stretch" data-trim>
+              describe('99 Bottles of Beer', () => {
+                before(() => {
+                  cy.visit('/99beers.html');
+                });
+              
+                it('one beer down', () => {
+                  cy.get('.wall .bottle')
+                    .should('have.length', 99)
+                    .first()
+                    .click();
+                  cy.get('.around button').click();
+                  cy.get('.wall .bottle')
+                    .should('have.length', 98);
+                });
+              });            
+            </code></pre>
+          </textarea>
+        </section>
 
         <section
-          data-background-image="img/testcafé-cover.jpg"
+          data-background-image="img/testcafe-cover.jpg"
           data-background-size="contain"
           data-background-color="#000"
           data-markdown
@@ -857,6 +983,33 @@
             Notes: Iron Maiden le seul groupe dont le chanteur pilote l'avion lors des tournées
 
             Basé sur une architecture spécifique et originale d'injection de proxy navigateur
+          </textarea>
+        </section>
+        <section data-markdown data-separator-vertical="^\r?\n===\r?\n$">
+          <textarea data-template>
+            ## [TestCafé](https://devexpress.github.io/testcafe/)
+
+            <img class="plain" data-src="img/testcafe-qrcode.png" />
+            
+            Notes:
+          </textarea>
+        </section>
+        <section data-markdown data-separator-vertical="^\r?\n===\r?\n$">
+          <textarea data-template>
+            ### Test TestCafé
+
+            <pre><code class="hljs language-js stretch" data-trim>
+              fixture('99 Bottles of Beer')
+                .page('http://hostname/99beers.html');
+              
+              test('one beer down', async t => {
+                const bottles = Selector('.wall .bottle');
+                await t.expect(bottles.count).eql(99);
+                await t.click(bottles.nth(0));
+                await t.click('.around button');
+                await t.expect(bottles.count).eql(98);
+              });
+            </code></pre>
           </textarea>
         </section>
 
@@ -870,6 +1023,36 @@
             Notes: Apocalyptica, réinterprète les classiques métal au violoncelle
 
             Interface commune au dessus de différents moteurs
+          </textarea>
+        </section>
+        <section data-markdown data-separator-vertical="^\r?\n===\r?\n$">
+          <textarea data-template>
+            ## [CodeceptJS](https://codecept.io/)
+
+            <img class="plain" data-src="img/codeceptjs-qrcode.png" />
+            
+            Notes:
+          </textarea>
+        </section>
+        <section data-markdown data-separator-vertical="^\r?\n===\r?\n$">
+          <textarea data-template>
+            ### Test CodeceptJS
+
+            <pre><code class="hljs language-js stretch" data-trim>
+              Feature('99 Bottles of Beer');
+
+              Before((I) => {
+                I.amOnPage('/99beers.html');
+              })
+              
+              Scenario('one beer down', (I) => {
+                const bottles = locate('.wall .bottle');
+                I.seeNumberOfElements(bottles, 99);
+                I.click(bottles.first());
+                I.click('.around button');
+                I.seeNumberOfElements(bottles, 98);
+              });
+            </code></pre>
           </textarea>
         </section>
 
@@ -1114,10 +1297,10 @@
 
             ### Les tests
 
-            - Tests unitaires : Mocha, Chai, Sinon
+            - Tests unitaires : Mocha/Chai/Sinon
             - Tests E2E :
-              - Mocha, Chai, Supertest
-              - Cucumber, Chai, Supertest
+              - Mocha/Chai/Supertest
+              - Cucumber/Chai/Supertest
               - Cypress (classique + Cucumber)
 
             ---
@@ -1148,10 +1331,10 @@
 
             ### Les tests
 
-            - Tests unitaires : Jest
+            - Tests unitaires : Jest/React
             - Tests E2E :
-              - Jest, Puppeteer
-              - Cucumber, Chai, Puppeteer
+              - Puppeteer (Jest)
+              - Puppeteer (Cucumber/Chai)
               - Cypress (classique + Cucumber)
               - TestCafé (classique + Cucumber)
               - CodeceptJS (classique + Cucumber)
@@ -1183,12 +1366,12 @@
 
             ### Les tests
 
-            - Tests unitaires : Karma, Jasmine
+            - Tests unitaires : Karma/Jasmine/Angular
             - Tests E2E :
-              - Protractor, Jasmine
-              - Protractor, Cucumber
-              - Mocha, Puppeteer
-              - Cucumber, Puppeteer
+              - Protractor (Jasmine)
+              - Protractor (Cucumber/Chai)
+              - Puppeteer (Mocha/Chai)
+              - Puppeteer (Cucumber/Chai)
               - Cypress (classique + Cucumber)
               - TestCafé (classique + Cucumber)
               - CodeceptJS (classique + Cucumber)
