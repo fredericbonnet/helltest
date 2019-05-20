@@ -57,1354 +57,9 @@
 
             Notes: Les têtes d'affiche (aucun ordre particulier) 
                 
-            Eclectique, il y a tous les genres et pour tous les goûts
-          </textarea>
-        </section>
+            Eclectique, il y a tous les genres et pour tous les goûts : du hard, du heavy, du glam, du black, de l'indus...
 
-        <section
-          data-markdown
-          data-separator-vertical="^\r?\n===\r?\n$"
-          data-background-image="img/marius-masalar-410695-unsplash.jpg"
-          data-background-color="#000"
-          data-background-opacity="0.5"
-        >
-          <textarea data-template>
-            # Un peu de jargon
-
-            Notes: Un peu come le solfège en musique, il y a des concepts à connaître
-          </textarea>
-        </section>
-
-        <section data-markdown data-separator-vertical="^\r?\n===\r?\n$">
-          <textarea data-template>
-            ## Un peu de jargon
-
-            - Niveaux de tests : tests unitaires, d'intégration, fonctionnels, end-to-end... <!-- .element: class="fragment" -->
-            - Méthodologies : TDD, BDD, ATDD... <!-- .element: class="fragment" -->
-            - Techniques : Assertions, mocks, stubs, spies... <!-- .element: class="fragment" -->
-            - Outils : Test runner, test reporter... <!-- .element: class="fragment" -->
-
-            Notes: Présentation des différentes catégories de termes et de concepts
-
-            ---
-
-            ## Les niveaux de tests
-
-            [CFTL](http://www.cftl.fr/) : Comité Français des Tests Logiciels
-
-            1. Tests unitaires <!-- .element: class="fragment" -->
-            2. Tests d'intégration <!-- .element: class="fragment" -->
-            3. Tests système <!-- .element: class="fragment" -->
-            4. Tests d'acceptation <!-- .element: class="fragment" -->
-
-            ===
-
-            ### Tests unitaires
-
-            Évaluent la conformité d'un composant isolément <!-- .element: class="fragment" -->
-
-            Note: Un seul composant, on simule le reste
-
-            ===
-
-            ### Tests d'intégration
-
-            Évaluent la compatibilité mutuelle d'un sous-ensemble de composants de l'application <!-- .element: class="fragment" -->
-
-            Notes: Deux ou plusieurs composants qui doivent fonctionner ensemble
-
-            On simule le reste
-
-            ===
-
-            ### Tests système
-
-            Appelés aussi tests fonctionnels
-
-            Évaluent la conformité de l'application aux exigences <!-- .element: class="fragment" -->
-            
-            Note: On peut simuler les applications tierces ou pas selon l'environnement
-
-=            ===
-
-            ### Test d'acceptation / recette
-
-            Métier à part entière, distinct du développement proprement dit <!-- .element: class="fragment" -->
-            
-            Notes:
-            
-            Dans le domaine du développement logiciel, c'est parfois automatisé mas pas toujours. 
-            Dans ce cas il y a de grandes chances pour que ce soit avec une solution standard de
-            pilotage d'appli interactive (typiquement Selenium pour les applis web)
-
-            Dans les projets au forfait on fait souvent ces tests 2 fois : une fois chez le fournisseur,
-            et l'autre chez le client, après s'être mis d'accord sur un cahier de recette
-
-            La principale source d'incompréhension dans un projet logiciel c'est la divergence entre les tests 
-            écrits par les développeurs et ceux du cahier de recette : nécessite des bonnes pratiques de
-            communication (voir Cucumber)
-
-            ---
-
-            ## Les méthodologies
-
-            - TDD <!-- .element: class="fragment" -->
-            - BDD <!-- .element: class="fragment" -->
-            - ATDD <!-- .element: class="fragment" -->
-
-            ===
-
-            ### TDD
-
-            Test Driven Development
-
-            <span class="fragment">
-              <img data-src="img/extreme-programming.jpg" alt="Extreme Programming" class="plain" width="33%" />
-              <blockquote>All tests are green, Brothers! Let's pray the Dark Lord!</blockquote>
-            </span>
-
-            Notes: Pratique de l'Extreme Programming
-
-            On code d'abord les tests pour qu'ils échouent, ensuite on code jusqu'à ce qu'ils fonctionnent
-
-            Orienté développeur
-
-            Pas nécessaire de faire du TDD "pur" pour acquérir de bonnes pratiques
-
-            TCR : Test Commit Revert : encore plus extreme (Blackened Death Metal)
-
-            ===
-
-            ### BDD
-
-            Behavior Driven Development
-
-            - Domain-driven design (DDD) : méthodologie de conception logicielle axée sur la logique métier <!-- .element: class="fragment" -->
-            - Domain-specific language (DSL) : langage dédié à un domaine applicatif <!-- .element: class="fragment" -->
-
-            Notes:
-            
-            Evolution/réaction au TDD basée sur la collaboration entre toutes les parties prenantes d'un projet : développeurs, testeurs, utilisateurs...
-
-            Orienté équipe
-
-            DDD et DSL : concepts liés
-
-            ===
-
-            ### ATDD
-
-            Acceptance Test Driven Development
-
-            Notes: Englobe tous les concepts xDD avec un focus sur les besoins client
-
-            Le cahier de recette dirige le développement
-
-            Orienté business
-
-            ---
-
-            ## Les techniques
-
-            - Assertions <!-- .element: class="fragment" -->
-            - Test Doubles <!-- .element: class="fragment" -->
-
-            Notes: Techniques d'écriture des tests automatisés
-
-            ===
-
-            ### Assertions
-
-            Dans le contexte des tests, expression permettant de vérifier l'état du système en cours de test <!-- .element: class="fragment" -->
-            
-            Un test contient au moins une assertion <!-- .element: class="fragment" -->
-
-            Notes: Assertion = prédicat + exception
-            
-            ===
-
-            ### Test doubles
-
-            Concept générique <!-- .element: class="fragment" -->
-
-            - Stubs (ou bouchons) <!-- .element: class="fragment" -->
-            - Mocks (ou objet factice) <!-- .element: class="fragment" -->
-            - Spy (ou espion) <!-- .element: class="fragment" -->
-
-            Notes: Englobe plusieurs concepts proches avec quelques nuances:
-
-            - Stubs : réponses pré-enregistrées respectant le contrat d'interface. S'applique 
-              aux fonctions, aux services, etc
-            - Mocks : application orientée objet des stubs, avec comportement dépendant du contexte
-            - Spy : greffon sur objet ou fonction existante
-            
-            ---
-
-            ## Outils
-
-            - Test Runner <!-- .element: class="fragment" -->
-            - Test Reporter <!-- .element: class="fragment" -->
-            - Testing Framework <!-- .element: class="fragment" -->
-
-            Notes:
-            - Test Runner : exécute les tests
-
-            - Test Reporter : produit un rapport d'exécution des tests.
-
-            Différents formats, fonctions type couverture de code, intégration avec tableaux de bord, etc
-
-            - Testing Framework : permet l'écriture des tests : structuration du code par exemple
-            
-            ---
-
-            ## Termes usuels
-
-            - White Box / Black Box
-            - End-to-End
-
-            ===
-
-            ### Tests "White Box" / "Black Box"
-
-            - Test "White Box" : dépend de la structure interne de l'objet du test <!-- .element: class="fragment" -->
-            - Test "Black Box" : dépend de la définition de l'objet du test <!-- .element: class="fragment" -->
-
-            Notes: Termes qui reviennent souvent
-
-            En général:
-            - White box plutôt développeur / TU
-            - Black box plutôt spécification / TI/TF
-
-            ===
-
-            ### Tests End-to-End (ou E2E)
-
-            - Tests fonctionnels de type "Black Box" <!-- .element: class="fragment" -->
-            - Basés sur le contrat d'interface (services) ou l'interface homme-machine (applications interactives) <!-- .element: class="fragment" -->
-            - Font appel à toutes les couches de l'application <!-- .element: class="fragment" -->
-            - Dans le domaine des applications web, implique en général le pilotage d'un navigateur <!-- .element: class="fragment" -->
-
-            Notes: Dernier point de la partie jargon
-
-            Tests E2E applis web = objet de cette présentation
-          </textarea>
-        </section>
-
-        <section
-          data-markdown
-          data-separator-vertical="^\r?\n===\r?\n$"
-          data-background-image="img/nick-moore-647831-unsplash.jpg"
-          data-background-color="#000"
-          data-background-opacity="0.5"
-        >
-          <textarea data-template>
-            # Les outils de tests
-          </textarea>
-        </section>
-        <section data-markdown data-separator-vertical="^\r?\n===\r?\n$">
-          <textarea data-template>
-            ## Scénario d'exemple
-            
-            ### 99 Bottles of Beer
-
-            99 bottles of beer on the wall, 99 bottles of beer. <!-- .element: class="fragment" -->
-
-            Take one down and pass it around, 98 bottles of beer on the wall. <!-- .element: class="fragment" -->
-            
-            98 bottles of beer on the wall, 98 bottles of beer. <!-- .element: class="fragment" -->
-
-            Take one down and pass it around, 97 bottles of beer on the wall. <!-- .element: class="fragment" -->
-            
-            ... <!-- .element: class="fragment" -->
-
-            Notes: Scénario pour comparer l'écriture des tests selon les outils
-
-            ===
-
-            www.99-bottles-of-beer.net
-
-            <img class="plain" data-src="img/99bottlesofbeer-qrcode.png" />
-
-            Notes: Implémentations de la chanson dans différents langages informatiques
-          </textarea>
-        </section>
-
-        <section data-markdown data-separator-vertical="^\r?\n===\r?\n$">
-          <textarea data-template>
-            ## Outils génériques
-
-            Notes: D'abord présentation des outils génériques dans le monde JS/Web
-
-            Pas de présentation des outils équivalents dans d'autres langages, on suppose
-            que vous connaissez déjà ceux de vos technos respectives (JUnit par exemple)
-
-            ---
-
-            ### Classe testée
-
-            <pre><code class="hljs language-ts stretch" data-trim>
-            class Wall {
-              bottles: Bottle[] = [];
-
-              getNbBottles() {
-                return this.bottles.length;
-              }
-              addBottles(nb) {
-                while (nb--) this.bottles.push(new Bottle());
-              }
-              takeDownBottle(): Bottle {
-                return this.bottles.pop();
-              }
-            }
-            
-            class Bottle {
-              passAround() {
-                throw new Error('TODO');  
-              }
-            }
-            </code></pre>
-
-            Notes: En TypeScript mais le concept reste le même avec d'autres langages
-          </textarea>
-        </section>
-
-        <section
-          data-background-image="img/trinity.jpg"
-          data-background-size="contain"
-          data-background-color="#000"
-          data-markdown
-        >
-          <textarea data-template>
-            Notes: La Sainte Trinité du Hard Rock britanique : Led Zeppelin, Black Sabbath et Deep Purple
-
-            Outils distincts mais qu'on combine très souvent ensemble, combinaison sans doute la plus populaire
-          </textarea>
-        </section>
-        <section data-markdown data-separator-vertical="^\r?\n===\r?\n$">
-          <textarea data-template>
-            ## [Mocha](https://mochajs.org/)
-
-            Framework de tests + Test runner
-
-            <img class="plain" data-src="img/mocha-qrcode.png" />
-
-            ===
-
-            ### Fonctionnalités principales
-
-            - Très peu de configuration nécessaire
-            - Plusieurs styles de tests : QUnit, TDD, BDD
-            - Environnements navigateur et Node.js
-            - Supporte les tests asynchrones
-            - Rechargement dynamique du code
-            - Extensible et intégrable, nombreux plugins : rapports, couverture de code...
-
-            ---
-
-            ## [Chai](https://www.chaijs.com/)
-
-            Bibliothèque d'assertions
-
-            <img class="plain" data-src="img/chai-qrcode.png" />
-
-            ===
-
-            ### Fonctionnalités principales
-
-            - Plusieurs styles d'assertions : Assert, Expect, Should
-            - Syntaxe fluide et chaînable
-            - Nombreux plugins : Promises, DOM, WebDriver...
-
-            ---
-
-            ## [Sinon](https://sinonjs.org/)
-
-            Bibliothèque de Test Doubles
-
-            <img class="plain" data-src="img/sinon-qrcode.png" />
-
-            ===
-
-            ### Fonctionnalités principales
-
-            - Stubs, mocks, spies, etc
-            - Fake Timers
-            - Fake XHR & server
-
-          </textarea>
-        </section>
-        <section>
-          <section data-markdown data-transition="fade">
-            <textarea data-template>
-              ### Tests Mocha/Chai
-
-              #### QUnit "plat" (assert)
-
-              <pre><code class="hljs language-js stretch" data-trim>
-              suite('99 Bottles of Beer')
-              
-              let wall;
-              
-              beforeEach(function() {
-                wall = new Wall();
-                wall.addBottles(99);
-              });
-              
-              test('one beer down', function() {
-                assert.equal(wall.getNbBottles(), 99);
-                const bottle = wall.takeDownBottle();
-                bottle.passAround();
-                assert.equal(wall.getNbBottles(), 98);
-              });
-              </code></pre>
-            </textarea>
-          </section>
-          <section data-markdown data-transition="fade">
-            <textarea data-template>
-              #### TDD (assert)
-
-              <pre><code class="hljs language-js stretch" data-trim>
-              suite('99 Bottles of Beer', function() {
-                let wall;
-  
-                setup(function() {
-                  wall = new Wall();
-                  wall.addBottles(99);
-                });
-              
-                test('one beer down', function() {
-                  assert.equal(wall.getNbBottles(), 99);
-                  const bottle = wall.takeDownBottle();
-                  bottle.passAround();
-                  assert.equal(wall.getNbBottles(), 98);
-                });
-              });            
-              </code></pre>
-            </textarea>
-          </section>
-          <section data-markdown data-transition="fade">
-            <textarea data-template>
-              #### BDD (expect)
-    
-              <pre><code class="hljs language-js stretch" data-trim>
-              describe('99 Bottles of Beer', function() {
-                let wall;
-    
-                beforeEach(function() {
-                  wall = new Wall();
-                  wall.addBottles(99);
-                });
-              
-                it('one beer down', function() {
-                  expect(wall.getNbBottles()).to.equal(99);
-                  const bottle = wall.takeDownBottle();
-                  bottle.passAround();
-                  expect(wall.getNbBottles()).to.equal(98);
-                });
-              });            
-              </code></pre>
-            </textarea>
-          </section>
-          <section data-markdown data-transition="fade">
-            <textarea data-template>
-              #### BDD (should)
-    
-              <pre><code class="hljs language-js stretch" data-trim>
-              describe('99 Bottles of Beer', function() {
-                let wall;
-    
-                beforeEach(function() {
-                  wall = new Wall();
-                  wall.addBottles(99);
-                });
-              
-                it('one beer down', function() {
-                  wall.getNbBottles().should.equal(99);
-                  const bottle = wall.takeDownBottle();
-                  bottle.passAround();
-                  wall.getNbBottles().should.equal(98);
-                });
-              });            
-              </code></pre>
-            </textarea>
-          </section>
-        </section>
-
-        <section
-          data-background-image="img/jasmine-cover.jpg"
-          data-background-size="contain"
-          data-background-color="#fff"
-          data-markdown
-        >
-          <textarea data-template>
-            Notes: Le grand classique thrash metal que tout le monde connaît : Metallica
-            
-            Existe depuis longtemps, toujours très populaire, encore actif, mais ça fait pas mal de temps
-            qu'ils n'ont pas sorti quelque chose de vraiment novateur
-          </textarea>
-        </section>
-        <section data-markdown data-separator-vertical="^\r?\n===\r?\n$">
-          <textarea data-template>
-            ## [Jasmine](https://jasmine.github.io/)
-
-            Framework de tests
-
-            <img class="plain" data-src="img/jasmine-qrcode.png" />
-
-            ===
-
-            ### Fonctionnalités principales
-
-            - Style de tests BDD
-            - Inclut ses propres assertions et test doubles
-            - Supporte les tests asynchrones
-            - Environnements navigateur et Node.js
-            - Extensible et intégrable, nombreux plugins : rapports, couverture de code...
-            - Intégration possible avec Ruby et Python
-          </textarea>
-        </section>
-        <section data-markdown data-separator-vertical="^\r?\n===\r?\n$">
-          <textarea data-template>
-            ### Test Jasmine
-
-            <pre><code class="hljs language-js stretch" data-trim>
-            describe('99 Bottles of Beer', function() {
-              let wall;
-  
-              beforeEach(function() {
-                wall = new Wall();
-                wall.addBottles(99);
-              });
-            
-              it('one beer down', function() {
-                expect(wall.getNbBottles()).toBe(99);
-                const bottle = wall.takeDownBottle();
-                bottle.passAround();
-                expect(wall.getNbBottles()).toBe(98);
-              });
-            });            
-            </code></pre>
-          </textarea>
-        </section>
-
-        <section
-          data-background-image="img/jest-cover.jpg"
-          data-background-color="#000"
-          data-markdown
-        >
-          <textarea data-template>
-            Notes: Groupe de thrash metal fondé par un ancien de Metallica qu'il a largement dépassé d'un point de vue technique : Megadeth
-            
-            Basé à l'origine sur Jasmine mais avec plein de fonctions en plus
-
-            Très actif
-          </textarea>
-        </section>
-        <section data-markdown data-separator-vertical="^\r?\n===\r?\n$">
-          <textarea data-template>
-            ## [Jest](https://jestjs.io/)
-
-            Framework de tests
-
-            <img class="plain" data-src="img/jasmine-qrcode.png" />
-
-            Note: Projet Facebook
-
-            Directement intégré au toolchain React
-
-            Très populaire même hors React
-
-            ===
-
-            ### Fonctionnalités principales
-
-            - Très peu de configuration nécessaire
-            - Style de tests BDD
-            - Vaste API d'assertions, test doubles, etc.
-            - Exécution parallèle des tests
-            - Extensible et intégrable, nombreux plugins : rapports, couverture de code...
-
-          </textarea>
-        </section>
-        <section data-markdown data-separator-vertical="^\r?\n===\r?\n$">
-          <textarea data-template>
-            ### Test Jest
-
-            <pre><code class="hljs language-js stretch" data-trim>
-            describe('99 Bottles of Beer', function() {
-              let wall;
-  
-              beforeEach(function() {
-                wall = new Wall();
-                wall.addBottles(99);
-              });
-            
-              test('one beer down', function() {
-                expect(wall.getNbBottles()).toBe(99);
-                const bottle = wall.takeDownBottle();
-                bottle.passAround();
-                expect(wall.getNbBottles()).toBe(98);
-              });
-            });            
-            </code></pre>
-          </textarea>
-        </section>
-
-        <section
-          data-background-image="img/cucumber-cover.jpg"
-          data-background-size="contain"
-          data-background-color="#000"
-          data-markdown
-        >
-          <textarea data-template>
-            Notes: Le truc inclassable : System of a Down
-
-            Mélange les genres, ne ressemble à rien d'autre : métal alternatif, nu metal, hard rock, etc
-
-          </textarea>
-        </section>
-        <section data-markdown data-separator-vertical="^\r?\n===\r?\n$">
-          <textarea data-template>
-              ## [Cucumber](https://cucumber.io/)
-  
-              Framework de tests
-  
-              <img class="plain" data-src="img/cucumber-qrcode.png" />
-    
-              Notes: Le chainon manquant entre les specs, la validation et les développeurs
-
-              ===
-
-              ### Fonctionnalités principales
-  
-              - Basé sur 2 piliers :
-                - Gherkin, langage de spécifications BDD
-                - "Steps", code exécutable proprement dit
-              - Supporte de très nombreux langages
-              - S'intègre à la plupart des environnements
-              - Génération de code ("snippets")
-    
-              Notes: 
-              Gherkin : Outil de communication, spécification exécutable, lisible par
-              tout le monde
-          </textarea>
-        </section>
-        <section>
-          <section
-            data-markdown
-            data-separator-vertical="^\r?\n===\r?\n$"
-            data-transition="fade"
-          >
-            <textarea data-template>
-              ### Scénario Gherkin
-
-              <pre><code class="hljs language-gherkin stretch" data-trim>
-              Feature: 99 Bottles of Beer
-    
-              Background: 
-                Given there are 99 bottles of beer on the wall
-    
-              Scenario: One beer down
-                When I take one bottle down 
-                 And I pass the bottle around
-                Then there should be 98 bottles of beer on the wall
-              </code></pre>
-
-              Notes: Format lisible, colle bien aux modèles agiles
-            </textarea>
-          </section>
-          <section
-            data-markdown
-            data-separator-vertical="^\r?\n===\r?\n$"
-            data-transition="fade"
-          >
-            <textarea data-template>
-              ### Scénario Gherkin (en français)
-
-              <pre><div class="hljs language-gherkin stretch" style="padding: 5px"><span class="hljs-comment"># language: fr</span>
-              <span class="hljs-keyword">Fonctionnalité</span>: 99 Bouteilles de Bière
-              
-              <span class="hljs-keyword">Contexte</span>: 
-                <span class="hljs-keyword">Étant donné qu'</span>il y a 99 bouteilles de bière sur le mur
-
-              <span class="hljs-keyword">Scénario</span>: Une bière en moins
-                 <span class="hljs-keyword">Quand</span> je prends une bouteille
-                <span class="hljs-keyword">Et que</span> je passe la bouteille autour de moi
-                 <span class="hljs-keyword">Alors</span> il devrait y avoir 98 bouteilles de bière sur le mur
-              </div></pre>
-
-              Notes: Multilinguisme très intéressant pour les specs
-            </textarea>
-          </section>
-        </section>
-        <section data-markdown data-separator-vertical="^\r?\n===\r?\n$">
-          <textarea data-template>
-            ### Steps Cucumber
-
-            <pre><code class="hljs language-js stretch" data-trim>
-            class World() {
-              constructor() {
-                this.wall = new Wall();
-              }
-            }
-            setWorldConstructor(world);
-  
-            Given('there are {int} bottles of beer on the wall', function(nb) {
-              this.wall.addBottles(nb);
-            });
-            When('I take one bottle down ', function() {
-              this.bottle = this.wall.takeDownBottle();
-            });
-            When('I pass the bottles around', function() {
-              this.bottle.passAround();
-            });
-            Then('there should be {int} bottles of beer on the wall', function(nb) {
-              expect(this.wall.getNbBottles()).toBe(nb);
-            });
-            </code></pre>
-          </textarea>
-        </section>
-
-        <section>
-          <section
-            data-background-image="img/karma.jpg"
-            data-background-size="contain"
-            data-background-color="#fff"
-            data-markdown
-          >
-            <textarea data-template>
-              Notes: On conclut sur les outils génériques
-
-              L'ampli Marshall "Murder One" de Lenny Kilmister le chanteur de Motörhead
-            </textarea>
-          </section>
-          <section
-            data-background-image="img/motorhead-murderone.jpg"
-            data-background-size="contain"
-            data-background-color="#000"
-            data-markdown
-          ></section>
-        </section>
-        <section data-markdown data-separator-vertical="^\r?\n===\r?\n$">
-          <textarea data-template>
-            ## [Karma](https://karma-runner.github.io/)
-
-            Test runner
-
-            <img class="plain" data-src="img/karma-qrcode.png" />
-
-            Notes: Test runner générique avec plein de fonctionnalités intéressantes pour
-            améliorer le fonctionnement d'autres outils de tests
-            
-            ===
-
-            ### Fonctionnalités principales
-
-            - Supporte Mocha, Jasmine, etc.
-            - Extensible, nombreux plugins : lanceurs de navigateurs, préprocesseurs, reporters, exécution parallèle, etc
-            - Rechargement dynamique du code
-
-            Notes: Intégré par défaut avec Angular
-          </textarea>
-        </section>
-
-        <section data-markdown data-separator-vertical="^\r?\n===\r?\n$">
-          <textarea data-template>
-            ## Solutions end-to-end
-
-            ---
-
-            ### Les défis du E2E Web
-
-            - Interactions <!-- .element: class="fragment" -->
-            - Structure des pages <!-- .element: class="fragment" -->
-            - Timing <!-- .element: class="fragment" -->
-            - Asynchronisme <!-- .element: class="fragment" -->
-
-            Notes:
-
-            Interactions inclut navigations => voir applications SPA
-
-            Tester l'existence d'éléments dynamiques sur la page: 
-            - Sélecteurs : les frameworks compliquent parfois la tâche (coucou React VDOM ou JSF)
-            - Trop tôt / Trop tard / Timeouts
-
-            Modèles asynchrones JS pour l'écriture des tests :
-            - Callbacks
-            - Promises
-            - Syntaxe async/await
-            - Implicite ou explicite (smart assertions)
-
-            ---
-
-            ### Page testée
-
-            <pre><code class="hljs language-html stretch" data-trim>
-              <div class="wall">
-                <div class="bottle" id="beer-1" onclick="takeDownBottle()"></div>
-                <div class="bottle" id="beer-2" onclick="takeDownBottle()"></div>
-                ...
-                <div class="bottle" id="beer-98" onclick="takeDownBottle()"></div>
-                <div class="bottle" id="beer-99" onclick="takeDownBottle()"></div>
-              </div>
-
-              <button id="pass-bottle-around" onclick="passBottleAround()">Pass bottle around</button>
-
-              <script>
-                let bottle;
-                function takeDownBottle(event) {...}
-                function passBottleAround() {...}
-              </script>
-            </code></pre>
-
-            Notes: En HTML pur mais le concept reste le même avec des frameworks web
-          </textarea>
-        </section>
-
-        <section
-          data-background-image="img/selenium-cover.jpg"
-          data-background-size="contain"
-          data-background-color="#000"
-          data-markdown
-        >
-          <textarea data-template>
-            Notes: AC/DC, les papys du hard rock
-
-            Forte influence, tout le monde connait même ta mère. 
-            
-            Plus gros tube : Highway to Hell : tous ceux qui ont écrit des tests Selenium peuvent en parler.
-            
-            On leur doit beaucoup, ils tournent encore mais ça marche surtout sur la nostalgie, il est peut-être temps de passer à autre chose
-          </textarea>
-        </section>
-        <section data-markdown data-separator-vertical="^\r?\n===\r?\n$">
-          <textarea data-template>
-            ## [Selenium "classique"](https://www.seleniumhq.org/)
-
-            - Selenium RC : Serveur d'automatisation navigateur écrit en Java
-            - Selenium IDE : Environnement de développement basé sur des plugins Firefox et Chrome
-
-            <img class="plain" data-src="img/selenium-qrcode.png" />
-            
-            Notes: RC = Remote Control
-
-            Parler des problématiques intégration continue
-          </textarea>
-        </section>
-        <section data-markdown data-separator-vertical="^\r?\n===\r?\n$">
-          <textarea data-template>
-            ## Le futur : [Webdriver](https://www.w3.org/TR/webdriver/)
-
-            Selenium 2
-            
-            Standard W3C depuis juin 2018
-
-            Fonctionnement autonome ("standalone")
-
-            <img class="plain" data-src="img/webdriver-qrcode.png" />
-
-            Notes: Issu des travaux du projet Selenium
-
-            Supporté par tous les navigateurs
-
-            Lingua franca des frameworks de Tests
-
-            Selenium not dead!
-          </textarea>
-        </section>
-
-        <section
-          data-background-image="img/protractor-cover.jpg"
-          data-background-size="contain"
-          data-background-color="#000"
-          data-markdown
-        >
-          <textarea data-template>
-            Notes: La secte Angular : black metal Belzebubs
-
-            Black metal sous-genre de métal extrême considéré par beaucoup comme hermétique voire sectaire
-            Incantations cabalistiques : providers, modules, directives, injection de dépendances
-          </textarea>
-        </section>
-        <section data-markdown data-separator-vertical="^\r?\n===\r?\n$">
-          <textarea data-template>
-            ## [Protractor](https://www.protractortest.org/)
-
-            Framework de tests E2E pour Angular/AngularJS
-            
-            <img class="plain" data-src="img/protractor-qrcode.png" />
-            
-            Notes: Intégré par défaut à la toolchain Angular
-            
-            ---
-
-            ### Fonctionnalités principales
-
-            - Test runner en ligne de commande
-            - Supporte Selenium et tous les navigateurs compatibles avec WebDriver + mode headless
-            - Exécution parallèle en mode "sharding"
-            - Compatible intégration continue
-
-            Note: IC : installe automatiquement WebDriver par exemple
-            
-            Sharding : plusieurs instances de navigateurs
-
-            ---
-
-            ### Expérience développeur
-
-            - Supporte plusieurs frameworks : Jasmine, Mocha, Cucumber, custom
-            - Modèle synchrone avec "control flow"
-            - API de sélecteurs "Locators" CSS, XPath et Angular
-            - Extensible, nombreux plugins
-
-            Notes: 
-
-            Accès à tout l'écosystème des frameworks respectifs, 
-            notamment couverture de code (istanbul par exemple)
-            et enregistrement vidéo
-
-            ---
-
-            ### Limites
-
-            - Spécifique à AngularJS/Angular
-            - Gestion complexe de l'asynchronisme (surtout avec Mocha)
-            - Support Angular moins avancé que AngularJS
-            - Gestion limitée du timing et des échecs
-            - Support debugging limité
-            - Pas de rechargement dynamique du code
-            - Pas intégrable
-
-            Notes:
-            Echecs : plugins pour retry
-          </textarea>
-        </section>
-        <section data-markdown data-separator-vertical="^\r?\n===\r?\n$">
-          <textarea data-template>
-            ### Test Protractor (Jasmine)
-
-            <pre><code class="hljs language-js stretch" data-trim>
-              import { browser, by, element } from 'protractor';
-
-              describe('99 Bottles of Beer', () => {
-                before(() => {
-                  browser.get('/99beers.html');
-                });
-              
-                it('one beer down', () => {
-                  const bottles = element.all(by.css('.wall .bottle'));
-                  expect(bottles.count()).toBe(99);
-                  bottles.first().click();
-                  element(by.css('#pass-bottle-around')).click();
-                  expect($$('.wall .bottle').count()).toBe(98);
-                });
-              });            
-            </code></pre>
-          </textarea>
-        </section>
-
-        <section
-          data-background-image="img/puppeteer-cover.jpg"
-          data-background-size="contain"
-          data-background-color="#000"
-          data-markdown
-        >
-          <textarea data-template>
-            Notes: Rapide, puissant, bourrin, sale : métal industriel Rammstein
-
-            On met les mains dans le cambouis mais on sais exactement ce qui se passe sous le capot.
-          </textarea>
-        </section>
-        <section data-markdown data-separator-vertical="^\r?\n===\r?\n$">
-          <textarea data-template>
-            ## [Puppeteer](https://pptr.dev/)
-
-            Bibliothèque de pilotage Chrome via DevTools
-
-            <img class="plain" data-src="img/puppeteer-qrcode.png" />
-            
-            Notes: Pas spécifique aux tests, bibliothèque polyvalente
-
-            ---
-
-            ### Fonctionnalités principales
-
-            - Outil polyvalent
-            - API puissante basée sur DevTools
-            - Mode headless
-            - Captures écrans et PDF
-            - Intégrable avec tout type de framework
-            - Compatible intégration continue
-
-            Notes:
-
-            Evoquer utilisation pour génération de rapport
-
-            Capture Vidéo possible via bibliothèque tierce
-            
-            IC : installation automatique de Chromium sous forme de dépendance
-
-            ---
-
-            ### Expérience développeur
-
-            - Modèle asynchrone (Promises natives)
-            - Sélecteurs CSS et XPath
-            - Exécution distante de code
-
-            ---
-
-            ### Limites
-
-            - Gestion manuelle du timing et des échecs (timeouts)
-            - Supporte uniquement Chrome (mais travail en cours sur Firefox)
-
-            Notes: Revers de la médaille d'un outil bas niveau
-
-          </textarea>
-        </section>
-        <section data-markdown data-separator-vertical="^\r?\n===\r?\n$">
-          <textarea data-template>
-            ### Test Puppeteer (Mocha/Chai)
-
-            <pre><code class="hljs language-js stretch" data-trim>
-              const puppeteer = require('puppeteer');
-
-              describe('99 Bottles of Beer', () => {
-                let browser, page;
-
-                before(async () => {
-                  browser = await puppeteer.launch();
-                  page = await browser.newPage();
-                  await page.goto('http://hostname/99beers.html');
-                });
-                after(async () => {
-                  await browser.close();
-                });
-              
-                it('one beer down', async () => {
-                  const bottles = await page.$$('.wall .bottle');
-                  expect(bottles).to.have.lengthOf(99);
-                  await bottles.first().click();
-                  await page.click('#pass-bottle-around');
-                  expect(await page.$$('.wall .bottle')).to.have.lengthOf(98);
-                });
-              });            
-            </code></pre>
-          </textarea>
-        </section>
-
-        <section
-          data-background-image="img/cypress-cover.jpg"
-          data-background-size="contain"
-          data-background-color="#000"
-          data-markdown
-        >
-          <textarea data-template>
-            Notes: le genre le plus accessible et mainstream du métal: glam metal Mötley Crüe
-            
-            Clinquant, des strass et des paillettes, des pantalons moulants, des tatouages et des coupes de cheveux improbables
-            
-            Ca passe à la radio, ta petite soeur adore, c'est efficace et fun
-
-            Fait aimer les tests à ceux qui n'aiment pas les tests
-
-            Certains parti-pris et quelques limites qui peuvent rebuter les amateurs d'autres styles
-          </textarea>
-        </section>
-        <section data-markdown data-separator-vertical="^\r?\n===\r?\n$">
-          <textarea data-template>
-            ## [Cypress](https://www.cypress.io/)
-
-            Environnement de tests complet
-
-            <img class="plain" data-src="img/cypress-qrcode.png" />
-            
-            ---
-
-            ### Fonctionnalités principales
-
-            - IDE graphique basé sur Electron + test runner en ligne de commande
-            - Supporte Chrome et Electron + mode headless
-            - Captures écrans et vidéos
-            - Compatible intégration continue
-
-            Notes:
-
-            IC supporte plein de trucs : https://docs.cypress.io/guides/guides/continuous-integration.html#Examples
-
-            ---
-
-            ### Expérience développeur
-
-            - Basé sur Mocha/Chai/Sinon, style BDD
-            - Modèle synchrone avec pseudo-Promises
-            - Sélecteurs jQuery
-            - Gestion automatique du timing et des échecs ("Retry-ability")
-
-            ...
-
-            Notes: 
-
-            Accès à tout l'écosystème Mocha/Chai/Sinon
-
-            ===
-
-            ...
-
-            - Rechargement dynamique du code
-            - Debugging et exécution pas à pas avec inspecteur et voyage dans le temps
-            - S'exécute dans le navigateur, accès direct aux DOM
-            - Extensible, nombreux plugins dont Cucumber
-
-            Notes:
-
-            Exécution dans navigateur à double tranchant : pas accès aux ressources locales
-            
-            Plugins : https://docs.cypress.io/plugins/index.html
-
-            ---
-
-            ### Limites
-
-            - Supporte uniquement Chrome et Electron
-            - Pas d'exécution parallèle (nécessite plusieurs machines)
-            - Pas intégrable
-            - Pas de couverture de code
-
-            Notes: 
-            
-            Parallélisation tient à la nature de l'archi in-browser
-
-            Un gars de Cypress a même écrit un article de blog pour 
-            expliquer en quoi la couverture de code ne sert à rien en E2E
-            https://www.cypress.io/blog/2018/12/20/element-coverage/
-            => parti-pris
-          </textarea>
-        </section>
-        <section data-markdown data-separator-vertical="^\r?\n===\r?\n$">
-          <textarea data-template>
-            ### Test Cypress
-
-            <pre><code class="hljs language-js stretch" data-trim>
-              describe('99 Bottles of Beer', () => {
-                before(() => {
-                  cy.visit('/99beers.html');
-                });
-              
-                it('one beer down', () => {
-                  cy.get('.wall .bottle')
-                    .should('have.length', 99)
-                    .first()
-                    .click();
-                  cy.get('#pass-bottle-around').click();
-                  cy.get('.wall .bottle')
-                    .should('have.length', 98);
-                });
-              });            
-            </code></pre>
-          </textarea>
-        </section>
-
-        <section>
-          <section
-            data-background-image="img/testcafe-cover.jpg"
-            data-background-size="contain"
-            data-background-color="#000"
-            data-markdown
-          >
-            <textarea data-template>
-              Notes: Iron Maiden le seul groupe dont le chanteur pilote l'avion lors des tournées
-
-              Basé sur une architecture spécifique et originale d'injection de proxy navigateur
-            </textarea>
-          </section>
-          <section
-            data-background-image="img/ironmaiden-aceshigh.jpg"
-            data-background-size="contain"
-            data-background-color="#000"
-            data-markdown
-          ></section>
-          <section
-            data-background-image="img/ironmaiden-edforceone.jpg"
-            data-background-size="contain"
-            data-background-color="#000"
-            data-markdown
-          ></section>
-        </section>
-        <section data-markdown data-separator-vertical="^\r?\n===\r?\n$">
-          <textarea data-template>
-            ## [TestCafé](https://devexpress.github.io/testcafe/)
-            
-            Framework de tests avec une architecture originale :
-            - Un proxy injecté côté navigateur (Hammerhead)
-            - Un test runner côté Node.js
-
-            <img class="plain" data-src="img/testcafe-qrcode.png" />
-
-            ---
-
-            ### Fonctionnalités principales
-
-            - Test runner en ligne de commande
-            - TestCafé Studio : IDE commercial
-            - Supporte tous les navigateurs : desktop, mobile, cloud, headless...
-            - Captures écrans et vidéos
-            - Exécution parallèle
-            - Compatible intégration continue
-
-            Notes:
-
-            IC supporte plein de trucs : https://devexpress.github.io/testcafe/documentation/continuous-integration/
-
-            ---
-
-            ### Expérience développeur
-
-            - Style de tests "plat"
-            - Modèle asynchrone (Promises natives + spécifiques)
-            - API de sélecteurs "Selectors" puissance et extensible
-            - Gestion automatique du timing et des échecs ("Smart Assertions")
-
-            ...
-
-            Notes: 
-            
-            Bibliothèques de sélecteurs pour Angular, React etc : https://devexpress.github.io/testcafe/documentation/test-api/selecting-page-elements/framework-specific-selectors.html
-
-            ===
-
-            ...
-
-            - Rôles utilisateurs
-            - Debugging et exécution pas à pas
-            - Rechargement dynamique du code
-            - Extensible et intégrable
-
-            ---
-
-            ### Limites
-
-            - Pas de support natif Cucumber
-            - Pas de couverture de code
-          </textarea>
-        </section>
-        <section data-markdown data-separator-vertical="^\r?\n===\r?\n$">
-          <textarea data-template>
-            ### Test TestCafé
-
-            <pre><code class="hljs language-js stretch" data-trim>
-              fixture('99 Bottles of Beer')
-                .page('http://hostname/99beers.html');
-              
-              test('one beer down', async t => {
-                const bottles = Selector('.wall .bottle');
-                await t.expect(bottles.count).eql(99);
-                await t.click(bottles.nth(0));
-                await t.click('#pass-bottle-around');
-                await t.expect(bottles.count).eql(98);
-              });
-            </code></pre>
-          </textarea>
-        </section>
-
-        <section
-          data-background-image="img/codeceptjs-cover.jpg"
-          data-background-size="contain"
-          data-background-color="#000"
-          data-markdown
-        >
-          <textarea data-template>
-            Notes: Apocalyptica, réinterprète les classiques métal au violoncelle
-
-            Interface commune au dessus de différents moteurs
-          </textarea>
-        </section>
-        <section data-markdown data-separator-vertical="^\r?\n===\r?\n$">
-          <textarea data-template>
-            ## [CodeceptJS](https://codecept.io/)
-
-            Framework de tests multi-cibles
-
-            <img class="plain" data-src="img/codeceptjs-qrcode.png" />
-            
-            ---
-
-            ### Fonctionnalités principales
-
-            - Test runner en ligne de commande
-            - Architecture extensible : pilotes WebDriver, Puppeteer, Protractor, Nightmare, Appium...
-            - Supporte tous les navigateurs : desktop, mobile, cloud, headless...
-            - Nombreux formats de rapport
-            - Compatible intégration continue
-            
-            ...
-            
-            Notes: Accès aux reporters Mocha par exemple
-
-            ===
-
-            ...
-
-            - Captures écrans
-            - Exécution parallèle
-            - Support Cucumber natif
-            - Data-Driven Tests
-
-            ---
-
-            ### Expérience développeur
-
-            - Style de tests "plat"
-            - Modèle mixte synchrone/asynchrone (Promises natives)
-            - API de sélecteurs "Locators" puissance et extensible : CSS, XPath, sémantique, etc.
-            - Gestion automatique du timing et des échecs ("SmartWait")
-            
-            ...
-
-            Notes: Asynchrone quand on doit obtenir des données du navigateur, synchrone sinon
-            
-            Locators acceptent les chaînes de caractères comme le label d'un bouton par exemple
-
-            ===
-
-            ...
-
-            - Coeur du runner basé sur Mocha
-            - Multi-sessions et autologin
-            - Générateurs de code
-            - Injection de dépendances (helpers, page objects...)
-            - Debugging et shell interactif
-            - Extensible et intégrable, nombreux plugins
-
-            ---
-
-            ### Limites
-
-            - Pas de rechargement dynamique du code
-            - Pas d'enregistrement vidéo
-          </textarea>
-        </section>
-        <section data-markdown data-separator-vertical="^\r?\n===\r?\n$">
-          <textarea data-template>
-            ### Test CodeceptJS
-
-            <pre><code class="hljs language-js stretch" data-trim>
-              Feature('99 Bottles of Beer');
-
-              Before((I) => {
-                I.amOnPage('/99beers.html');
-              })
-              
-              Scenario('one beer down', (I) => {
-                const bottles = locate('.wall .bottle');
-                I.seeNumberOfElements(bottles, 99);
-                I.click(bottles.first());
-                I.click('#pass-bottle-around');
-                I.seeNumberOfElements(bottles, 98);
-              });
-            </code></pre>
+            Tout le monde est quasiment sûrs de trouver chaussure à son pied
           </textarea>
         </section>
 
@@ -1417,13 +72,45 @@
           <h1>Le projet Instakittens</h1>
         </section>
 
+        <section data-markdown data-separator-vertical="^\r?\n===\r?\n$">
+          <textarea data-template>
+            ## Pourquoi Instakittens ?
+
+            [TodoMVC](http://todomvc.com/), mais pour les tests
+
+            http://todomvc.com/
+
+            <img class="plain" data-src="img/instakittens-qrcode.png" />
+
+            Notes: TodoMVC : comparatifs de frameworks front-end
+
+            J'en profite pour dire que j'utilise les QR Code pour que vous puissiez flasher les liens
+
+            ---
+
+            ## Pourquoi pas TodoMVC ?
+
+            Pas assez représentatif d'une appli réelle <!-- .element: class="fragment" -->
+
+            - Modèle de données trop simple <!-- .element: class="fragment" -->
+            - Pas de backend <!-- .element: class="fragment" -->
+            - Pas de droits utilisateurs <!-- .element: class="fragment" -->
+
+            Notes: J'ai cherché un équivalent pour les frameworks de tests mais sans succès
+
+            TodoMVC a déjà sa suite de tests donc duplication d'effort
+         </textarea
+          >
+        </section>
+
         <section>
           <section data-markdown>
             <textarea data-template>
               ## [Le projet Instakittens](https://github.com/fredericbonnet/instakittens)
 
-              Application de type Instagram, mais pour les photos de chatons
+              Instagram, mais pour les photos de chatons
 
+              https://github.com/fredericbonnet/instakittens
               <img class="plain" data-src="img/instakittens-qrcode.png" />
             </textarea>
           </section>
@@ -1435,6 +122,9 @@
                 Black Metal Cats (@evilbmcats)</a
               >
             </p>
+            <aside class="notes">
+              Grumpy Cat (paix à son âme)
+            </aside>
           </section>
           <section
             data-background-color="#000"
@@ -1535,14 +225,14 @@
           <textarea data-template>
             ## Objectifs
 
-            [TodoMVC](http://todomvc.com/), mais pour les tests
-
             - Embryons d'applications testables <!-- .element: class="fragment" -->
-            - Représentatif d'une application réelle <!-- .element: class="fragment" -->
+            - Représentatives d'une application réelle <!-- .element: class="fragment" -->
             - Minimum de code applicatif <!-- .element: class="fragment" -->
             - Configuration par défaut dans la mesure du possible <!-- .element: class="fragment" -->
 
             Notes: Pas un prototype mais un embryon
+
+            Conf par défaut : pouvoir comparer la simplicité de mise en place
           </textarea>
         </section>
         <section data-markdown data-separator-vertical="^\r?\n===\r?\n$">
@@ -1574,6 +264,8 @@
             - Restreint : Contenu visible uniquement par les utilisateurs enregistrés <!-- .element: class="fragment" -->
             - Privé : Contenu visible uniquement par le propriétaire <!-- .element: class="fragment" -->
 
+            Notes: Règles métier que l'appli devra respecter
+            
             ===
 
             ### Photos
@@ -1587,22 +279,1446 @@
             Les utilisateurs enregistrés peuvent poster des commentaires sous les photos des albums publics ou restreints
           </textarea>
         </section>
+
+        <section
+          data-markdown
+          data-separator-vertical="^\r?\n===\r?\n$"
+          data-background-image="img/marius-masalar-410695-unsplash.jpg"
+          data-background-color="#000"
+          data-background-opacity="0.5"
+        >
+          <textarea data-template>
+            # Un peu de jargon
+
+            Notes: Un peu come le solfège en musique, il y a des concepts à connaître
+          </textarea>
+        </section>
+
+        <section data-markdown data-separator-vertical="^\r?\n===\r?\n$">
+          <textarea data-template>
+            ## Un peu de jargon
+
+            - Niveaux de tests : tests unitaires, d'intégration, fonctionnels, end-to-end... <!-- .element: class="fragment" -->
+            - Méthodologies : TDD, BDD, ATDD... <!-- .element: class="fragment" -->
+            - Techniques : Assertions, mocks, stubs, spies... <!-- .element: class="fragment" -->
+            - Outils : Test runner, test reporter... <!-- .element: class="fragment" -->
+
+            Notes: Présentation des différentes catégories de termes et de concepts
+
+            ---
+
+            ## Les niveaux de tests
+
+            [CFTL](http://www.cftl.fr/) : Comité Français des Tests Logiciels
+
+            1. Tests unitaires <!-- .element: class="fragment" -->
+            2. Tests d'intégration <!-- .element: class="fragment" -->
+            3. Tests système <!-- .element: class="fragment" -->
+            4. Tests d'acceptation <!-- .element: class="fragment" -->
+
+            ===
+
+            ### Tests unitaires
+
+            Évaluent la conformité d'un composant isolément <!-- .element: class="fragment" -->
+
+            Note: Un seul composant, on simule le reste
+
+            ===
+
+            ### Tests d'intégration
+
+            Évaluent la compatibilité mutuelle d'un sous-ensemble de composants de l'application <!-- .element: class="fragment" -->
+
+            Notes: Deux ou plusieurs composants qui doivent fonctionner ensemble
+
+            On va plutôt tester les contrats d'interface
+
+            On simule le reste
+
+            ===
+
+            ### Tests système
+
+            Appelés aussi tests fonctionnels
+
+            Évaluent la conformité de l'application aux exigences <!-- .element: class="fragment" -->
+            
+            Note: On peut simuler les applications tierces ou pas selon l'environnement
+            Par exemple : base de données
+
+            ===
+
+            ### Tests d'acceptation / recette
+
+            Métier à part entière, distinct du développement proprement dit <!-- .element: class="fragment" -->
+            
+            Notes:
+            
+            Dans le domaine du développement logiciel, c'est parfois automatisé mas pas toujours. 
+            Dans ce cas il y a de grandes chances pour que ce soit avec une solution standard de
+            pilotage d'appli interactive (typiquement Selenium pour les applis web)
+
+            Dans les projets au forfait on fait souvent ces tests 2 fois : une fois chez le fournisseur,
+            et l'autre chez le client, après s'être mis d'accord sur un cahier de recette
+
+            La principale source d'incompréhension dans un projet logiciel c'est la divergence entre les tests 
+            écrits par les développeurs et ceux du cahier de recette : nécessite des bonnes pratiques de
+            communication (voir Cucumber)
+
+            ---
+
+            ## Les méthodologies
+
+            - TDD <!-- .element: class="fragment" -->
+            - BDD <!-- .element: class="fragment" -->
+            - ATDD <!-- .element: class="fragment" -->
+
+            ===
+
+            ### TDD
+
+            Test Driven Development
+
+            <span class="fragment">
+              <img data-src="img/extreme-programming.jpg" alt="Extreme Programming" class="plain" width="33%" />
+              <blockquote>All tests are green, Brothers! Let's pray the Dark Lord!</blockquote>
+            </span>
+
+            Notes: Pratique de l'Extreme Programming
+
+            On code d'abord les tests pour qu'ils échouent, ensuite on code jusqu'à ce qu'ils fonctionnent
+
+            Orienté développeur
+
+            Pas nécessaire de faire du TDD "pur" pour acquérir de bonnes pratiques
+
+            TCR : Test Commit Revert : encore plus extreme (Blackened Death Metal)
+
+            ===
+
+            ### BDD
+
+            Behavior Driven Development
+
+            - DSL : Domain-specific language, langage dédié à un domaine applicatif <!-- .element: class="fragment" -->
+            - DDD : Domain-driven design, méthodologie de conception logicielle axée sur la logique métier <!-- .element: class="fragment" -->
+
+            Notes:
+            
+            Evolution/réaction au TDD basée sur la collaboration entre toutes les parties prenantes d'un projet : développeurs, testeurs, utilisateurs...
+
+            Orienté équipe
+
+            DDD et DSL : concepts liés
+
+            ===
+
+            ### ATDD
+
+            Acceptance Test Driven Development
+
+            Notes: Englobe tous les concepts xDD avec un focus sur les besoins client
+
+            Le cahier de recette dirige le développement
+
+            Orienté business
+
+            ---
+
+            ## Les techniques
+
+            - Assertions <!-- .element: class="fragment" -->
+            - Test Doubles <!-- .element: class="fragment" -->
+
+            Notes: Techniques d'écriture des tests automatisés
+
+            ===
+
+            ### Assertions
+
+            Dans le contexte des tests, expression permettant de vérifier l'état du système en cours de test <!-- .element: class="fragment" -->
+            
+            Un test contient au moins une assertion <!-- .element: class="fragment" -->
+
+            Notes: Assertion = prédicat + exception
+            
+            ===
+
+            ### Test doubles
+
+            Concept générique <!-- .element: class="fragment" -->
+
+            - Stubs (ou bouchons) <!-- .element: class="fragment" -->
+            - Mocks (ou objet factice) <!-- .element: class="fragment" -->
+            - Spy (ou espion) <!-- .element: class="fragment" -->
+
+            Notes: Englobe plusieurs concepts proches avec quelques nuances:
+
+            - Stubs : réponses pré-enregistrées respectant le contrat d'interface. S'applique 
+              aux fonctions, aux services, etc
+            - Mocks : application orientée objet des stubs, avec comportement dépendant du contexte
+            - Spy : greffon sur objet ou fonction existante
+            
+            ---
+
+            ## Outils
+
+            - Test Runner <!-- .element: class="fragment" -->
+            - Test Reporter <!-- .element: class="fragment" -->
+            - Testing Framework <!-- .element: class="fragment" -->
+
+            Notes:
+            - Test Runner : exécute les tests
+
+            - Test Reporter : produit un rapport d'exécution des tests.
+
+            Différents formats, fonctions type couverture de code, intégration avec tableaux de bord, etc
+
+            - Testing Framework : permet l'écriture des tests : structuration du code par exemple
+            
+            ---
+
+            ## Termes usuels
+
+            - White Box / Black Box <!-- .element: class="fragment" -->
+            - End-to-End <!-- .element: class="fragment" -->
+
+            Note: Pour conclure sur le jargon
+
+            ===
+
+            ### Tests "White Box" / "Black Box"
+
+            - Test "White Box" : dépend de la structure interne de l'objet du test <!-- .element: class="fragment" -->
+            - Test "Black Box" : dépend de la définition de l'objet du test <!-- .element: class="fragment" -->
+
+            Notes: Termes qui reviennent souvent
+
+            En général:
+            - White box plutôt développeur / TU
+            - Black box plutôt spécification / TI/TF
+
+            ===
+
+            ### Tests End-to-End (ou E2E)
+
+            - Tests fonctionnels de type "Black Box" <!-- .element: class="fragment" -->
+            - Basés sur le contrat d'interface (services) ou l'interface homme-machine (applications interactives) <!-- .element: class="fragment" -->
+            - Font appel à toutes les couches de l'application <!-- .element: class="fragment" -->
+            - Dans le domaine des applications web, implique en général le pilotage d'un navigateur <!-- .element: class="fragment" -->
+
+            Notes: Dernier point de la partie jargon
+
+            Contrat d'interface : Swagger par exemple
+
+            IHM web : Selenium
+
+            Tests E2E applis web = objet de cette présentation
+          </textarea>
+        </section>
+
+        <section
+          data-markdown
+          data-separator-vertical="^\r?\n===\r?\n$"
+          data-background-image="img/nick-moore-647831-unsplash.jpg"
+          data-background-color="#000"
+          data-background-opacity="0.5"
+        >
+          <textarea data-template>
+            # Les outils de tests
+
+            Notes: Je ne présente que les outils que j'ai mis en oeuvre pour Instakittens
+
+            (à l'exception de Selenium)
+
+            Il y en a plein d'autres
+
+            Panorama non exhaustif, chacun mériterait sa propre présentation
+          </textarea>
+        </section>
+        <section data-markdown data-separator-vertical="^\r?\n===\r?\n$">
+          <textarea data-template>
+            ## Scénario d'exemple
+            
+            ### 99 Bottles of Beer
+
+            99 bottles of beer on the wall, 99 bottles of beer. <!-- .element: class="fragment" -->
+
+            Take one down and pass it around, 98 bottles of beer on the wall. <!-- .element: class="fragment" -->
+            
+            98 bottles of beer on the wall, 98 bottles of beer. <!-- .element: class="fragment" -->
+
+            Take one down and pass it around, 97 bottles of beer on the wall. <!-- .element: class="fragment" -->
+            
+            ... <!-- .element: class="fragment" -->
+
+            Notes: Scénario pour comparer l'écriture des tests selon les outils
+
+            ===
+
+            http://www.99-bottles-of-beer.net
+
+            <img class="plain" data-src="img/99bottlesofbeer-qrcode.png" />
+
+            Notes: Implémentations de la chanson dans différents langages informatiques
+          </textarea>
+        </section>
+
+        <section data-markdown data-separator-vertical="^\r?\n===\r?\n$">
+          <textarea data-template>
+            ## Outils génériques
+
+            Notes: D'abord présentation des outils génériques dans le monde JS/Web
+
+            Pas de présentation des outils équivalents dans d'autres langages, on suppose
+            que vous connaissez déjà ceux de vos technos respectives (JUnit par exemple)
+
+            ---
+
+            ### Code testé
+
+            <pre><code class="hljs language-ts stretch" data-trim>
+            class Wall {
+              bottles: Bottle[] = [];
+
+              getNbBottles() {
+                return this.bottles.length;
+              }
+              addBottles(nb) {
+                while (nb--) this.bottles.push(new Bottle());
+              }
+              takeDownBottle(): Bottle {
+                return this.bottles.pop();
+              }
+            }
+            </code></pre>
+            
+            <pre><code class="hljs language-ts stretch" data-trim>
+            interface Bottle {
+              passAround();
+            }
+            </code></pre>
+
+            Notes: En TypeScript mais le concept reste le même avec d'autres langages
+          </textarea>
+        </section>
+
+        <section
+          data-background-image="img/trinity.jpg"
+          data-background-size="contain"
+          data-background-color="#000"
+          data-markdown
+        >
+          <textarea data-template>
+            Notes: La Sainte Trinité du Hard Rock britanique : Led Zeppelin, Black Sabbath et Deep Purple
+
+            Outils distincts mais qu'on combine très souvent ensemble, combinaison sans doute la plus populaire
+          </textarea>
+        </section>
+        <section data-markdown data-separator-vertical="^\r?\n===\r?\n$">
+          <textarea data-template>
+            ## [Mocha](https://mochajs.org/)
+
+            Framework de tests + Test runner
+
+            https://mochajs.org/
+
+            <img class="plain" data-src="img/mocha-qrcode.png" />
+
+            ---
+
+            ### Fonctionnalités principales
+
+            - Très peu de configuration nécessaire
+            - Plusieurs styles de tests : QUnit, TDD, BDD
+            - Environnements navigateur et Node.js
+            - Supporte les tests asynchrones
+            - Rechargement dynamique du code
+            - Extensible et intégrable, nombreux plugins : rapports, couverture de code...
+
+            ---
+
+            ## [Chai](https://www.chaijs.com/)
+
+            Bibliothèque d'assertions
+
+            https://www.chaijs.com/
+
+            <img class="plain" data-src="img/chai-qrcode.png" />
+
+            ---
+
+            ### Fonctionnalités principales
+
+            - Plusieurs styles d'assertions : assert, expect, should
+            - Syntaxe fluide et chaînable
+            - Nombreux plugins : Promises, DOM, WebDriver...
+
+            ---
+
+            ## [Sinon](https://sinonjs.org/)
+
+            Bibliothèque de Test Doubles
+
+            https://sinonjs.org/
+
+            <img class="plain" data-src="img/sinon-qrcode.png" />
+
+            ---
+
+            ### Fonctionnalités principales
+
+            - Stubs, mocks, spies, etc
+            - Fake Timers
+            - Fake XHR & server
+
+          </textarea>
+        </section>
+        <section>
+          <section data-markdown data-transition="fade">
+            <textarea data-template>
+              ### Tests Mocha/Chai
+
+              #### QUnit "plat" (assert)
+
+              <pre><code class="hljs language-js stretch" data-trim>
+              suite('99 Bottles of Beer')
+              
+              let wall;
+              
+              beforeEach(function() {
+                wall = new Wall();
+                wall.addBottles(99);
+              });
+              
+              test('one beer down', function() {
+                assert.equal(wall.getNbBottles(), 99);
+                const bottle = wall.takeDownBottle();
+                bottle.passAround();
+                assert.equal(wall.getNbBottles(), 98);
+              });
+              </code></pre>
+            </textarea>
+          </section>
+          <section data-markdown data-transition="fade">
+            <textarea data-template>
+              #### TDD (assert)
+
+              <pre><code class="hljs language-js stretch" data-trim>
+              suite('99 Bottles of Beer', function() {
+                let wall;
+  
+                setup(function() {
+                  wall = new Wall();
+                  wall.addBottles(99);
+                });
+              
+                test('one beer down', function() {
+                  assert.equal(wall.getNbBottles(), 99);
+                  const bottle = wall.takeDownBottle();
+                  bottle.passAround();
+                  assert.equal(wall.getNbBottles(), 98);
+                });
+              });            
+              </code></pre>
+
+              Note: Comme QUnit mais structuré
+            </textarea>
+          </section>
+          <section data-markdown data-transition="fade">
+            <textarea data-template>
+              #### BDD (expect)
+    
+              <pre><code class="hljs language-js stretch" data-trim>
+              describe('99 Bottles of Beer', function() {
+                let wall;
+    
+                beforeEach(function() {
+                  wall = new Wall();
+                  wall.addBottles(99);
+                });
+              
+                it('one beer down', function() {
+                  expect(wall.getNbBottles()).to.equal(99);
+                  const bottle = wall.takeDownBottle();
+                  bottle.passAround();
+                  expect(wall.getNbBottles()).to.equal(98);
+                });
+              });            
+              </code></pre>
+
+              Note: Le plus courant
+            </textarea>
+          </section>
+          <section data-markdown data-transition="fade">
+            <textarea data-template>
+              #### BDD (should)
+    
+              <pre><code class="hljs language-js stretch" data-trim>
+              describe('99 Bottles of Beer', function() {
+                let wall;
+    
+                beforeEach(function() {
+                  wall = new Wall();
+                  wall.addBottles(99);
+                });
+              
+                it('one beer down', function() {
+                  wall.getNbBottles().should.equal(99);
+                  const bottle = wall.takeDownBottle();
+                  bottle.passAround();
+                  wall.getNbBottles().should.equal(98);
+                });
+              });            
+              </code></pre>
+
+              Note: Syntaxe alternative à expect
+            </textarea>
+          </section>
+        </section>
+
+        <section
+          data-background-image="img/jasmine-cover.jpg"
+          data-background-size="contain"
+          data-background-color="#fff"
+          data-markdown
+        >
+          <textarea data-template>
+            Notes: Le grand classique thrash metal que tout le monde connaît : Metallica
+            
+            Existe depuis longtemps, toujours très populaire, encore actif, mais ça fait pas mal de temps
+            qu'ils n'ont pas sorti quelque chose de vraiment novateur
+          </textarea>
+        </section>
+        <section data-markdown data-separator-vertical="^\r?\n===\r?\n$">
+          <textarea data-template>
+            ## [Jasmine](https://jasmine.github.io/)
+
+            Framework de tests
+
+            https://jasmine.github.io/
+
+            <img class="plain" data-src="img/jasmine-qrcode.png" />
+
+            ---
+
+            ### Fonctionnalités principales
+
+            - Inclut ses propres assertions et test doubles
+            - Style de tests BDD/expect
+            - Supporte les tests asynchrones
+            - Environnements navigateur et Node.js
+            - Extensible et intégrable, nombreux plugins : rapports, couverture de code...
+            - Intégration possible avec Ruby et Python
+          </textarea>
+        </section>
+        <section data-markdown data-separator-vertical="^\r?\n===\r?\n$">
+          <textarea data-template>
+            ### Test Jasmine
+
+            <pre><code class="hljs language-js stretch" data-trim>
+            describe('99 Bottles of Beer', function() {
+              let wall;
+  
+              beforeEach(function() {
+                wall = new Wall();
+                wall.addBottles(99);
+              });
+            
+              it('one beer down', function() {
+                expect(wall.getNbBottles()).toBe(99);
+                const bottle = wall.takeDownBottle();
+                bottle.passAround();
+                expect(wall.getNbBottles()).toBe(98);
+              });
+            });            
+            </code></pre>
+          </textarea>
+        </section>
+
+        <section
+          data-background-image="img/jest-cover.jpg"
+          data-background-color="#000"
+          data-markdown
+        >
+          <textarea data-template>
+            Notes: Groupe de thrash metal fondé par un ancien de Metallica qu'il a largement dépassé d'un point de vue technique : Megadeth
+            
+            Basé à l'origine sur Jasmine mais avec plein de fonctions en plus
+
+            Très actif
+          </textarea>
+        </section>
+        <section data-markdown data-separator-vertical="^\r?\n===\r?\n$">
+          <textarea data-template>
+            ## [Jest](https://jestjs.io/)
+
+            Framework de tests
+
+            https://jestjs.io/
+
+            <img class="plain" data-src="img/jasmine-qrcode.png" />
+
+            Note: Projet Facebook
+
+            Directement intégré au toolchain React
+
+            Très populaire même hors React
+
+            ---
+
+            ### Fonctionnalités principales
+
+            - Très peu de configuration nécessaire
+            - Style de tests BDD/expect
+            - Vaste API d'assertions, test doubles, etc.
+            - Exécution parallèle des tests
+            - Extensible et intégrable, nombreux plugins : rapports, couverture de code...
+
+          </textarea>
+        </section>
+        <section data-markdown data-separator-vertical="^\r?\n===\r?\n$">
+          <textarea data-template>
+            ### Test Jest
+
+            <pre><code class="hljs language-js stretch" data-trim>
+            describe('99 Bottles of Beer', function() {
+              let wall;
+  
+              beforeEach(function() {
+                wall = new Wall();
+                wall.addBottles(99);
+              });
+            
+              test('one beer down', function() {
+                expect(wall.getNbBottles()).toBe(99);
+                const bottle = wall.takeDownBottle();
+                bottle.passAround();
+                expect(wall.getNbBottles()).toBe(98);
+              });
+            });            
+            </code></pre>
+          </textarea>
+        </section>
+
+        <section
+          data-background-image="img/cucumber-cover.jpg"
+          data-background-size="contain"
+          data-background-color="#000"
+          data-markdown
+        >
+          <textarea data-template>
+            Notes: Le truc inclassable : System of a Down
+
+            Mélange les genres, ne ressemble à rien d'autre : métal alternatif, nu metal, hard rock, etc
+
+          </textarea>
+        </section>
+        <section data-markdown data-separator-vertical="^\r?\n===\r?\n$">
+          <textarea data-template>
+              ## [Cucumber](https://cucumber.io/)
+  
+              Framework de tests universel
+  
+              https://cucumber.io/
+
+              <img class="plain" data-src="img/cucumber-qrcode.png" />
+
+              ---
+
+              ### Fonctionnalités principales
+  
+              - Basé sur 2 piliers :
+                - Gherkin, langage de spécifications BDD
+                - "Steps", code exécutable proprement dit
+              - Supporte de très nombreux langages
+              - S'intègre à la plupart des environnements
+              - Génération de code ("snippets")
+    
+              Notes: 
+              Gherkin : Outil de communication, spécification exécutable, lisible par
+              tout le monde
+
+              Le chainon manquant entre les specs, la validation et les développeurs
+          </textarea>
+        </section>
+        <section>
+          <section
+            data-markdown
+            data-separator-vertical="^\r?\n===\r?\n$"
+            data-transition="fade"
+          >
+            <textarea data-template>
+              ### Scénario Gherkin
+
+              <pre><code class="hljs language-gherkin stretch" data-trim>
+              Feature: 99 Bottles of Beer
+    
+              Background: 
+                Given there are 99 bottles of beer on the wall
+    
+              Scenario: One beer down
+                When I take one bottle down 
+                 And I pass the bottle around
+                Then there should be 98 bottles of beer on the wall
+              </code></pre>
+
+              Notes: Format lisible, colle bien aux modèles agiles
+            </textarea>
+          </section>
+          <section
+            data-markdown
+            data-separator-vertical="^\r?\n===\r?\n$"
+            data-transition="fade"
+          >
+            <textarea data-template>
+              ### Scénario Gherkin (en français)
+
+              <pre><div class="hljs language-gherkin stretch" style="padding: 5px"><span class="hljs-comment"># language: fr</span>
+              <span class="hljs-keyword">Fonctionnalité</span>: 99 Bouteilles de Bière
+              
+              <span class="hljs-keyword">Contexte</span>: 
+                <span class="hljs-keyword">Étant donné qu'</span>il y a 99 bouteilles de bière sur le mur
+
+              <span class="hljs-keyword">Scénario</span>: Une bière en moins
+                 <span class="hljs-keyword">Quand</span> je prends une bouteille
+                <span class="hljs-keyword">Et que</span> je passe la bouteille
+                 <span class="hljs-keyword">Alors</span> il devrait y avoir 98 bouteilles de bière sur le mur
+              </div></pre>
+
+              Notes: Multilinguisme très intéressant pour les specs
+            </textarea>
+          </section>
+        </section>
+        <section data-markdown data-separator-vertical="^\r?\n===\r?\n$">
+          <textarea data-template>
+            ### Steps Cucumber
+
+            <pre><code class="hljs language-js stretch" data-trim>
+            class World() {
+              constructor() {
+                this.wall = new Wall();
+              }
+            }
+            setWorldConstructor(world);
+  
+            Given('there are {int} bottles of beer on the wall', function(nb) {
+              this.wall.addBottles(nb);
+            });
+            When('I take one bottle down ', function() {
+              this.bottle = this.wall.takeDownBottle();
+            });
+            When('I pass the bottles around', function() {
+              this.bottle.passAround();
+            });
+            Then('there should be {int} bottles of beer on the wall', function(nb) {
+              expect(this.wall.getNbBottles()).toBe(nb);
+            });
+            </code></pre>
+
+            Notes: Steps = réutilisables et génériques, on peut multiplier les scénarios
+
+            Ici on pourrait écrire toute la chanson sans une ligne de code supplémentaire
+          </textarea>
+        </section>
+
+        <section>
+          <section
+            data-background-image="img/karma.jpg"
+            data-background-size="contain"
+            data-background-color="#fff"
+            data-markdown
+          >
+            <textarea data-template>
+              Notes: On conclut sur les outils génériques
+
+              L'ampli Marshall "Murder One" de Lenny Kilmister le chanteur de Motörhead
+            </textarea>
+          </section>
+          <section
+            data-background-image="img/motorhead-murderone.jpg"
+            data-background-size="contain"
+            data-background-color="#000"
+            data-markdown
+          ></section>
+        </section>
+        <section data-markdown data-separator-vertical="^\r?\n===\r?\n$">
+          <textarea data-template>
+            ## [Karma](https://karma-runner.github.io/)
+
+            Test runner généraliste
+
+            https://karma-runner.github.io/
+
+            <img class="plain" data-src="img/karma-qrcode.png" />
+
+            Notes: Test runner générique avec plein de fonctionnalités intéressantes pour
+            améliorer le fonctionnement d'autres outils de tests
+
+            Intégré par défaut avec Angular
+
+            ---
+
+            ### Fonctionnalités principales
+
+            - Supporte Mocha, Jasmine, etc.
+            - Extensible, nombreux plugins : lanceurs de navigateurs, préprocesseurs, reporters, exécution parallèle, etc
+            - Rechargement dynamique du code
+          </textarea>
+        </section>
+
+        <section data-markdown data-separator-vertical="^\r?\n===\r?\n$">
+          <textarea data-template>
+            ## Solutions end-to-end
+
+            ---
+
+            ### Les défis du E2E Web
+
+            - Interactions <!-- .element: class="fragment" -->
+            - Structure des pages <!-- .element: class="fragment" -->
+            - Timing <!-- .element: class="fragment" -->
+            - Asynchronisme <!-- .element: class="fragment" -->
+
+            Notes:
+
+            Interactions inclut navigations => voir applications SPA
+
+            Tester l'existence d'éléments dynamiques sur la page: 
+            - Sélecteurs : les frameworks compliquent parfois la tâche (coucou React VDOM ou JSF)
+            - Trop tôt / Trop tard / Timeouts
+
+            Modèles asynchrones JS pour l'écriture des tests :
+            - Callbacks
+            - Promises
+            - Syntaxe async/await
+            - Implicite ou explicite (smart assertions)
+
+            ---
+
+            ### Page testée
+
+            <pre><code class="hljs language-html stretch" data-trim>
+              <div class="wall">
+                <div class="bottle" id="beer-1" onclick="takeDownBottle()"></div>
+                <div class="bottle" id="beer-2" onclick="takeDownBottle()"></div>
+                ...
+                <div class="bottle" id="beer-98" onclick="takeDownBottle()"></div>
+                <div class="bottle" id="beer-99" onclick="takeDownBottle()"></div>
+              </div>
+
+              <button id="pass-bottle-around" onclick="passBottleAround()">
+                Pass Bottle Around
+              </button>
+
+              <script>
+                let bottle;
+                function takeDownBottle(event) {...}
+                function passBottleAround() {...}
+              </script>
+            </code></pre>
+
+            Notes: En HTML pur mais le concept reste le même avec des frameworks web
+          </textarea>
+        </section>
+
+        <section
+          data-background-image="img/selenium-cover.jpg"
+          data-background-size="contain"
+          data-background-color="#000"
+          data-markdown
+        >
+          <textarea data-template>
+            Notes: AC/DC, les papys du hard rock
+
+            Forte influence, tout le monde connait même ta mère. 
+            
+            Plus gros tube : Highway to Hell : tous ceux qui ont écrit des tests Selenium peuvent en parler.
+            
+            On leur doit beaucoup, ils tournent encore mais ça marche surtout sur la nostalgie, il est peut-être temps de passer à autre chose
+          </textarea>
+        </section>
+        <section data-markdown data-separator-vertical="^\r?\n===\r?\n$">
+          <textarea data-template>
+            ## [Selenium "classique"](https://www.seleniumhq.org/)
+
+            - Selenium RC : Serveur Java
+            - Selenium IDE : Plugins Firefox et Chrome
+
+            https://www.seleniumhq.org/
+
+            <img class="plain" data-src="img/selenium-qrcode.png" />
+            
+            Notes: RC = Remote Control
+
+            Parler des problématiques intégration continue
+          </textarea>
+        </section>
+        <section data-markdown data-separator-vertical="^\r?\n===\r?\n$">
+          <textarea data-template>
+            ## Le futur : [Webdriver](https://www.w3.org/TR/webdriver/)
+
+            Selenium 2 : Fonctionnement "standalone"
+            
+            Standard W3C depuis juin 2018
+
+            https://www.w3.org/TR/webdriver/
+
+            <img class="plain" data-src="img/webdriver-qrcode.png" />
+
+            Notes: Issu des travaux du projet Selenium
+
+            Supporté par tous les navigateurs
+
+            Nécessite tout de même une mise en place particulière
+
+            Lingua franca des frameworks de tests, qui facilitent son utilisation
+
+            Selenium not dead!
+          </textarea>
+        </section>
+
+        <section
+          data-background-image="img/protractor-cover.jpg"
+          data-background-size="contain"
+          data-background-color="#000"
+          data-markdown
+        >
+          <textarea data-template>
+            Notes: La secte Angular : black metal Belzebubs
+
+            Black metal sous-genre de métal extrême considéré par beaucoup comme hermétique voire sectaire
+            Incantations cabalistiques : providers, modules, directives, injection de dépendances
+          </textarea>
+        </section>
+        <section data-markdown data-separator-vertical="^\r?\n===\r?\n$">
+          <textarea data-template>
+            ## [Protractor](https://www.protractortest.org/)
+
+            Framework de tests E2E pour Angular/AngularJS
+            
+            https://www.protractortest.org/
+
+            <img class="plain" data-src="img/protractor-qrcode.png" />
+            
+            Notes: Intégré par défaut à la toolchain Angular
+            
+            ---
+
+            ### Fonctionnalités principales
+
+            - Test runner en ligne de commande
+            - Supporte Selenium et tous les navigateurs compatibles avec WebDriver + mode headless
+            - Exécution parallèle en mode "sharding"
+            - Compatible intégration continue
+
+            Note: IC : l'intégration Angular CLI installe automatiquement WebDriver
+            
+            Sharding : plusieurs instances de navigateurs
+
+            ---
+
+            ### Expérience développeur
+
+            - Supporte plusieurs frameworks : Jasmine, Mocha, Cucumber, custom
+            - Modèle synchrone avec "control flow"
+            - API de sélecteurs "Locators" CSS, XPath et Angular
+            - Extensible, nombreux plugins
+
+            Notes: 
+
+            Accès à tout l'écosystème des frameworks respectifs, 
+            notamment couverture de code (istanbul par exemple)
+            et enregistrement vidéo
+
+            ---
+
+            ### Limites
+
+            - Spécifique à AngularJS/Angular
+            - Gestion complexe de l'asynchronisme (surtout avec Mocha)
+            - Support Angular moins avancé que AngularJS
+            - Gestion limitée du timing et des échecs
+            - Support debugging limité
+            - Pas de rechargement dynamique du code
+            - Pas intégrable
+
+            Notes:
+            Echecs : plugins pour retry
+          </textarea>
+        </section>
+        <section data-markdown data-separator-vertical="^\r?\n===\r?\n$">
+          <textarea data-template>
+            ### Test Protractor (Jasmine)
+
+            <pre><code class="hljs language-js stretch" data-trim>
+              import { browser, by, element } from 'protractor';
+
+              describe('99 Bottles of Beer', () => {
+                before(() => {
+                  browser.get('/99beers.html');
+                });
+              
+                it('one beer down', () => {
+                  const bottles = element.all(by.css('.wall .bottle'));
+                  expect(bottles.count()).toBe(99);
+                  bottles.first().click();
+                  element(by.css('#pass-bottle-around')).click();
+                  expect($$('.wall .bottle').count()).toBe(98);
+                });
+              });            
+            </code></pre>
+
+            Note: Jasmine car Mocha/Cucumber moins fréquent
+          </textarea>
+        </section>
+
+        <section
+          data-background-image="img/puppeteer-cover.jpg"
+          data-background-size="contain"
+          data-background-color="#000"
+          data-markdown
+        >
+          <textarea data-template>
+            Notes: Rapide, puissant, bourrin, sale : métal industriel Rammstein
+
+            On met les mains dans le cambouis mais on sais exactement ce qui se passe sous le capot.
+          </textarea>
+        </section>
+        <section data-markdown data-separator-vertical="^\r?\n===\r?\n$">
+          <textarea data-template>
+            ## [Puppeteer](https://pptr.dev/)
+
+            Bibliothèque de pilotage Chrome via DevTools
+
+            https://pptr.dev/
+
+            <img class="plain" data-src="img/puppeteer-qrcode.png" />
+            
+            Notes: Pas spécifique aux tests, bibliothèque polyvalente
+
+            ---
+
+            ### Fonctionnalités principales
+
+            - Outil polyvalent
+            - API puissante basée sur DevTools
+            - Mode headless
+            - Captures écrans et PDF
+            - Intégrable avec tout type de framework
+            - Compatible intégration continue
+
+            Notes:
+
+            Evoquer utilisation pour génération de rapport
+
+            Capture Vidéo possible via bibliothèque tierce
+            
+            IC : installation automatique de Chromium sous forme de dépendance
+
+            ---
+
+            ### Expérience développeur
+
+            - Modèle asynchrone (Promises natives)
+            - Sélecteurs CSS et XPath
+            - Exécution distante de code
+
+            ---
+
+            ### Limites
+
+            - Gestion explicite du timing et des échecs (timeouts)
+            - Supporte uniquement Chrome (mais travail en cours sur Firefox)
+
+            Notes: Revers de la médaille d'un outil bas niveau
+
+          </textarea>
+        </section>
+        <section data-markdown data-separator-vertical="^\r?\n===\r?\n$">
+          <textarea data-template>
+            ### Test Puppeteer (Mocha/Chai)
+
+            <pre><code class="hljs language-js stretch" data-trim>
+              const puppeteer = require('puppeteer');
+
+              describe('99 Bottles of Beer', () => {
+                let browser, page;
+
+                before(async () => {
+                  browser = await puppeteer.launch();
+                  page = await browser.newPage();
+                  await page.goto('http://hostname/99beers.html');
+                });
+                after(async () => {
+                  await browser.close();
+                });
+              
+                it('one beer down', async () => {
+                  const bottles = await page.$$('.wall .bottle');
+                  expect(bottles).to.have.lengthOf(99);
+                  await bottles.first().click();
+                  await page.click('#pass-bottle-around');
+                  expect(await page.$$('.wall .bottle')).to.have.lengthOf(98);
+                });
+              });            
+            </code></pre>
+
+            Note: Un peu plus verbeux car mise en place browser/page, possible de simplifier
+            (par exemple Jest-Puppeteer)
+          </textarea>
+        </section>
+
+        <section
+          data-background-image="img/cypress-cover.jpg"
+          data-background-size="contain"
+          data-background-color="#000"
+          data-markdown
+        >
+          <textarea data-template>
+            Notes: le genre le plus accessible et mainstream du métal: glam metal Mötley Crüe
+            
+            Clinquant, des strass et des paillettes, des pantalons moulants, des tatouages et des coupes de cheveux improbables
+            
+            Ca passe à la radio, ta petite soeur adore, c'est efficace et fun
+
+            Fait aimer les tests à ceux qui n'aiment pas les tests
+
+            Certains parti-pris et quelques limites qui peuvent rebuter les amateurs d'autres styles
+          </textarea>
+        </section>
+        <section data-markdown data-separator-vertical="^\r?\n===\r?\n$">
+          <textarea data-template>
+            ## [Cypress](https://www.cypress.io/)
+
+            Environnement de tests complet
+
+            https://www.cypress.io/
+
+            <img class="plain" data-src="img/cypress-qrcode.png" />
+            
+            ---
+
+            ### Fonctionnalités principales
+
+            - IDE graphique basé sur Electron + test runner en ligne de commande
+            - Supporte Chrome et Electron + mode headless
+            - Captures écrans et vidéos
+            - Compatible intégration continue
+
+            Notes:
+
+            IC supporte plein de trucs : https://docs.cypress.io/guides/guides/continuous-integration.html#Examples
+
+            ---
+
+            ### Expérience développeur
+
+            - Basé sur Mocha/Chai/Sinon, style BDD/should
+            - Modèle synchrone avec pseudo-Promises
+            - Sélecteurs jQuery
+            - Gestion automatique du timing et des échecs ("Retry-ability")
+
+            ...
+
+            Notes: 
+
+            Accès à tout l'écosystème Mocha/Chai/Sinon
+
+            jQuery = surensemble CSS avec sélecteurs supplémentaires
+
+            ===
+
+            ...
+
+            - Rechargement dynamique du code
+            - Debugging et exécution pas à pas avec inspecteur et voyage dans le temps
+            - S'exécute dans le navigateur, accès direct aux DOM
+            - Extensible, nombreux plugins dont Cucumber
+
+            Notes:
+
+            Exécution dans navigateur à double tranchant : pas accès aux ressources locales
+            
+            Plugins : https://docs.cypress.io/plugins/index.html
+
+            ---
+
+            ### Limites
+
+            - Supporte uniquement Chrome et Electron
+            - Pas d'exécution parallèle (nécessite plusieurs machines)
+            - Pas intégrable
+            - Pas de couverture de code
+
+            Notes: 
+            
+            Parallélisation tient à la nature de l'archi in-browser
+
+            Un gars de Cypress a même écrit un article de blog pour 
+            expliquer en quoi la couverture de code ne sert à rien en E2E
+            https://www.cypress.io/blog/2018/12/20/element-coverage/
+            => parti-pris
+          </textarea>
+        </section>
+        <section data-markdown data-separator-vertical="^\r?\n===\r?\n$">
+          <textarea data-template>
+            ### Test Cypress
+
+            <pre><code class="hljs language-js stretch" data-trim>
+              describe('99 Bottles of Beer', () => {
+                before(() => {
+                  cy.visit('/99beers.html');
+                });
+              
+                it('one beer down', () => {
+                  cy.get('.wall .bottle')
+                    .should('have.length', 99)
+                    .first()
+                    .click();
+                  cy.get('#pass-bottle-around').click();
+                  cy.get('.wall .bottle')
+                    .should('have.length', 98);
+                });
+              });            
+            </code></pre>
+          </textarea>
+        </section>
+
+        <section>
+          <section
+            data-background-image="img/testcafe-cover.jpg"
+            data-background-size="contain"
+            data-background-color="#000"
+            data-markdown
+          >
+            <textarea data-template>
+              Notes: Iron Maiden le seul groupe dont le chanteur pilote l'avion lors des tournées
+
+              Basé sur une architecture spécifique et originale d'injection de proxy navigateur
+            </textarea>
+          </section>
+          <section
+            data-background-image="img/ironmaiden-aceshigh.jpg"
+            data-background-size="contain"
+            data-background-color="#000"
+            data-markdown
+          ></section>
+          <section
+            data-background-image="img/ironmaiden-edforceone.jpg"
+            data-background-size="contain"
+            data-background-color="#000"
+            data-markdown
+          ></section>
+        </section>
+        <section data-markdown data-separator-vertical="^\r?\n===\r?\n$">
+          <textarea data-template>
+            ## [TestCafé](https://devexpress.github.io/testcafe/)
+            
+            Framework de tests avec une architecture originale :
+            - Un proxy injecté côté navigateur (Hammerhead)
+            - Un test runner côté Node.js
+
+            https://devexpress.github.io/testcafe/
+
+            <img class="plain" width="30%" data-src="img/testcafe-qrcode.png" />
+
+            ---
+
+            ### Fonctionnalités principales
+
+            - Test runner en ligne de commande
+            - TestCafé Studio : IDE commercial
+            - Supporte tous les navigateurs : desktop, mobile, cloud, headless...
+            - Captures écrans et vidéos
+            - Exécution parallèle
+            - Compatible intégration continue
+
+            Notes:
+
+            IC supporte plein de trucs : https://devexpress.github.io/testcafe/documentation/continuous-integration/
+
+            ---
+
+            ### Expérience développeur
+
+            - Style de tests "plat"
+            - Modèle asynchrone (Promises natives + spécifiques)
+            - API de sélecteurs "Selectors" puissance et extensible
+            - Gestion automatique du timing et des échecs ("Smart Assertions")
+
+            ...
+
+            Notes: 
+            
+            Bibliothèques de sélecteurs pour Angular, React etc : https://devexpress.github.io/testcafe/documentation/test-api/selecting-page-elements/framework-specific-selectors.html
+
+            ===
+
+            ...
+
+            - Rôles utilisateurs
+            - Debugging et exécution pas à pas
+            - Rechargement dynamique du code
+            - Extensible et intégrable
+
+            ---
+
+            ### Limites
+
+            - Pas de support natif Cucumber
+            - Pas de couverture de code
+          </textarea>
+        </section>
+        <section data-markdown data-separator-vertical="^\r?\n===\r?\n$">
+          <textarea data-template>
+            ### Test TestCafé
+
+            <pre><code class="hljs language-js stretch" data-trim>
+              fixture('99 Bottles of Beer')
+                .page('http://hostname/99beers.html');
+              
+              test('one beer down', async t => {
+                const bottles = Selector('.wall .bottle');
+                await t.expect(bottles.count).eql(99);
+                await t.click(bottles.nth(0));
+                await t.click('#pass-bottle-around');
+                await t.expect(bottles.count).eql(98);
+              });
+            </code></pre>
+          </textarea>
+        </section>
+
+        <section
+          data-background-image="img/codeceptjs-cover.jpg"
+          data-background-size="contain"
+          data-background-color="#000"
+          data-markdown
+        >
+          <textarea data-template>
+            Notes: Apocalyptica, réinterprète les classiques métal au violoncelle
+
+            Interface commune au dessus de différents moteurs
+          </textarea>
+        </section>
+        <section data-markdown data-separator-vertical="^\r?\n===\r?\n$">
+          <textarea data-template>
+            ## [CodeceptJS](https://codecept.io/)
+
+            Framework de tests multi-cibles
+
+            https://codecept.io/
+
+            <img class="plain" data-src="img/codeceptjs-qrcode.png" />
+            
+            ---
+
+            ### Fonctionnalités principales
+
+            - Test runner en ligne de commande
+            - Architecture extensible : pilotes WebDriver, Puppeteer, Protractor, Nightmare, Appium...
+            - Supporte tous les navigateurs : desktop, mobile, cloud, headless...
+            - Nombreux formats de rapport
+            - Compatible intégration continue
+            
+            ...
+            
+            Notes: Accès aux reporters Mocha par exemple
+
+            ===
+
+            ...
+
+            - Captures écrans
+            - Exécution parallèle
+            - Support Cucumber natif
+            - Data-Driven Tests
+
+            ---
+
+            ### Expérience développeur
+
+            - Style de tests "plat"
+            - Modèle mixte synchrone/asynchrone (Promises natives)
+            - API de sélecteurs "Locators" puissance et extensible : CSS, XPath, sémantique, etc.
+            - Gestion automatique du timing et des échecs ("SmartWait")
+            
+            ...
+
+            Notes: Asynchrone quand on doit obtenir des données du navigateur, synchrone sinon
+            
+            Locators acceptent les chaînes de caractères comme le label d'un bouton par exemple
+
+            ===
+
+            ...
+
+            - Coeur du runner basé sur Mocha
+            - Multi-sessions et autologin
+            - Générateurs de code
+            - Injection de dépendances (helpers, page objects...)
+            - Debugging et shell interactif
+            - Extensible et intégrable, nombreux plugins
+
+            ---
+
+            ### Limites
+
+            - Pas de rechargement dynamique du code
+            - Pas d'enregistrement vidéo
+          </textarea>
+        </section>
+        <section data-markdown data-separator-vertical="^\r?\n===\r?\n$">
+          <textarea data-template>
+            ### Test CodeceptJS
+
+            <pre><code class="hljs language-js stretch" data-trim>
+              Feature('99 Bottles of Beer');
+
+              Before((I) => {
+                I.amOnPage('/99beers.html');
+              })
+              
+              Scenario('one beer down', (I) => {
+                const bottles = locate('.wall .bottle');
+                I.seeNumberOfElements(bottles, 99);
+                I.click(bottles.first());
+                I.click('#pass-bottle-around');
+                // I.click('Pass Bottle Around');
+                I.seeNumberOfElements(bottles, 98);
+              });
+            </code></pre>
+          </textarea>
+        </section>
+
+        <section
+          data-background="black"
+          data-background-image="img/hellfest-warmup.jpg"
+          data-background-opacity="0.5"
+          data-markdown
+        >
+          <textarea data-template>
+            # Retour d'expérience
+          </textarea>
+        </section>
+
         <section data-markdown data-separator-vertical="^\r?\n===\r?\n$">
           <textarea data-template>
             ## Les applications
 
-            - Générateur de données <!-- .element: class="fragment" -->
-            - Serveur d'API REST <!-- .element: class="fragment" -->
-            - Interface d'administration <!-- .element: class="fragment" -->
-            - Application mobile <!-- .element: class="fragment" -->
+            - Générateur de données Node.js <!-- .element: class="fragment" -->
+            - Serveur d'API JSON REST Express <!-- .element: class="fragment" -->
+            - Interface d'administration web React <!-- .element: class="fragment" -->
+            - Application web mobile Ionic 4 / Angular <!-- .element: class="fragment" -->
 
             ===
 
-            ## Objectifs à long terme
+            ## Objectifs à terme
 
             - Autres protocoles que JSON REST : GraphQL, Falcor...
-            - Autres technologies côté serveur : Java, PHP...
-            - Autres technologies côté client : NativeScript, Flutter...
+            - Autres technologies backend : Java, PHP...
+            - Autres technologies frontend : NativeScript, Flutter...
 
             ---
 
@@ -1649,12 +1765,6 @@
 
             ---
 
-            ### Démonstration
-
-            Note: Démo avec Postman
-
-            ---
-
             ### Les tests
 
             - Tests unitaires : Mocha/Chai/Sinon
@@ -1662,6 +1772,16 @@
               - Mocha/Chai/Supertest
               - Cucumber/Chai/Supertest
               - Cypress (classique + Cucumber)
+
+            ---
+
+            ### Démonstration
+
+            Notes: 
+            
+            Démo interactive avec Postman
+
+            Démo tests
 
             ---
 
@@ -1683,12 +1803,6 @@
 
             ---
 
-            ### Démonstration
-
-            Note: Démo navigateur
-
-            ---
-
             ### Les tests
 
             - Tests unitaires : Jest/React
@@ -1700,6 +1814,14 @@
               - CodeceptJS (classique + Cucumber)
 
             Notes: Très peu de TU car très peu de code applicatif
+
+            ---
+
+            ### Démonstration
+
+            Notes: Démo interactive navigateur
+
+            Démo tests
 
             ---
 
@@ -1718,12 +1840,6 @@
 
             ---
 
-            ### Démonstration
-
-            Note: Démo navigateur mobile (mode émulation)
-
-            ---
-
             ### Les tests
 
             - Tests unitaires : Karma/Jasmine/Angular
@@ -1735,17 +1851,17 @@
               - Cypress (classique + Cucumber)
               - TestCafé (classique + Cucumber)
               - CodeceptJS (classique + Cucumber)
-          </textarea>
-        </section>
 
-        <section
-          data-background="black"
-          data-background-image="img/hellfest-warmup.jpg"
-          data-background-opacity="0.5"
-          data-markdown
-        >
-          <textarea data-template>
-            # Retour d'expérience
+            ---
+
+            ### Démonstration
+
+            Note: 
+            
+            Démo interactive navigateur mobile (mode émulation)
+
+            Démo tests
+
           </textarea>
         </section>
 
@@ -1867,6 +1983,7 @@
 
             #### Les points forts
 
+            - Architecture et modèle
             - Rapide
             - Mode interactif
             - Cucumber inclus
