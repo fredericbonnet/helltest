@@ -31,6 +31,7 @@
     <div class="reveal">
       <div class="slides">
         <section
+          data-timing="2"
           data-background="black"
           data-background-image="img/andy-watkins-317614-unsplash.jpg"
           data-background-opacity="0.5"
@@ -39,6 +40,7 @@
           <h2>Le Test-ival Full Stack Extrême</h2>
         </section>
         <section
+          data-timing="20"
           data-markdown
           data-background="black"
           data-background-image="img/andy-watkins-317614-unsplash.jpg"
@@ -64,6 +66,7 @@
         </section>
 
         <section
+          data-timing="5"
           data-background-image="img/evilbmcats.jpg"
           data-background-size="contain"
           data-background-color="#fff"
@@ -99,12 +102,11 @@
             Notes: J'ai cherché un équivalent pour les frameworks de tests mais sans succès
 
             TodoMVC a déjà sa suite de tests donc duplication d'effort
-         </textarea
-          >
+          </textarea>
         </section>
 
         <section>
-          <section data-markdown>
+          <section data-timing="10" data-markdown>
             <textarea data-template>
               ## [Le projet Instakittens](https://github.com/fredericbonnet/instakittens)
 
@@ -114,7 +116,7 @@
               <img class="plain" data-src="img/instakittens-qrcode.png" />
             </textarea>
           </section>
-          <section>
+          <section data-timing="5">
             <p>
               <img class="plain" data-src="img/evilbmcats.jpg" />
               <br />
@@ -127,6 +129,7 @@
             </aside>
           </section>
           <section
+            data-hidden
             data-background-color="#000"
             data-background-image="https://pbs.twimg.com/media/D3xIMpDXoAAq9mk.jpg"
           >
@@ -142,6 +145,7 @@
             </div>
           </section>
           <section
+            data-hidden
             data-background-color="#000"
             data-background-image="https://pbs.twimg.com/media/D5TO1H_VUAYohSK.jpg"
           >
@@ -158,6 +162,7 @@
             </div>
           </section>
           <section
+            data-hidden
             data-background-color="#000"
             data-background-image="https://pbs.twimg.com/media/D3V_c8yUwAA8aDJ.jpg"
           >
@@ -174,6 +179,7 @@
             </div>
           </section>
           <section
+            data-hidden
             data-background-color="#000"
             data-background-image="https://pbs.twimg.com/media/D5SGp4QU8AAZXAf.jpg"
           >
@@ -190,6 +196,7 @@
             </div>
           </section>
           <section
+            data-hidden
             data-background-color="#000"
             data-background-image="https://pbs.twimg.com/media/D4JlWx0UcAAqx6J.jpg"
           >
@@ -205,6 +212,7 @@
             </div>
           </section>
           <section
+            data-hidden
             data-background-color="#000"
             data-background-image="https://pbs.twimg.com/media/D36Qt19UcAAZutP.jpg"
           >
@@ -524,6 +532,7 @@
         </section>
 
         <section
+          data-timing="10"
           data-markdown
           data-separator-vertical="^\r?\n===\r?\n$"
           data-background-image="img/nick-moore-647831-unsplash.jpg"
@@ -542,7 +551,11 @@
             Panorama non exhaustif, chacun mériterait sa propre présentation
           </textarea>
         </section>
-        <section data-markdown data-separator-vertical="^\r?\n===\r?\n$">
+        <section
+          data-timing="20"
+          data-markdown
+          data-separator-vertical="^\r?\n===\r?\n$"
+        >
           <textarea data-template>
             ## Scénario d'exemple
             
@@ -570,7 +583,11 @@
           </textarea>
         </section>
 
-        <section data-markdown data-separator-vertical="^\r?\n===\r?\n$">
+        <section
+          data-timing="20"
+          data-markdown
+          data-separator-vertical="^\r?\n===\r?\n$"
+        >
           <textarea data-template>
             ## Outils génériques
 
@@ -578,9 +595,11 @@
 
             Pas de présentation des outils équivalents dans d'autres langages, on suppose
             que vous connaissez déjà ceux de vos technos respectives (JUnit par exemple)
+          </textarea>
+        </section>
 
-            ---
-
+        <section data-markdown data-separator-vertical="^\r?\n===\r?\n$">
+          <textarea data-template>
             ### Code testé
 
             <pre><code class="hljs language-ts stretch" data-trim>
@@ -610,6 +629,16 @@
         </section>
 
         <section
+          data-timing="2"
+          data-markdown
+          data-separator-vertical="^\r?\n===\r?\n$"
+        >
+          <textarea data-template>
+            ## Mocha/Chai/Sinon
+          </textarea>
+        </section>
+        <section
+          data-timing="20"
           data-background-image="img/trinity.jpg"
           data-background-size="contain"
           data-background-color="#000"
@@ -621,7 +650,11 @@
             Outils distincts mais qu'on combine très souvent ensemble, combinaison sans doute la plus populaire
           </textarea>
         </section>
-        <section data-markdown data-separator-vertical="^\r?\n===\r?\n$">
+        <section
+          data-timing="10"
+          data-markdown
+          data-separator-vertical="^\r?\n===\r?\n$"
+        >
           <textarea data-template>
             ## [Mocha](https://mochajs.org/)
 
@@ -630,9 +663,10 @@
             https://mochajs.org/
 
             <img class="plain" data-src="img/mocha-qrcode.png" />
-
-            ---
-
+          </textarea>
+        </section>
+        <section data-markdown data-separator-vertical="^\r?\n===\r?\n$">
+          <textarea data-template>
             ### Fonctionnalités principales
 
             - Très peu de configuration nécessaire
@@ -641,9 +675,14 @@
             - Supporte les tests asynchrones
             - Rechargement dynamique du code
             - Extensible et intégrable, nombreux plugins : rapports, couverture de code...
-
-            ---
-
+          </textarea>
+        </section>
+        <section
+          data-timing="10"
+          data-markdown
+          data-separator-vertical="^\r?\n===\r?\n$"
+        >
+          <textarea data-template>
             ## [Chai](https://www.chaijs.com/)
 
             Bibliothèque d'assertions
@@ -651,17 +690,23 @@
             https://www.chaijs.com/
 
             <img class="plain" data-src="img/chai-qrcode.png" />
-
-            ---
-
+          </textarea>
+        </section>
+        <section data-markdown data-separator-vertical="^\r?\n===\r?\n$">
+          <textarea data-template>
             ### Fonctionnalités principales
 
             - Plusieurs styles d'assertions : assert, expect, should
             - Syntaxe fluide et chaînable
             - Nombreux plugins : Promises, DOM, WebDriver...
-
-            ---
-
+          </textarea>
+        </section>
+        <section
+          data-timing="10"
+          data-markdown
+          data-separator-vertical="^\r?\n===\r?\n$"
+        >
+          <textarea data-template>
             ## [Sinon](https://sinonjs.org/)
 
             Bibliothèque de Test Doubles
@@ -669,9 +714,10 @@
             https://sinonjs.org/
 
             <img class="plain" data-src="img/sinon-qrcode.png" />
-
-            ---
-
+          </textarea>
+        </section>
+        <section data-markdown data-separator-vertical="^\r?\n===\r?\n$">
+          <textarea data-template>
             ### Fonctionnalités principales
 
             - Stubs, mocks, spies, etc
@@ -706,7 +752,7 @@
               </code></pre>
             </textarea>
           </section>
-          <section data-markdown data-transition="fade">
+          <section data-timing="10" data-markdown data-transition="fade">
             <textarea data-template>
               #### TDD (assert)
 
@@ -756,7 +802,7 @@
               Note: Le plus courant
             </textarea>
           </section>
-          <section data-markdown data-transition="fade">
+          <section data-timing="10" data-markdown data-transition="fade">
             <textarea data-template>
               #### BDD (should)
     
@@ -784,6 +830,22 @@
         </section>
 
         <section
+          data-timing="10"
+          data-markdown
+          data-separator-vertical="^\r?\n===\r?\n$"
+        >
+          <textarea data-template>
+            ## [Jasmine](https://jasmine.github.io/)
+
+            Framework de tests
+
+            https://jasmine.github.io/
+
+            <img class="plain" data-src="img/jasmine-qrcode.png" />
+          </textarea>
+        </section>
+        <section
+          data-timing="20"
           data-background-image="img/jasmine-cover.jpg"
           data-background-size="contain"
           data-background-color="#fff"
@@ -798,16 +860,6 @@
         </section>
         <section data-markdown data-separator-vertical="^\r?\n===\r?\n$">
           <textarea data-template>
-            ## [Jasmine](https://jasmine.github.io/)
-
-            Framework de tests
-
-            https://jasmine.github.io/
-
-            <img class="plain" data-src="img/jasmine-qrcode.png" />
-
-            ---
-
             ### Fonctionnalités principales
 
             - Inclut ses propres assertions et test doubles
@@ -843,19 +895,10 @@
         </section>
 
         <section
-          data-background-image="img/jest-cover.jpg"
-          data-background-color="#000"
+          data-timing="10"
           data-markdown
+          data-separator-vertical="^\r?\n===\r?\n$"
         >
-          <textarea data-template>
-            Notes: Groupe de thrash metal fondé par un ancien de Metallica qu'il a largement dépassé d'un point de vue technique : Megadeth
-            
-            Basé à l'origine sur Jasmine mais avec plein de fonctions en plus
-
-            Très actif
-          </textarea>
-        </section>
-        <section data-markdown data-separator-vertical="^\r?\n===\r?\n$">
           <textarea data-template>
             ## [Jest](https://jestjs.io/)
 
@@ -870,9 +913,24 @@
             Directement intégré au toolchain React
 
             Très populaire même hors React
+          </textarea>
+        </section>
+        <section
+          data-timing="20"
+          data-background-image="img/jest-cover.jpg"
+          data-background-color="#000"
+          data-markdown
+        >
+          <textarea data-template>
+            Notes: Groupe de thrash metal fondé par un ancien de Metallica qu'il a largement dépassé d'un point de vue technique : Megadeth
+            
+            Basé à l'origine sur Jasmine mais avec plein de fonctions en plus
 
-            ---
-
+            Très actif
+          </textarea>
+        </section>
+        <section data-markdown data-separator-vertical="^\r?\n===\r?\n$">
+          <textarea data-template>
             ### Fonctionnalités principales
 
             - Très peu de configuration nécessaire
@@ -883,7 +941,11 @@
 
           </textarea>
         </section>
-        <section data-markdown data-separator-vertical="^\r?\n===\r?\n$">
+        <section
+          data-timing="10"
+          data-markdown
+          data-separator-vertical="^\r?\n===\r?\n$"
+        >
           <textarea data-template>
             ### Test Jest
 
@@ -908,6 +970,23 @@
         </section>
 
         <section
+          data-timing="10"
+          data-markdown
+          data-separator-vertical="^\r?\n===\r?\n$"
+        >
+          <textarea data-template>
+              ## [Cucumber](https://cucumber.io/)
+  
+              Framework de tests universel
+  
+              https://cucumber.io/
+
+              <img class="plain" data-src="img/cucumber-qrcode.png" />
+            </textarea
+          >
+        </section>
+        <section
+          data-timing="20"
           data-background-image="img/cucumber-cover.jpg"
           data-background-size="contain"
           data-background-color="#000"
@@ -917,35 +996,24 @@
             Notes: Le truc inclassable : System of a Down
 
             Mélange les genres, ne ressemble à rien d'autre : métal alternatif, nu metal, hard rock, etc
-
           </textarea>
         </section>
         <section data-markdown data-separator-vertical="^\r?\n===\r?\n$">
           <textarea data-template>
-              ## [Cucumber](https://cucumber.io/)
+            ### Fonctionnalités principales
+
+            - Basé sur 2 piliers :
+              - Gherkin, langage de spécifications BDD
+              - "Steps", code exécutable proprement dit
+            - Supporte de très nombreux langages
+            - S'intègre à la plupart des environnements
+            - Génération de code ("snippets")
   
-              Framework de tests universel
-  
-              https://cucumber.io/
+            Notes: 
+            Gherkin : Outil de communication, spécification exécutable, lisible par
+            tout le monde
 
-              <img class="plain" data-src="img/cucumber-qrcode.png" />
-
-              ---
-
-              ### Fonctionnalités principales
-  
-              - Basé sur 2 piliers :
-                - Gherkin, langage de spécifications BDD
-                - "Steps", code exécutable proprement dit
-              - Supporte de très nombreux langages
-              - S'intègre à la plupart des environnements
-              - Génération de code ("snippets")
-    
-              Notes: 
-              Gherkin : Outil de communication, spécification exécutable, lisible par
-              tout le monde
-
-              Le chainon manquant entre les specs, la validation et les développeurs
+            Le chainon manquant entre les specs, la validation et les développeurs
           </textarea>
         </section>
         <section>
@@ -973,6 +1041,7 @@
             </textarea>
           </section>
           <section
+            data-timing="10"
             data-markdown
             data-separator-vertical="^\r?\n===\r?\n$"
             data-transition="fade"
@@ -1025,30 +1094,16 @@
             Notes: Steps = réutilisables et génériques, on peut multiplier les scénarios
 
             Ici on pourrait écrire toute la chanson sans une ligne de code supplémentaire
+
+            + On peut changer le langage / techno servant à écrire les steps => pérennité de la suite de tests
           </textarea>
         </section>
 
-        <section>
-          <section
-            data-background-image="img/karma.jpg"
-            data-background-size="contain"
-            data-background-color="#fff"
-            data-markdown
-          >
-            <textarea data-template>
-              Notes: On conclut sur les outils génériques
-
-              L'ampli Marshall "Murder One" de Lenny Kilmister le chanteur de Motörhead
-            </textarea>
-          </section>
-          <section
-            data-background-image="img/motorhead-murderone.jpg"
-            data-background-size="contain"
-            data-background-color="#000"
-            data-markdown
-          ></section>
-        </section>
-        <section data-markdown data-separator-vertical="^\r?\n===\r?\n$">
+        <section
+          data-hidden
+          data-markdown
+          data-separator-vertical="^\r?\n===\r?\n$"
+        >
           <textarea data-template>
             ## [Karma](https://karma-runner.github.io/)
 
@@ -1072,13 +1127,34 @@
             - Rechargement dynamique du code
           </textarea>
         </section>
+        <section data-hidden>
+          <section
+            data-background-image="img/karma.jpg"
+            data-background-size="contain"
+            data-background-color="#fff"
+            data-markdown
+          >
+            <textarea data-template>
+              Notes: On conclut sur les outils génériques
+
+              L'ampli Marshall "Murder One" de Lenny Kilmister le chanteur de Motörhead
+            </textarea>
+          </section>
+          <section
+            data-background-image="img/motorhead-murderone.jpg"
+            data-background-size="contain"
+            data-background-color="#000"
+            data-markdown
+          ></section>
+        </section>
 
         <section data-markdown data-separator-vertical="^\r?\n===\r?\n$">
           <textarea data-template>
             ## Solutions end-to-end
-
-            ---
-
+          </textarea>
+        </section>
+        <section data-markdown data-separator-vertical="^\r?\n===\r?\n$">
+          <textarea data-template>
             ### Les défis du E2E Web
 
             - Interactions <!-- .element: class="fragment" -->
@@ -1128,22 +1204,6 @@
           </textarea>
         </section>
 
-        <section
-          data-background-image="img/selenium-cover.jpg"
-          data-background-size="contain"
-          data-background-color="#000"
-          data-markdown
-        >
-          <textarea data-template>
-            Notes: AC/DC, les papys du hard rock
-
-            Forte influence, tout le monde connait même ta mère. 
-            
-            Plus gros tube : Highway to Hell : tous ceux qui ont écrit des tests Selenium peuvent en parler.
-            
-            On leur doit beaucoup, ils tournent encore mais ça marche surtout sur la nostalgie, il est peut-être temps de passer à autre chose
-          </textarea>
-        </section>
         <section data-markdown data-separator-vertical="^\r?\n===\r?\n$">
           <textarea data-template>
             ## [Selenium "classique"](https://www.seleniumhq.org/)
@@ -1158,6 +1218,23 @@
             Notes: RC = Remote Control
 
             Parler des problématiques intégration continue
+          </textarea>
+        </section>
+        <section
+          data-timing="20"
+          data-background-image="img/selenium-cover.jpg"
+          data-background-size="contain"
+          data-background-color="#000"
+          data-markdown
+        >
+          <textarea data-template>
+            Notes: AC/DC, les papys du hard rock
+
+            Forte influence, tout le monde connait même ta mère. 
+            
+            Plus gros tube : Highway to Hell : tous ceux qui ont écrit des tests Selenium peuvent en parler.
+            
+            On leur doit beaucoup, ils tournent encore mais ça marche surtout sur la nostalgie, il est peut-être temps de passer à autre chose
           </textarea>
         </section>
         <section data-markdown data-separator-vertical="^\r?\n===\r?\n$">
@@ -1185,6 +1262,24 @@
         </section>
 
         <section
+          data-timing="10"
+          data-markdown
+          data-separator-vertical="^\r?\n===\r?\n$"
+        >
+          <textarea data-template>
+            ## [Protractor](https://www.protractortest.org/)
+
+            Framework de tests E2E pour Angular/AngularJS
+            
+            https://www.protractortest.org/
+
+            <img class="plain" data-src="img/protractor-qrcode.png" />
+            
+            Notes: Intégré par défaut à la toolchain Angular
+          </textarea>
+        </section>
+        <section
+          data-timing="20"
           data-background-image="img/protractor-cover.jpg"
           data-background-size="contain"
           data-background-color="#000"
@@ -1197,20 +1292,12 @@
             Incantations cabalistiques : providers, modules, directives, injection de dépendances
           </textarea>
         </section>
-        <section data-markdown data-separator-vertical="^\r?\n===\r?\n$">
+        <section
+          data-timing="20"
+          data-markdown
+          data-separator-vertical="^\r?\n===\r?\n$"
+        >
           <textarea data-template>
-            ## [Protractor](https://www.protractortest.org/)
-
-            Framework de tests E2E pour Angular/AngularJS
-            
-            https://www.protractortest.org/
-
-            <img class="plain" data-src="img/protractor-qrcode.png" />
-            
-            Notes: Intégré par défaut à la toolchain Angular
-            
-            ---
-
             ### Fonctionnalités principales
 
             - Test runner en ligne de commande
@@ -1280,6 +1367,22 @@
         </section>
 
         <section
+          data-timing="10"
+          data-markdown
+          data-separator-vertical="^\r?\n===\r?\n$"
+        >
+          <textarea data-template>
+            ## [Puppeteer](https://pptr.dev/)
+
+            Bibliothèque de pilotage Chrome via DevTools
+
+            https://pptr.dev/
+
+            <img class="plain" data-src="img/puppeteer-qrcode.png" />
+          </textarea>
+        </section>
+        <section
+          data-timing="20"
           data-background-image="img/puppeteer-cover.jpg"
           data-background-size="contain"
           data-background-color="#000"
@@ -1293,18 +1396,6 @@
         </section>
         <section data-markdown data-separator-vertical="^\r?\n===\r?\n$">
           <textarea data-template>
-            ## [Puppeteer](https://pptr.dev/)
-
-            Bibliothèque de pilotage Chrome via DevTools
-
-            https://pptr.dev/
-
-            <img class="plain" data-src="img/puppeteer-qrcode.png" />
-            
-            Notes: Pas spécifique aux tests, bibliothèque polyvalente
-
-            ---
-
             ### Fonctionnalités principales
 
             - Outil polyvalent
@@ -1313,8 +1404,8 @@
             - Captures écrans et PDF
             - Intégrable avec tout type de framework
             - Compatible intégration continue
-
-            Notes:
+            
+            Notes: Pas spécifique aux tests, bibliothèque polyvalente
 
             Evoquer utilisation pour génération de rapport
 
@@ -1329,6 +1420,8 @@
             - Modèle asynchrone (Promises natives)
             - Sélecteurs CSS et XPath
             - Exécution distante de code
+
+            Notes: Injection de code comme les mocks par exemple
 
             ---
 
@@ -1376,6 +1469,22 @@
         </section>
 
         <section
+          data-timing="10"
+          data-markdown
+          data-separator-vertical="^\r?\n===\r?\n$"
+        >
+          <textarea data-template>
+            ## [Cypress](https://www.cypress.io/)
+
+            Environnement de tests complet
+
+            https://www.cypress.io/
+
+            <img class="plain" data-src="img/cypress-qrcode.png" />
+          </textarea>
+        </section>
+        <section
+          data-timing="20"
           data-background-image="img/cypress-cover.jpg"
           data-background-size="contain"
           data-background-color="#000"
@@ -1395,16 +1504,6 @@
         </section>
         <section data-markdown data-separator-vertical="^\r?\n===\r?\n$">
           <textarea data-template>
-            ## [Cypress](https://www.cypress.io/)
-
-            Environnement de tests complet
-
-            https://www.cypress.io/
-
-            <img class="plain" data-src="img/cypress-qrcode.png" />
-            
-            ---
-
             ### Fonctionnalités principales
 
             - IDE graphique basé sur Electron + test runner en ligne de commande
@@ -1491,8 +1590,26 @@
           </textarea>
         </section>
 
+        <section
+          data-timing="20"
+          data-markdown
+          data-separator-vertical="^\r?\n===\r?\n$"
+        >
+          <textarea data-template>
+            ## [TestCafé](https://devexpress.github.io/testcafe/)
+            
+            Framework de tests avec une architecture originale :
+            - Un proxy injecté côté navigateur (Hammerhead)
+            - Un test runner côté Node.js
+
+            https://devexpress.github.io/testcafe/
+
+            <img class="plain" width="30%" data-src="img/testcafe-qrcode.png" />
+          </textarea>
+        </section>
         <section>
           <section
+            data-timing="20"
             data-background-image="img/testcafe-cover.jpg"
             data-background-size="contain"
             data-background-color="#000"
@@ -1519,18 +1636,6 @@
         </section>
         <section data-markdown data-separator-vertical="^\r?\n===\r?\n$">
           <textarea data-template>
-            ## [TestCafé](https://devexpress.github.io/testcafe/)
-            
-            Framework de tests avec une architecture originale :
-            - Un proxy injecté côté navigateur (Hammerhead)
-            - Un test runner côté Node.js
-
-            https://devexpress.github.io/testcafe/
-
-            <img class="plain" width="30%" data-src="img/testcafe-qrcode.png" />
-
-            ---
-
             ### Fonctionnalités principales
 
             - Test runner en ligne de commande
@@ -1596,6 +1701,22 @@
         </section>
 
         <section
+          data-timing="10"
+          data-markdown
+          data-separator-vertical="^\r?\n===\r?\n$"
+        >
+          <textarea data-template>
+            ## [CodeceptJS](https://codecept.io/)
+
+            Framework de tests multi-cibles
+
+            https://codecept.io/
+
+            <img class="plain" data-src="img/codeceptjs-qrcode.png" />
+          </textarea>
+        </section>
+        <section
+          data-timing="20"
           data-background-image="img/codeceptjs-cover.jpg"
           data-background-size="contain"
           data-background-color="#000"
@@ -1609,16 +1730,6 @@
         </section>
         <section data-markdown data-separator-vertical="^\r?\n===\r?\n$">
           <textarea data-template>
-            ## [CodeceptJS](https://codecept.io/)
-
-            Framework de tests multi-cibles
-
-            https://codecept.io/
-
-            <img class="plain" data-src="img/codeceptjs-qrcode.png" />
-            
-            ---
-
             ### Fonctionnalités principales
 
             - Test runner en ligne de commande
@@ -1973,7 +2084,7 @@
 
             #### Les points faibles
 
-            - Compatiblité Hammerhead avec certains frameworks
+            - Compatibilité Hammerhead avec certains frameworks
             - Difficultés d'intégration avec Cucumber
 
             Notes: Hammerhead fait des trucs bizzarres avec le DOM : problèmes avec Ionic 4 en mode dev => utilisation en mode prod
@@ -2028,6 +2139,8 @@
         hash: true,
         // Display the page number of the current slide
         slideNumber: true,
+
+        defaultTiming: 25,
 
         dependencies: [
           { src: "plugin/markdown/marked.js" },
