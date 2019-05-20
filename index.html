@@ -281,6 +281,7 @@
         </section>
 
         <section
+          data-hidden
           data-markdown
           data-separator-vertical="^\r?\n===\r?\n$"
           data-background-image="img/marius-masalar-410695-unsplash.jpg"
@@ -294,7 +295,11 @@
           </textarea>
         </section>
 
-        <section data-markdown data-separator-vertical="^\r?\n===\r?\n$">
+        <section
+          data-hidden
+          data-markdown
+          data-separator-vertical="^\r?\n===\r?\n$"
+        >
           <textarea data-template>
             ## Un peu de jargon
 
@@ -2014,6 +2019,8 @@
     <script src="js/reveal.js"></script>
 
     <script>
+      document.querySelectorAll("[data-hidden]").forEach(e => e.remove());
+
       // More info about config & dependencies:
       // - https://github.com/hakimel/reveal.js#configuration
       // - https://github.com/hakimel/reveal.js#dependencies
