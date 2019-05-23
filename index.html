@@ -36,6 +36,7 @@
           data-background-image="img/andy-watkins-317614-unsplash.jpg"
           data-background-opacity="0.5"
         >
+          <h3><a href="https://twitter.com/codinbzh">@codinbzh</a></h3>
           <img class="plain stretch" data-src="img/logo.png" />
           <h2>Le Test-ival Full Stack Extrême</h2>
         </section>
@@ -289,7 +290,6 @@
         </section>
 
         <section
-          data-hidden
           data-markdown
           data-separator-vertical="^\r?\n===\r?\n$"
           data-background-image="img/marius-masalar-410695-unsplash.jpg"
@@ -303,11 +303,7 @@
           </textarea>
         </section>
 
-        <section
-          data-hidden
-          data-markdown
-          data-separator-vertical="^\r?\n===\r?\n$"
-        >
+        <section data-markdown data-separator-vertical="^\r?\n===\r?\n$">
           <textarea data-template>
             ## Un peu de jargon
 
@@ -1195,8 +1191,8 @@
 
               <script>
                 let bottle;
-                function takeDownBottle(event) {...}
-                function passBottleAround() {...}
+                function takeDownBottle(event) {/*...*/}
+                function passBottleAround() {/*...*/}
               </script>
             </code></pre>
 
@@ -1251,7 +1247,7 @@
 
             Notes: Issu des travaux du projet Selenium
 
-            Supporté par tous les navigateurs
+            Supporté par tous les navigateurs y compris mobiles et cloud
 
             Nécessite tout de même une mise en place particulière
 
@@ -2139,6 +2135,8 @@
         hash: true,
         // Display the page number of the current slide
         slideNumber: true,
+
+        pdfSeparateFragments: false,
 
         defaultTiming: 25,
 
