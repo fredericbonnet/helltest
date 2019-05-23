@@ -14,7 +14,7 @@
 @import url(../../lib/font/zai-consul-polish-typewriter/zai-consul-polish-typewriter.css);
 
 // Override theme settings (see ../template/settings.scss)
-$backgroundColor: #191919;
+$backgroundColor: rgb(45, 50, 55);
 
 $mainColor: #fff;
 $headingColor: #fff;
@@ -22,13 +22,14 @@ $headingColor: #fff;
 $mainFontSize: 42px;
 $mainFont: "Source Sans Pro", Helvetica, sans-serif;
 $headingFont: "zai Consul Polish Typewriter", Helvetica, sans-serif;
-$headingTextShadow: 0px 0px 15px black;
+$headingTextShadow: 0px 0px 15px black !important;
 $heading1TextShadow: $headingTextShadow;
 $headingLetterSpacing: normal;
 $headingTextTransform: none;
 $linkColor: #e7ad52;
 $linkColorHover: lighten($linkColor, 15%);
 $selectionBackgroundColor: lighten($linkColor, 25%);
+$codeFont: "Consolas", monospace !important;
 
 $heading1Size: 2.5em;
 $heading2Size: 1.6em;
@@ -44,7 +45,7 @@ section.has-light-background {
   h5,
   h6 {
     color: #222;
-    text-shadow: 0px 0px 15px white;
+    text-shadow: 0px 0px 15px white !important;
   }
 }
 
@@ -72,10 +73,18 @@ section.has-light-background {
 
 .reveal pre {
   font-size: 0.5em !important;
+
+  code.hljs {
+    font-family: $codeFont;
+  }
 }
 
 @mixin bodyBackground() {
-  @include radial-gradient(rgba(28, 30, 32, 1), rgba(60, 65, 70, 1), circle);
+  @include radial-gradient(
+    darken($backgroundColor, 8%),
+    lighten($backgroundColor, 8%),
+    circle
+  );
 }
 
 // Theme template ------------------------------
