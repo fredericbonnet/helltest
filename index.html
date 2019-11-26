@@ -574,7 +574,7 @@
           <textarea data-template>
             ## Mocha/Chai/Sinon
 
-            Notes: Pas un mais trois outils
+            Trio d'outils de tests
           </textarea>
         </section>
         <section
@@ -671,50 +671,16 @@
             <textarea data-template>
               ### Tests Mocha/Chai
 
-              #### QUnit "plat" (assert)
+              3 syntaxes de tests :
 
-              <pre><code class="hljs language-js stretch" data-trim>
-              suite('99 Bottles of Beer')
-              
-              let wall;
-              
-              beforeEach(function() {
-                wall = new Wall();
-                wall.addBottles(99);
-              });
-              
-              test('one beer down', function() {
-                assert.equal(wall.getNbBottles(), 99);
-                const bottle = wall.takeDownBottle();
-                bottle.passAround();
-                assert.equal(wall.getNbBottles(), 98);
-              });
-              </code></pre>
-            </textarea>
-          </section>
-          <section data-timing="10" data-markdown data-transition="fade">
-            <textarea data-template>
-              #### TDD (assert)
+              - BDD (par défaut)
+              - TDD
+              - QUnit
 
-              <pre><code class="hljs language-js stretch" data-trim>
-              suite('99 Bottles of Beer', function() {
-                let wall;
-  
-                setup(function() {
-                  wall = new Wall();
-                  wall.addBottles(99);
-                });
-              
-                test('one beer down', function() {
-                  assert.equal(wall.getNbBottles(), 99);
-                  const bottle = wall.takeDownBottle();
-                  bottle.passAround();
-                  assert.equal(wall.getNbBottles(), 98);
-                });
-              });            
-              </code></pre>
-
-              Note: Comme QUnit mais structuré
+              3 syntaxes d'assertions :
+              - assert
+              - expect
+              - should
             </textarea>
           </section>
           <section data-markdown data-transition="fade">
@@ -765,6 +731,54 @@
               </code></pre>
 
               Note: Syntaxe alternative à expect
+            </textarea>
+          </section>
+          <section data-timing="10" data-markdown data-transition="fade">
+            <textarea data-template>
+              #### TDD (assert)
+
+              <pre><code class="hljs language-js stretch" data-trim>
+              suite('99 Bottles of Beer', function() {
+                let wall;
+  
+                setup(function() {
+                  wall = new Wall();
+                  wall.addBottles(99);
+                });
+              
+                test('one beer down', function() {
+                  assert.equal(wall.getNbBottles(), 99);
+                  const bottle = wall.takeDownBottle();
+                  bottle.passAround();
+                  assert.equal(wall.getNbBottles(), 98);
+                });
+              });            
+              </code></pre>
+
+              Note: Comme QUnit mais structuré
+            </textarea>
+          </section>
+          <section data-timing="10" data-markdown data-transition="fade">
+            <textarea data-template>
+              #### QUnit "plat" (assert)
+
+              <pre><code class="hljs language-js stretch" data-trim>
+              suite('99 Bottles of Beer')
+              
+              let wall;
+              
+              beforeEach(function() {
+                wall = new Wall();
+                wall.addBottles(99);
+              });
+              
+              test('one beer down', function() {
+                assert.equal(wall.getNbBottles(), 99);
+                const bottle = wall.takeDownBottle();
+                bottle.passAround();
+                assert.equal(wall.getNbBottles(), 98);
+              });
+              </code></pre>
             </textarea>
           </section>
         </section>
