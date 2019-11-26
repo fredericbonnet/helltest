@@ -609,12 +609,19 @@
           <textarea data-template>
             ### Fonctionnalités principales
 
-            - Très peu de configuration nécessaire
-            - Plusieurs styles de tests : QUnit, TDD, BDD
             - Environnements navigateur et Node.js
-            - Supporte les tests asynchrones
+            - Très peu de configuration nécessaire
             - Rechargement dynamique du code
             - Extensible et intégrable, nombreux plugins : rapports, couverture de code...
+
+            ...
+
+            ===
+
+            ...
+
+            - Plusieurs styles de tests : QUnit, TDD, BDD
+            - Supporte les tests asynchrones
           </textarea>
         </section>
         <section
@@ -666,8 +673,7 @@
 
           </textarea>
         </section>
-        <section>
-          <section data-markdown data-transition="fade">
+          <section data-markdown>
             <textarea data-template>
               ### Tests Mocha/Chai
 
@@ -816,11 +822,18 @@
           <textarea data-template>
             ### Fonctionnalités principales
 
+            - Environnements navigateur et Node.js
             - Inclut ses propres assertions et test doubles
+            - Extensible et intégrable, nombreux plugins : rapports, couverture de code...
+            
+            ...
+            
+            ===
+            
+            ...
+            
             - Style de tests BDD/expect
             - Supporte les tests asynchrones
-            - Environnements navigateur et Node.js
-            - Extensible et intégrable, nombreux plugins : rapports, couverture de code...
             - Intégration possible avec Ruby et Python
           </textarea>
         </section>
@@ -887,11 +900,19 @@
           <textarea data-template>
             ### Fonctionnalités principales
 
-            - Très peu de configuration nécessaire
-            - Style de tests BDD/expect
-            - Vaste API d'assertions, test doubles, etc.
-            - Exécution parallèle des tests
+            - "Zero conf" / très peu de configuration nécessaire
+            - Inclut une vaste API d'assertions, test doubles, etc.
+            - Exécution parallèle / conditionnelle
             - Extensible et intégrable, nombreux plugins : rapports, couverture de code...
+
+            ...
+
+            ===
+
+            ...
+
+            - Style de tests BDD/expect
+            - Supporte les tests asynchrones
 
           </textarea>
         </section>
@@ -961,13 +982,21 @@
               - "Steps", code exécutable proprement dit
             - Supporte de très nombreux langages
             - S'intègre à la plupart des environnements
-            - Génération de code ("snippets")
-  
+            
+            ...
+            
             Notes: 
             Gherkin : Outil de communication, spécification exécutable, lisible par
             tout le monde
-
+            
             Le chainon manquant entre les specs, la validation et les développeurs
+            
+            ===
+            
+            ...
+            
+            - Compatible avec Chai/Sinon/etc
+            - Génération de code ("snippets")
           </textarea>
         </section>
         <section>
@@ -1021,7 +1050,7 @@
         </section>
         <section data-markdown data-separator-vertical="^\r?\n===\r?\n$">
           <textarea data-template>
-            ### Steps Cucumber
+            ### Steps Cucumber/Chai
 
             <pre><code class="hljs language-js stretch" data-trim>
             class World() {
@@ -1256,35 +1285,37 @@
 
             - Test runner en ligne de commande
             - Supporte Selenium et tous les navigateurs compatibles avec WebDriver + mode headless
-            - Exécution parallèle en mode "sharding"
-            - Compatible intégration continue
-
-            Note: IC : l'intégration Angular CLI installe automatiquement WebDriver
-            
-            Sharding : plusieurs instances de navigateurs
+            - Supporte plusieurs frameworks : Jasmine, Mocha, Cucumber, custom
 
             ---
 
             ### Expérience développeur
 
-            - Supporte plusieurs frameworks : Jasmine, Mocha, Cucumber, custom
             - Modèle synchrone avec "control flow"
             - API de sélecteurs "Locators" CSS, XPath et Angular
             - Extensible, nombreux plugins
 
             Notes: 
 
-            Accès à tout l'écosystème des frameworks respectifs, 
+            Accès à tout l'écosystème des frameworks respectifs (Jasmine, Mocha...), 
             notamment couverture de code (istanbul par exemple)
             et enregistrement vidéo
 
             ---
 
-            ### Limites
+            ### Les plus
+
+            - Préconfiguré pour Angular
+            - Ecosystème et communauté
+            - Intégration continue : installation automatique du Web Driver
+
+            ---
+
+            ### Les moins
 
             - Spécifique à AngularJS/Angular
-            - Gestion complexe de l'asynchronisme (surtout avec Mocha)
             - Support Angular moins avancé que AngularJS
+            - Gestion complexe de l'asynchronisme (surtout avec Mocha)
             - Gestion limitée du timing et des échecs
             - Support debugging limité
             - Pas de rechargement dynamique du code
@@ -1352,37 +1383,44 @@
           <textarea data-template>
             ### Fonctionnalités principales
 
-            - Outil polyvalent
-            - API puissante basée sur DevTools
-            - Mode headless
-            - Captures écrans et PDF
+            - Bibliothèque basée sur Chromium DevTools
+            - Mode headed/headless
             - Intégrable avec tout type de framework
-            - Compatible intégration continue
             
             Notes: Pas spécifique aux tests, bibliothèque polyvalente
-
-            Evoquer utilisation pour génération de rapport
-
-            Capture Vidéo possible via bibliothèque tierce
             
-            IC : installation automatique de Chromium sous forme de dépendance
-
+            Evoquer utilisation pour génération de rapport
+            
             ---
-
+            
             ### Expérience développeur
 
             - Modèle asynchrone (Promises natives)
             - Sélecteurs CSS et XPath
-            - Exécution distante de code
-
-            Notes: Injection de code comme les mocks par exemple
+            - Exécution/injection distante de code
+            
+            Notes: Injection de code, pour les mocks par exemple
+            
+            ---
+            
+            ### Les plus
+            
+            - Outil polyvalent
+            - API puissante basée sur DevTools
+            - Bibliothèque intégrable
+            - Capture vidéo possible via bibliothèque tierce
+            - Evénements natifs
+            - Exécution parallèle
+            - Gestion fenêtres/onglets/mode privé...
+            - Intégration continue : installation automatique de Chromium
 
             ---
 
-            ### Limites
+            ### Les moins
 
             - Gestion explicite du timing et des échecs (timeouts)
-            - Supporte uniquement Chrome (mais travail en cours sur Firefox)
+            - Supporte uniquement Chromium (mais travail en cours sur Firefox)
+            - Lié à une version précise de Chromium
 
             Notes: Revers de la médaille d'un outil bas niveau
 
@@ -1462,59 +1500,63 @@
 
             - IDE graphique basé sur Electron + test runner en ligne de commande
             - Supporte Chrome et Electron + mode headless
-            - Captures écrans et vidéos
-            - Compatible intégration continue
-
+            - Basé sur Mocha/Chai/Sinon
+            
             Notes:
 
             IC supporte plein de trucs : https://docs.cypress.io/guides/guides/continuous-integration.html#Examples
-
+            
             ---
-
+            
             ### Expérience développeur
 
-            - Basé sur Mocha/Chai/Sinon, style BDD/should
+            - Style de tests BDD/should
             - Modèle synchrone avec pseudo-Promises
             - Sélecteurs jQuery
             - Gestion automatique du timing et des échecs ("Retry-ability")
-
-            ...
-
+            - Rechargement dynamique du code
+            - Debugging et exécution pas à pas avec inspecteur et voyage dans le temps
+            
             Notes: 
-
+            
             Accès à tout l'écosystème Mocha/Chai/Sinon
 
             jQuery = surensemble CSS avec sélecteurs supplémentaires
-
-            ===
-
-            ...
-
-            - Rechargement dynamique du code
-            - Debugging et exécution pas à pas avec inspecteur et voyage dans le temps
-            - S'exécute dans le navigateur, accès direct aux DOM
-            - Extensible, nombreux plugins dont Cucumber
-
-            Notes:
-
-            Exécution dans navigateur à double tranchant : pas accès aux ressources locales
             
+            ---
+            
+            ### Les plus
+            
+            - IDE
+            - S'exécute dans le navigateur, accès direct au DOM
+            - Pas besoin de WebDriver
+            - Extensible, nombreux plugins dont Cucumber
+            - Captures écrans et vidéos
+            - Compatible intégration continue (mode headless)
+            
+            Note:
+
             Plugins : https://docs.cypress.io/plugins/index.html
 
             ---
 
-            ### Limites
+            ### Les moins
 
+            - Gourmand en ressources
+            - Assertions en chaînes de caractères
             - Supporte uniquement Chrome et Electron
+            - Accès difficile aux ressources locales
             - Pas d'exécution parallèle (nécessite plusieurs machines)
             - Pas intégrable
             - Pas de couverture de code
 
             Notes: 
+
+            Exécution dans navigateur à double tranchant : pas accès aux ressources locales
             
             Parallélisation tient à la nature de l'archi in-browser
 
-            Un gars de Cypress a même écrit un article de blog pour 
+            Couverture de code : Un gars de Cypress a même écrit un article de blog pour 
             expliquer en quoi la couverture de code ne sert à rien en E2E
             https://www.cypress.io/blog/2018/12/20/element-coverage/
             => parti-pris
@@ -1595,9 +1637,6 @@
             - Test runner en ligne de commande
             - TestCafé Studio : IDE commercial
             - Supporte tous les navigateurs : desktop, mobile, cloud, headless...
-            - Captures écrans et vidéos
-            - Exécution parallèle
-            - Compatible intégration continue
 
             Notes:
 
@@ -1611,28 +1650,30 @@
             - Modèle asynchrone (Promises natives + spécifiques)
             - API de sélecteurs "Selectors" puissance et extensible
             - Gestion automatique du timing et des échecs ("Smart Assertions")
-
-            ...
+            - Debugging et exécution pas à pas
+            - Rechargement dynamique du code
 
             Notes: 
             
             Bibliothèques de sélecteurs pour Angular, React etc : https://devexpress.github.io/testcafe/documentation/test-api/selecting-page-elements/framework-specific-selectors.html
 
-            ===
+            ---
 
-            ...
+            ### Les plus
 
-            - Rôles utilisateurs
-            - Debugging et exécution pas à pas
-            - Rechargement dynamique du code
+            - Gestion des rôles utilisateurs
+            - Captures écrans et vidéos
             - Extensible et intégrable
+            - Compatible intégration continue (mode headless)
+            - Exécution parallèle et multi-cibles
 
             ---
 
-            ### Limites
+            ### Les moins
 
             - Pas de support natif Cucumber
             - Pas de couverture de code
+            - Evénements simulés : problèmes de compatibilité potentiels
           </textarea>
         </section>
         <section data-markdown data-separator-vertical="^\r?\n===\r?\n$">
@@ -1689,21 +1730,9 @@
             - Test runner en ligne de commande
             - Architecture extensible : pilotes WebDriver, Puppeteer, Protractor, Nightmare, Appium, TestCafé🆕...
             - Supporte tous les navigateurs : desktop, mobile, cloud, headless...
-            - Nombreux formats de rapport
-            - Compatible intégration continue
-            
-            ...
+            - Coeur du runner basé sur Mocha
             
             Notes: Accès aux reporters Mocha par exemple
-
-            ===
-
-            ...
-
-            - Captures écrans
-            - Exécution parallèle
-            - Support Cucumber natif
-            - Data-Driven Tests
 
             ---
 
@@ -1713,31 +1742,33 @@
             - Modèle mixte synchrone/asynchrone (Promises natives)
             - API de sélecteurs "Locators" puissance et extensible : CSS, XPath, sémantique, etc.
             - Gestion automatique du timing et des échecs ("SmartWait")
-            
-            ...
+            - Debugging et shell interactif
+            - Générateurs de code
+            - Injection de dépendances (helpers, page objects...)
 
             Notes: Asynchrone quand on doit obtenir des données du navigateur, synchrone sinon
             
             Locators acceptent les chaînes de caractères comme le label d'un bouton par exemple
 
-            ===
+            ---
 
-            ...
+            ### Les plus
 
-            - Coeur du runner basé sur Mocha
-            - Multi-sessions et autologin
-            - Générateurs de code
-            - Injection de dépendances (helpers, page objects...)
-            - Debugging et shell interactif
-            - Extensible et intégrable, nombreux plugins
+            - Support Cucumber natif
+            - Gestion multi-sessions et autologin
+            - Data-Driven Tests
+            - Extensible et intégrable
+            - Captures écrans
+            - Exécution parallèle et multi-cibles
+            - Compatible intégration continue
 
             ---
 
-            ### Limites
+            ### Les moins
 
             - Pas de rechargement dynamique du code
             - Pas d'enregistrement vidéo
-            - Pas d'installation automatique WebDriver
+            - Pas d'installation automatique WebDriver (le cas échéant)
           </textarea>
         </section>
         <section data-markdown data-separator-vertical="^\r?\n===\r?\n$">
