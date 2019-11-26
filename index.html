@@ -76,36 +76,6 @@
           <h1>Le projet Instakittens</h1>
         </section>
 
-        <section data-markdown data-separator-vertical="^\r?\n===\r?\n$">
-          <textarea data-template>
-            ## Pourquoi Instakittens ?
-
-            [TodoMVC](http://todomvc.com/), mais pour les tests
-
-            http://todomvc.com/
-
-            <img class="plain" data-src="img/instakittens-qrcode.png" />
-
-            Notes: TodoMVC : comparatifs de frameworks front-end
-
-            J'en profite pour dire que j'utilise les QR Code pour que vous puissiez flasher les liens
-
-            ---
-
-            ## Pourquoi pas TodoMVC ?
-
-            Pas assez représentatif d'une appli réelle <!-- .element: class="fragment" -->
-
-            - Modèle de données trop simple <!-- .element: class="fragment" -->
-            - Pas de backend <!-- .element: class="fragment" -->
-            - Pas de droits utilisateurs <!-- .element: class="fragment" -->
-
-            Notes: J'ai cherché un équivalent pour les frameworks de tests mais sans succès
-
-            TodoMVC a déjà sa suite de tests donc duplication d'effort
-          </textarea>
-        </section>
-
         <section>
           <section data-timing="10" data-markdown>
             <textarea data-template>
@@ -230,62 +200,34 @@
             </div>
           </section>
         </section>
-        <section data-markdown>
-          <textarea data-template>
-            ## Objectifs
 
-            - Embryons d'applications testables <!-- .element: class="fragment" -->
-            - Représentatives d'une application réelle <!-- .element: class="fragment" -->
-            - Minimum de code applicatif <!-- .element: class="fragment" -->
-            - Configuration par défaut dans la mesure du possible <!-- .element: class="fragment" -->
-
-            Notes: Pas un prototype mais un embryon
-
-            Conf par défaut : pouvoir comparer la simplicité de mise en place
-          </textarea>
-        </section>
         <section data-markdown data-separator-vertical="^\r?\n===\r?\n$">
           <textarea data-template>
-            ## Les entités
-          
-            - Utilisateurs <!-- .element: class="fragment" -->
-            - Albums <!-- .element: class="fragment" -->
-            - Photos <!-- .element: class="fragment" -->
-            - Commentaires <!-- .element: class="fragment" -->
+            ## Pourquoi Instakittens ?
 
-            ===
+            [TodoMVC](http://todomvc.com/), mais pour les tests
 
-            ### Utilisateurs
-            
-            L'application autorise plusieurs niveaux d'accès :
+            http://todomvc.com/
 
-            - Visiteurs anonymes non authentifiés <!-- .element: class="fragment" -->
-            - Utilisateurs enregistrés <!-- .element: class="fragment" -->
-            - Administrateurs <!-- .element: class="fragment" -->
+            <img class="plain" data-src="img/instakittens-qrcode.png" />
 
-            ===
+            Notes: TodoMVC : comparatifs de frameworks front-end
 
-            ### Albums
+            J'en profite pour dire que j'utilise les QR Code pour que vous puissiez flasher les liens
 
-            Les utilisateurs peuvent créer un nombre arbitraire d'albums photos. Les albums ont plusieurs niveaux d'accès :
+            ---
 
-            - Public : Contenu visible par tout le monde <!-- .element: class="fragment" -->
-            - Restreint : Contenu visible uniquement par les utilisateurs enregistrés <!-- .element: class="fragment" -->
-            - Privé : Contenu visible uniquement par le propriétaire <!-- .element: class="fragment" -->
+            ## Pourquoi pas TodoMVC ?
 
-            Notes: Règles métier que l'appli devra respecter
-            
-            ===
+            Pas assez représentatif d'une appli réelle <!-- .element: class="fragment" -->
 
-            ### Photos
+            - Modèle de données trop simple <!-- .element: class="fragment" -->
+            - Pas de backend <!-- .element: class="fragment" -->
+            - Pas de droits utilisateurs <!-- .element: class="fragment" -->
 
-            Les albums peuvent contenir un nombre arbitraire de photos de chatons
+            Notes: J'ai cherché un équivalent pour les frameworks de tests mais sans succès
 
-            ===
-
-            ### Commentaires
-
-            Les utilisateurs enregistrés peuvent poster des commentaires sous les photos des albums publics ou restreints
+            TodoMVC a déjà sa suite de tests donc duplication d'effort
           </textarea>
         </section>
 
@@ -631,6 +573,8 @@
         >
           <textarea data-template>
             ## Mocha/Chai/Sinon
+
+            Notes: Pas un mais trois outils
           </textarea>
         </section>
         <section
@@ -1816,6 +1760,77 @@
           </textarea>
         </section>
 
+        <section data-timing="10" data-markdown>
+          <textarea data-template>
+            ## [Le projet Instakittens](https://github.com/fredericbonnet/instakittens)
+
+            Instagram, mais pour les photos de chatons
+
+            https://github.com/fredericbonnet/instakittens
+            <img class="plain" data-src="img/instakittens-qrcode.png" />
+          </textarea>
+        </section>
+
+        <section data-markdown>
+          <textarea data-template>
+            ## Objectifs
+
+            - Embryons d'applications testables <!-- .element: class="fragment" -->
+            - Représentatives d'une application réelle <!-- .element: class="fragment" -->
+            - Minimum de code applicatif <!-- .element: class="fragment" -->
+            - Configuration par défaut dans la mesure du possible <!-- .element: class="fragment" -->
+
+            Notes: Pas un prototype mais un embryon
+
+            Conf par défaut : pouvoir comparer la simplicité de mise en place
+          </textarea>
+        </section>
+
+        <section data-markdown data-separator-vertical="^\r?\n===\r?\n$">
+          <textarea data-template>
+            ## Les entités
+          
+            - Utilisateurs <!-- .element: class="fragment" -->
+            - Albums <!-- .element: class="fragment" -->
+            - Photos <!-- .element: class="fragment" -->
+            - Commentaires <!-- .element: class="fragment" -->
+
+            ===
+
+            ### Utilisateurs
+            
+            L'application autorise plusieurs niveaux d'accès :
+
+            - Visiteurs anonymes non authentifiés <!-- .element: class="fragment" -->
+            - Utilisateurs enregistrés <!-- .element: class="fragment" -->
+            - Administrateurs <!-- .element: class="fragment" -->
+
+            ===
+
+            ### Albums
+
+            Les utilisateurs peuvent créer un nombre arbitraire d'albums photos. Les albums ont plusieurs niveaux d'accès :
+
+            - Public : Contenu visible par tout le monde <!-- .element: class="fragment" -->
+            - Restreint : Contenu visible uniquement par les utilisateurs enregistrés <!-- .element: class="fragment" -->
+            - Privé : Contenu visible uniquement par le propriétaire <!-- .element: class="fragment" -->
+
+            Notes: Règles métier que l'appli devra respecter
+            
+            ===
+
+            ### Photos
+
+            Les albums peuvent contenir un nombre arbitraire de photos de chatons
+
+            ===
+
+            ### Commentaires
+
+            Les utilisateurs enregistrés peuvent poster des commentaires sous les photos des albums publics ou restreints
+          </textarea>
+        </section>
+
         <section data-markdown data-separator-vertical="^\r?\n===\r?\n$">
           <textarea data-template>
             ## Les applications
@@ -2081,7 +2096,7 @@
 
             #### Les points faibles
 
-            - Compatibilité Hammerhead avec certains frameworks
+            - ~Compatibilité Hammerhead avec certains frameworks~ A surveiller
             - Difficultés d'intégration avec Cucumber
 
             Notes: Hammerhead fait des trucs bizzarres avec le DOM : problèmes avec Ionic 4 en mode dev => utilisation en mode prod
